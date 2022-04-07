@@ -1,4 +1,4 @@
-//Print text to standard output using puts.
+/*Print text to standard output using puts.*/
 #include <stdio.h>
 int main(void)
 {
