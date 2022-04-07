@@ -1,4 +1,6 @@
-/*Print text to standard output using puts.*/
+/**
+ * main - Print text to standard output using puts() funtion.
+ */
 #include <stdio.h>
 int main(void)
 {
