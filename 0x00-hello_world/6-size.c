@@ -1,4 +1,6 @@
-//A program that prints the size of various types on the computer it is compiled and run on.
+/*A program that prints the size of various types 
+* on the computer it is compiled and run on.
+*/
 #include <stdio.h>
 int main(void)
 {
