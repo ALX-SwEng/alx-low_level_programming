@@ -1,4 +1,4 @@
-//Print string to standard output using printf.
+/*Print string to standard output using printf.*/
 #include <stdio.h>
 int main(void)
 {
