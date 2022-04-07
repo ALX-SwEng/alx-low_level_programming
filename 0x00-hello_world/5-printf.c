@@ -1,4 +1,6 @@
-/*Print string to standard output using printf.*/
+/**
+ * main - Print text to standard output using printf() funtion.
+ */
 #include <stdio.h>
 int main(void)
 {
