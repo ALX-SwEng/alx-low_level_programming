@@ -4,7 +4,7 @@
 /* more headers goes there */
 
 /**
-* main - chech if a number is possitive, negative, or zero
+* main - print the last digit of a given number
 * Return: program returns 0
 */
 int main(void)
