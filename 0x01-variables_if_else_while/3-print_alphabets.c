@@ -2,7 +2,7 @@
 /* more headers goes there */
 
 /**
-* main - print lowercases alphabet 
+* main - print lowercases alphabet
 * followed by uppercase alphabets
 * Return: program returns 0
 */
@@ -21,7 +21,7 @@ int main(void)
 	{
 		putchar(c);
 		c++;
-	}	
+	}
 	putchar('\n');
 	return (0);
 }
