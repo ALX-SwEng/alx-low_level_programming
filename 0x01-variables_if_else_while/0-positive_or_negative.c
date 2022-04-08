@@ -4,8 +4,8 @@
 /* more headers goes there */
 
 /**
- * main - chech if a number is possitive, negative, or zero
-* RETURN: the function returns 0
+* main - chech if a number is possitive, negative, or zero
+* Return: program returns 0
 */
 int main(void)
 {
