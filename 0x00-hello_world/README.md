@@ -1,5 +1,5 @@
-##### At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
-### General
+#### At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+## General
 ###### Why C programming is awesome
 ###### Who invented C
 ###### Who are Dennis Ritchie, Brian Kernighan and Linus Torvalds
@@ -14,8 +14,8 @@
 ###### How to find the right header to include in your source code when using a standard library function
 ###### How does the main function influence the return value of the program
 
-### Exercises
-1)[Preprocessor] Write a script that runs a C file through the preprocessor and save the result into another file. 
+## Exercises
+1) [Preprocessor] Write a script that runs a C file through the preprocessor and save the result into another file. 
                     The C file name will be saved in the variable $CFILE
                      The output should be saved in the file c
 
@@ -43,7 +43,7 @@
         Your program should return 0
         Your program should compile without warning when using the -Wall gcc option
         
-7)[Size] Write a C program that prints the size of various types on the computer it is compiled and run on.
+7) [Size] Write a C program that prints the size of various types on the computer it is compiled and run on.
           You should produce the exact same output as in the example
           Warnings are allowed
           Your program should return 0
