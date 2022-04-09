@@ -12,7 +12,7 @@ int main(void)
 		int i = n;
 
 		while (i <= 9)
-		{		
+		{	
 			if (i != n)
 			{
 				putchar (n % 10 + '0');
