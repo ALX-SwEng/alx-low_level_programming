@@ -1,10 +1,24 @@
-#include <stdlib.h>
-#include <time.h>
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+#include <stdio.h>
+/**
+* main - print combination of single digits
+* Return: program returns 0
+*/
 int main(void)
 {
+	int n = 0;
 
+	while (n <= 9)
+	{
+		putchar (n % 10 + '0');
+		n++;
+	}
+	
+	n=97;
+	while (n <= 101)
+	{
+		putchar (n % 100);
+		n++;
+	}
+	putchar ('\n');
 	return (0);
 }
