@@ -14,6 +14,7 @@ int main(void)
 		while (i <= 9)
 		{
 			int j = i;
+			
 			while (j <= 9)
 			{
 				if (n != i && i != j)
