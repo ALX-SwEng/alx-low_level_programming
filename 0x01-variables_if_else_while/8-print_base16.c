@@ -16,7 +16,7 @@ int main(void)
 	n=97;
 	while (n <= 101)
 	{
-		putchar (n % 100);
+		putchar (n);
 		n++;
 	}
 	putchar ('\n');
