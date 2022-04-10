@@ -14,15 +14,15 @@ int main(void)
 		while (i <= 9)
 		{
 			int j = i;
-			
+
 			putchar (n % 10 + '0');
 			putchar (i % 10 + '0');
 			putchar (' ');
-			
+
 			while (j <= 9)
 			{
 				int k = 0;
-				
+
 				while (k <= 9)
 				{
 					putchar (j % 10 + '0');
