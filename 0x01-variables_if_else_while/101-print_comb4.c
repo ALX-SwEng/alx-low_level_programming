@@ -15,18 +15,24 @@ int main(void)
 		{
 			int j = i;
 
+			putchar (n % 10 + '0');
+			putchar (i % 10 + '0');
+			putchar (' ');
+			
 			while (j <= 9)
 			{
-				if (n != i && i != j)
+				int k = 0;
+				
+				while (k <= 9)
 				{
-					putchar (n % 10 + '0');
-					putchar (i % 10 + '0');
 					putchar (j % 10 + '0');
-					if (n != 7)
+					putchar (k % 10 + '0');
+					if (j != 9)
 					{
 						putchar (',');
 						putchar (' ');
 					}
+					k++;
 				}
 				j++;
 			}
