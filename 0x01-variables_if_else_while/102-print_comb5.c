@@ -14,11 +14,7 @@ int main(void)
 		while (i <= 9)
 		{
 			int j = i;
-
-			putchar (n % 10 + '0');
-			putchar (i % 10 + '0');
-			putchar (' ');
-
+			
 			while (j <= 9)
 			{
 				int k = 0;
@@ -28,10 +24,17 @@ int main(void)
 					if (n == 0 && i == 0 && j == 0 && k == 0)
 						k++;
 
+					putchar (n % 10 + '0');
+					putchar (i % 10 + '0');
+					putchar (' ');
 					putchar (j % 10 + '0');
 					putchar (k % 10 + '0');
-					putchar (',');
-					putchar (' ');
+					
+					if (j != 8)
+					{
+						putchar (',');
+						putchar (' ');
+					}
 					k++;
 				}
 				j++;
