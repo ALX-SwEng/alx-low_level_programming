@@ -25,7 +25,11 @@ int main(void)
 
 				while (k <= 9)
 				{
-					putchar (j % 10 + '0');
+					if (n == 0 && i == 0 && j == 0 && k == 0)
+						putchar (j % 10 + '1');
+					else 
+						putchar (j % 10 + '0');
+
 					putchar (k % 10 + '0');
 					putchar (',');
 					putchar (' ');
