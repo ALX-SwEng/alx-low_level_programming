@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* main - print combination of single digits
+* main - print combination of two digits
 * Return: program returns 0
 */
 int main(void)
@@ -27,11 +27,8 @@ int main(void)
 				{
 					putchar (j % 10 + '0');
 					putchar (k % 10 + '0');
-					if (j != 9)
-					{
-						putchar (',');
-						putchar (' ');
-					}
+					putchar (',');
+					putchar (' ');
 					k++;
 				}
 				j++;
