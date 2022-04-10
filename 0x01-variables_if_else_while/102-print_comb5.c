@@ -21,7 +21,7 @@ int main(void)
 
 				while (k <= 9)
 				{
-					if (i == 0 && k == 0)
+					if (j == 0 && k == 0)
 						k++;
 
 					putchar (n % 10 + '0');
