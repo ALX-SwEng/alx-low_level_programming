@@ -17,11 +17,11 @@ int main(void)
 
 			while (j <= 9)
 			{
-				int k = 0;
+				int k = i;
 
 				while (k <= 9)
 				{
-					if (n == 0 && i == 0 && j == 0 && k == 0)
+					if (i == 0 && k == 0)
 						k++;
 
 					putchar (n % 10 + '0');
