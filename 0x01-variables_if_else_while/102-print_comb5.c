@@ -30,7 +30,7 @@ int main(void)
 					putchar (j % 10 + '0');
 					putchar (k % 10 + '0');
 
-					if (j != 8)
+					if (i != 8)
 					{
 						putchar (',');
 						putchar (' ');
