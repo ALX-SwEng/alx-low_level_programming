@@ -24,7 +24,6 @@ int main(void)
 						putchar(c + '0');
 						putchar(i + '0');
 						putchar(' ');
-						
 						putchar(k + '0');
 						putchar(j + '0');
 
