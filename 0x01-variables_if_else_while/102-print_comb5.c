@@ -39,12 +39,9 @@ int main(void)
 					}
 					j++;
 				}
-				k++;
-			}
-			i++;
-		}
-		c++;
-	}
+				k++;}
+			i++;}
+		c++;}
 	putchar('\n');
 	return (0);
 }
