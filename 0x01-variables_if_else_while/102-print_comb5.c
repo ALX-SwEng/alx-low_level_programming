@@ -9,7 +9,7 @@ int main(void)
 
 	while (n <= 9)
 	{
-		int i = n;
+		int i = 0;
 
 		while (i <= 9)
 		{
