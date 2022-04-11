@@ -39,6 +39,7 @@ int main(void)
 						putchar(',');
 						putchar(' ');
 					}
+					}
 					k++;
 				}
 				j++;
