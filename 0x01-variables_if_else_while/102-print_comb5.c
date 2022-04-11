@@ -21,19 +21,23 @@ int main(void)
 
 				while (k <= 9)
 				{
-					if (j == 0 && k == 0)
-						k = i + 1;
-
-					putchar (n % 10 + '0');
-					putchar (i % 10 + '0');
-					putchar (' ');
-					putchar (j % 10 + '0');
-					putchar (k % 10 + '0');
-
-					if (i != 8)
+					if (((j + k) > (n + i) &&  j >= n) || n < j)
 					{
-						putchar (',');
-						putchar (' ');
+						putchar(n);
+						putchar(i);
+						putchar(' ');
+						
+						putchar(j);
+						putchar(k);
+
+					if (n + i + j + k == 227 && n == 57)
+					{
+					break;
+					}
+					else
+					{
+						putchar(',');
+						putchar(' ');
 					}
 					k++;
 				}
