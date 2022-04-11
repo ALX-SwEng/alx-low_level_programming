@@ -26,10 +26,9 @@ int main(void)
 						putchar(k + '0');
 						putchar(j + '0');
 
-					if (c + i + k + j == 227 && c == 57)
+					if (c + i + k + j == 35 && c == 9)
 					{
-					j = 10;
-					break;
+					break;					
 					}
 					else
 					{
@@ -39,9 +38,12 @@ int main(void)
 					}
 					j++;
 				}
-				k++; }
-			i++; }
-		c++; }
+				k++; 
+				}
+			i++; 
+			}
+		c++; 
+		}
 	putchar('\n');
 	return (0);
 }
