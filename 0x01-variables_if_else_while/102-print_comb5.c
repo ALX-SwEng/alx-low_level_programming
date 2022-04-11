@@ -21,7 +21,7 @@ int main(void)
 
 				while (k <= 9)
 				{
-					if (((j + k) > (n + i) &&  j >= n) || n < j)
+					if (((j + k) > (n + i) &&  j >= n) || n < j) 
 					{
 						putchar(n + '0');
 						putchar(i + '0');
