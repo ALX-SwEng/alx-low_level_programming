@@ -24,7 +24,7 @@ int main(void)
 				{
 					if (!ctrl)
 					{
-						k = i+1;
+						k = i + 1;
 						ctrl = 1;
 					}
 
