@@ -26,15 +26,11 @@ int main(void)
 						putchar(n);
 						putchar(i);
 						putchar(' ');
-						
+
 						putchar(j);
 						putchar(k);
 
-					if (n + i + j + k == 227 && n == 57)
-					{
-					break;
-					}
-					else
+					if (n + i + j + k != 227 && n != 57)
 					{
 						putchar(',');
 						putchar(' ');
