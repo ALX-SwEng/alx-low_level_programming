@@ -19,7 +19,7 @@
 ###### What is the ASCII character set
 ###### What are the purpose of the gcc flags -m32 and -m64
 
-
+## Project Works
 1) [Positive or Negative]: Complete the source code in order to print whether the number stored in the variable n is positive or negative.
 2) [The last digit]: Complete the source code in order to print the last digit of the number stored in the variable n
 3) [Lowercase Alphabets]: Write a program that prints the alphabet in lowercase, followed by a new line.
