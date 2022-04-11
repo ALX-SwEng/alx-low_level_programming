@@ -1,46 +1,49 @@
 #include <stdio.h>
+
 /**
-* main - print combination of two digits
-* Return: program returns 0
-*/
+  * main - Prints 3 combination of numbers
+  *
+  * Return: Always (Success)
+  */
 int main(void)
 {
-	int n = 0, i, j, k;
+	int c = 0, i, k, j;
 
-	while (n <= 9)
+	while (c <= 9)
 	{
 		i = 0;
 		while (i <= 9)
 		{
-			j = 0;
-			while (j <= 9)
+			k = 0;
+			while( k <= 9)
 			{
-				k = 0;
-				while (k <= 9)
+				j = 0;
+				for (j = 48; j <= 57; j++)
 				{
-					if (((j + k) > (n + i) &&  j >= n) || n < j)
+					if (((k + j) > (c + i) &&  k >= c) || c < k)
 					{
-						putchar(n + '0');
-						putchar(i + '0');
-						putchar(' ');
-						putchar(j + '0');
-						putchar(k + '0');
+						putchar(c);
+						putchar(i);
+						putchar(' ');						
+						putchar(k);
+						putchar(j);
 
-					if (n + i + j + k < 227 && n < 57)
+					if (c + i + k + j == 227 && c == 57)
 					{
-						putchar(',');
-						putchar(' ');
+					break;
 					}
 					else
-						break;
+					{
+					putchar(',');
+					putchar(' ');
 					}
-					k++;
+					j++;
 				}
-				j++;
+				k++;
 			}
 			i++;
 		}
-		n++;
+		c++;
 	}
 	putchar('\n');
 	return (0);
