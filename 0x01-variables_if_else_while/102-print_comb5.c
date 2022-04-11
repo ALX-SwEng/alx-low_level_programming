@@ -18,15 +18,11 @@ int main(void)
 			while (j <= 9)
 			{
 				int k = 0;
-				int ctrl = 0;
 
 				while (k <= 9)
 				{
-					if (!ctrl)
-					{
+					if (j == 0 && k == 0)
 						k = i + 1;
-						ctrl = 1;
-					}
 
 					putchar (n % 10 + '0');
 					putchar (i % 10 + '0');
