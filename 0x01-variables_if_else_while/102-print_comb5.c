@@ -15,8 +15,8 @@ int main(void)
 			j = n;
 			while (j <= 9)
 			{
-				if (n == j )
-					k = i +1;
+				if (n == j)
+					k = i + 1;
 				else
 					k = 0;
 				while (k <= 9)
@@ -26,10 +26,10 @@ int main(void)
 					putchar(' ');
 					putchar(j + '0');
 					putchar(k + '0');
-							
+
 					if (n + i + j + k == 35 && n == 9)
 					{
-					break;					
+					break;			
 					}
 					else
 					{
@@ -38,11 +38,11 @@ int main(void)
 					}
 					k++;
 				}
-				j++; 
+				j++;
 				}
-			i++; 
+			i++;
 			}
-		n++; 
+		n++;
 		}
 	putchar('\n');
 	return (0);
