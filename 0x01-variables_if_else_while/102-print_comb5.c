@@ -18,7 +18,7 @@ int main(void)
 			while( k <= 9)
 			{
 				j = 0;
-				for (j = 48; j <= 57; j++)
+				while (j <= 9)
 				{
 					if (((k + j) > (c + i) &&  k >= c) || c < k)
 					{
@@ -34,8 +34,9 @@ int main(void)
 					}
 					else
 					{
-					putchar(',');
-					putchar(' ');
+						putchar(',');
+						putchar(' ');
+					}
 					}
 					j++;
 				}
