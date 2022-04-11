@@ -26,13 +26,13 @@ int main(void)
 						putchar(j + '0');
 						putchar(k + '0');
 
-					if (n + i + j + k == 227 && n == 57)
-						break;
-					else
+					if (n + i + j + k < 227 && n < 57)
 					{
 						putchar(',');
 						putchar(' ');
 					}
+					else
+						break;
 					}
 					k++;
 				}
