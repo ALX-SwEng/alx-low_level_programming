@@ -5,28 +5,29 @@
   */
 int main(void)
 {
-	int c = 0, i, k, j;
+	int n = 0, i, j, k;
 
-	while (c <= 9)
+	while (n <= 9)
 	{
 		i = 0;
 		while (i <= 9)
 		{
-			k = 0;
-			while (k <= 9)
+			j = n;
+			while (j <= 9)
 			{
-				j = 0;
-				while (j <= 9)
+				if (n == j )
+					k = i +1;
+				else
+					k = 0;
+				while (k <= 9)
 				{
-					if (((k + j) > (c + i) &&  k >= c) || c < k)
-					{
-						putchar(c + '0');
-						putchar(i + '0');
-						putchar(' ');
-						putchar(k + '0');
-						putchar(j + '0');
-
-					if (c + i + k + j == 35 && c == 9)
+					putchar(n + '0');
+					putchar(i + '0');
+					putchar(' ');
+					putchar(j + '0');
+					putchar(k + '0');
+							
+					if (n + i + j + k == 35 && n == 9)
 					{
 					break;					
 					}
@@ -35,14 +36,13 @@ int main(void)
 					putchar(',');
 					putchar(' ');
 					}
-					}
-					j++;
+					k++;
 				}
-				k++; 
+				j++; 
 				}
 			i++; 
 			}
-		c++; 
+		n++; 
 		}
 	putchar('\n');
 	return (0);
