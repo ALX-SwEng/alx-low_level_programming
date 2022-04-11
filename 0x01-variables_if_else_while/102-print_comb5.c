@@ -15,7 +15,7 @@ int main(void)
 		while (i <= 9)
 		{
 			k = 0;
-			while( k <= 9)
+			while (k <= 9)
 			{
 				j = 0;
 				while (j <= 9)
@@ -24,10 +24,9 @@ int main(void)
 					{
 						putchar(c);
 						putchar(i);
-						putchar(' ');						
+						putchar(' ');					
 						putchar(k);
 						putchar(j);
-
 					if (c + i + k + j == 227 && c == 57)
 					{
 					break;
