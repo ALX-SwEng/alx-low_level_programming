@@ -27,7 +27,7 @@ int main(void)
 					putchar(j + '0');
 					putchar(k + '0');
 
-					if (n + i + j + k == 35 && n == 9){ break; }
+					if (n + i + j + k == 35 && n == 9) { break; }
 					else
 					{
 					putchar(',');
