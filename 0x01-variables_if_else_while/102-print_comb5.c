@@ -22,7 +22,7 @@ int main(void)
 						putchar(c);
 						putchar(i);
 						putchar(' ');
-						
+
 						putchar(k);
 						putchar(j);
 
