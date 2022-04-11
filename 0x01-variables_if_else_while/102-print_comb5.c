@@ -22,11 +22,11 @@ int main(void)
 				{
 					if (((k + j) > (c + i) &&  k >= c) || c < k)
 					{
-						putchar(c);
-						putchar(i);
+						putchar(c + '0');
+						putchar(i + '0');
 						putchar(' ');
-						putchar(k);
-						putchar(j);
+						putchar(k + '0');
+						putchar(j + '0');
 					if (c + i + k + j == 227 && c == 57)
 					{
 					break;
