@@ -28,7 +28,7 @@ int main(void)
 
 					if (c + i + k + j == 35 && c == 9)
 					{
-					break;		
+					break;					
 					}
 					else
 					{
@@ -38,12 +38,12 @@ int main(void)
 					}
 					j++;
 				}
-				k++;
+				k++; 
+				}
+			i++; 
 			}
-			i++;
+		c++; 
 		}
-		c++;
-	}
 	putchar('\n');
 	return (0);
 }
