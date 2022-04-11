@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
-  * main - Prints 3 combination of numbers
-  * Return: Always (Success)
-  */
+* main - prints all possible combinations of 2 two-digit numbers
+* Return: Always (Success)
+*/
 int main(void)
 {
 	int n = 0, i, j, k;
@@ -27,10 +27,7 @@ int main(void)
 					putchar(j + '0');
 					putchar(k + '0');
 
-					if (n + i + j + k == 35 && n == 9)
-					{
-					break;			
-					}
+					if (n + i + j + k == 35 && n == 9){ break; }
 					else
 					{
 					putchar(',');
