@@ -13,16 +13,20 @@ int main(void)
 
 		while (i <= 9)
 		{
-			int j = i;
+			int j = 0;
 
 			while (j <= 9)
 			{
-				int k = i;
+				int k = 0;
+				bool ctrl = false;
 
 				while (k <= 9)
 				{
-					if (j == 0 && k == 0)
-						k++;
+					if (!ctrl)
+					{
+						k = i+1;
+						ctrl = true;
+					}
 
 					putchar (n % 10 + '0');
 					putchar (i % 10 + '0');
