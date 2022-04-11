@@ -18,14 +18,14 @@ int main(void)
 			while (j <= 9)
 			{
 				int k = 0;
-				bool ctrl = false;
+				int ctrl = 0;
 
 				while (k <= 9)
 				{
 					if (!ctrl)
 					{
 						k = i+1;
-						ctrl = true;
+						ctrl = 1;
 					}
 
 					putchar (n % 10 + '0');
