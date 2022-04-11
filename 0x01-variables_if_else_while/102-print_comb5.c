@@ -2,7 +2,6 @@
 
 /**
   * main - Prints 3 combination of numbers
-  *
   * Return: Always (Success)
   */
 int main(void)
@@ -25,16 +24,18 @@ int main(void)
 						putchar(c + '0');
 						putchar(i + '0');
 						putchar(' ');
+						
 						putchar(k + '0');
 						putchar(j + '0');
+
 					if (c + i + k + j == 227 && c == 57)
 					{
 					break;
 					}
 					else
 					{
-						putchar(',');
-						putchar(' ');
+					putchar(',');
+					putchar(' ');
 					}
 					}
 					j++;
