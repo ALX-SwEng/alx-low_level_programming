@@ -1,12 +1,28 @@
-#include "stdio.h"
+#include "main.h"
 
 /**
- * main - check the code
+ * main - prints all natural numbers from n to 98
+ *@n: integer number
  *
- * Return: Always 0.
+ * Return: nothing.
  */
-int main(void)
+void print_to_98(int n)
 {
-    print_alphabet();
-    return (0);
+    if (n < 98)
+    {
+        while (n <= 98)
+        {
+            _putchar (n);
+            ++n;
+        }
+    }
+    else
+    {
+        while (n >= 98)
+        {
+            _putchar (n);
+            --n;
+        }
+    }
+     _putchar ("\n");
 }
