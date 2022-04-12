@@ -7,8 +7,7 @@
  */
 int main(void)
 {
-    for (int i = 0; i < 10; i++)
-        print_alphabet();
+   print_alphabet();
     
     return (0);
 }
