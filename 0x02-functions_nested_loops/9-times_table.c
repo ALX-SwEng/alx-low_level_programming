@@ -16,7 +16,7 @@ if (i < 10)
 {
 _putchar (',');
 _putchar (' ');
-_putchar (' ');        
+_putchar (' '); 
 }
 }
 _putchar ('\n');
@@ -24,7 +24,7 @@ _putchar ('\n');
 for (i = 1; i <= 9; ++i)
 {
 int j;
-        
+
 _putchar ('0');
 _putchar (',');
 _putchar (' ');
@@ -37,18 +37,21 @@ int r, p = i * j;
 if (p <= 9)
 {
 _putchar (p + '0');
-_putchar (' '); 
+_putchar (' ');
 }
 else
 {
-    r = p % 10;
-    p = p / 10;
-    _putchar(p + '0');
-    _putchar(r + '0');
+r = p % 10;
+p = p / 10;
+_putchar(p + '0');
+_putchar(r + '0');
 }
-    
+
+if (j < 9)
+{
 _putchar (',');
 _putchar (' ');
+}
 }
 _putchar ('\n');
 }
