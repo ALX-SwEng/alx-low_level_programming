@@ -7,8 +7,10 @@
  */
 int main(void)
 {
-	for (int i = 0; i < 10; i++)
-		print_alphabet();
+	int i;
+	
+	for (i = 0; i < 10; i++)
+		print_alphabet_x10();
 
 return (0);
 }
@@ -18,7 +20,7 @@ return (0);
  *
  * Return: none.
  */
-void  print_alphabet(void)
+void  print_alphabet_x10()
 {
 	char c = 'a';
 
