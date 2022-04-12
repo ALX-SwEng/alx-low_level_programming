@@ -37,6 +37,7 @@ int r, p = i * j;
 if (p <= 9)
 {
 _putchar (p + '0');
+if (j < 9)
 _putchar (' ');
 }
 else
