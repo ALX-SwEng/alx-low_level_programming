@@ -1,12 +1,11 @@
 #include "stdio.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_last_digit - extract the last digit of a number
+ * @n: an integer number
+ * Return: last digit of number.
  */
-int main(void)
+int print_last_digit(int n)
 {
-    print_alphabet();
-    return (0);
+return (n % 10);
 }
