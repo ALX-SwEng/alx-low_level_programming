@@ -16,44 +16,33 @@ if (i < 10)
 {
 _putchar (',');
 _putchar (' ');
-_putchar (' '); 
-}
-}
-_putchar ('\n');
-
+_putchar (' '); }}
+putchar ('\n');
+	
 for (i = 1; i <= 9; ++i)
 {
-int j;
-
-_putchar ('0');
-_putchar (',');
-_putchar (' ');
-_putchar (' ');
-
-for (j = 1; j <= 9; ++j)
+int j, r1, r2, p = 0;
+			
+for (j = 0; j <= 9; ++j)
 {
-int r, p = i * j;
-
-if (p <= 9)
-{
-_putchar (p + '0');
-if (j < 9)
-_putchar (' ');
-}
+if (j == 0)
+putchar ('0');
 else
 {
-r = p % 10;
-p = p / 10;
-_putchar(p + '0');
-_putchar(r + '0');
-}
-
-if (j < 9)
+p = i * j;			
+if (p <= 9)
+putchar (p + '0');
+else
 {
-_putchar (',');
-_putchar (' ');
+r1 = p % 10;
+r2 = p / 10;
+putchar(r2 + '0');
+putchar(r1 + '0'); }}
 }
-}
-_putchar ('\n');
-}
-}
+if (j < 9)
+{					
+putchar (',');
+putchar (' ');
+if (p <= 9)
+putchar (' '); }}
+putchar ('\n'); }}
