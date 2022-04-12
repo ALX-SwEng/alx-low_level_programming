@@ -5,8 +5,18 @@
  *
  * Return: Always 0.
  */
-int main(void)
+void times_table(void)
 {
-    print_alphabet();
-    return (0);
+    int i;
+    
+    for (i = 1; i <= 10; ++)
+        _putchar (0);
+    for (i = 1; i <= 9; ++i)
+    {
+        _putchar(0);
+        int j;
+        
+        for (j = i; j <= 9; ++j)
+            putchar(i * j);
+    }
 }
