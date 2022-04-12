@@ -1,22 +1,7 @@
 #include "main.h"
 
 /**
- * main - invoke print_alphabet() function
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	int i;
-	
-	for (i = 0; i < 10; i++)
-		print_alphabet_x10();
-
-return (0);
-}
-
-/**
- * print_alphabet - print lowercase alphabet
+ * print_alphabet_x10 - print lowercase alphabet 10 times
  *
  * Return: none.
  */
