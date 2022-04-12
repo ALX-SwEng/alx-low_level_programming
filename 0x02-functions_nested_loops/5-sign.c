@@ -1,12 +1,26 @@
 #include "stdio.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * print_sign - check if a number is +ve, -ve or zero
+ * @n: number inputed by user
+ * Return: 1 if n is +ve, -1 if n is -ve othrwise 0.
  */
-int main(void)
+
+int print_sign(int n)
 {
-    print_alphabet();
-    return (0);
+if (n > 0)
+{
+_putchar('+');    
+return (1);
+}
+else if (n == 0)
+{
+_putchar('0');      
+return (0);
+}
+else
+{
+_putchar('-');  
+return (-1);
+}
 }
