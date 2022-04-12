@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-   print_alphabet();
-    
-    return (0);
+print_alphabet();
+
+return (0);
 }
 
 /**
@@ -19,7 +19,7 @@ int main(void)
  */
 void  print_alphabet(void)
 {
-    char c = 'a';
+	char c = 'a';
 
 	while (c <= 'z')
 	{
