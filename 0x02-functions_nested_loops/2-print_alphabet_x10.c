@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-    for (int i = 0; i < 10; i++)
-        print_alphabet();
-    
+	for (int i = 0; i < 10; i++)
+		print_alphabet();
+
     return (0);
 }
 
@@ -20,7 +20,7 @@ int main(void)
  */
 void  print_alphabet(void)
 {
-    char c = 'a';
+	char c = 'a';
 
 	while (c <= 'z')
 	{
