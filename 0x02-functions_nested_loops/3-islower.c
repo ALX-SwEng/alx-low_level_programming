@@ -1,12 +1,14 @@
 #include "stdio.h"
 
 /**
- * main - check the code
+ * int _islower - check lowercase alphabets
  *
- * Return: Always 0.
+ * Return: 1 if c is lowercase othrwise 0.
  */
-int main(void)
+int _islower(int c)
 {
-    print_alphabet();
-    return (0);
+    if (c >= 97 && c <= 122)
+        return (1);
+    else
+        return (0);
 }
