@@ -6,7 +6,7 @@
  */
 
 int main(void)
-{    
+{
 	 int n1 = 0, n2 = 1, n3, i;
 
 	 for(i = 2; i <= 48; ++i)
@@ -15,14 +15,14 @@ int main(void)
 		  if (n3 == 3)
 		  	putchar ('\n');
 
-		  if (i < 48 && n3 != 2)	
+		  if (i < 48 && n3 != 2)
 		  	printf ("%d, ", n3);
-		  else 
+		  else
 		  	printf ("%d", n3);
 
 		  n1 = n2;
 		  n2 = n3;
 	 }
-	 
-  return (0);  
- } 
+
+  return (0);
+ }
