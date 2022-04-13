@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int n1 = 0, n2 = 1, n3, i;
+	long int n1 = 0, n2 = 1, n3, i;
 
 	for (i = 2; i <= 48; ++i)
 	{
