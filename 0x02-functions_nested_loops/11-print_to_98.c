@@ -29,10 +29,10 @@ void print_to_98(int n)
 		}
 		
 		if (sign == 1)
-			putchar('-');
+			_putchar('-');
 		while (len > 0)
 		{
-	        	putchar (reverse % 10 + '0');
+	        	_putchar(reverse % 10 + '0');
 	        	reverse = reverse / 10;
 	        	len--;
 		}	    
