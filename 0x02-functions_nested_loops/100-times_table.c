@@ -45,5 +45,5 @@ void print_times_table(int n)
 					{
 						_putchar ('0' + rev % 10);
 						rev = rev / 10;
-						--len; }}}}}
-	_putchar ('\n'); }
+						--len; }}}}
+	_putchar ('\n'); }}
