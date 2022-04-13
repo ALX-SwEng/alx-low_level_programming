@@ -7,7 +7,7 @@
  */
 void print_times_table(int n)
 {
-	int i, a, j, p = 0;
+	int i, a, j, rev, len, p = 0;
 
 	if (n >= 0 && n <= 15)
 	{
@@ -26,8 +26,7 @@ void print_times_table(int n)
 				else
 				{
 					p = i * j;
-					int rev = 0, len = 0;
-					
+					rev = 0, len = 0;					
 					while (p > 0)
 					{
 						rev = (rev * 10) + (p % 10);
