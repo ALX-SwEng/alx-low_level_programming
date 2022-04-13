@@ -9,12 +9,10 @@
  */
 int print_last_digit(int n)
 {
-	//if (n == INT_MIN)
-	//	n = 8;
 	if (n < 0)
 		n = abs(n);
 
 	_putchar (n % 10 + 48);
 
-return (n%10);
+return (n % 10);
 }
