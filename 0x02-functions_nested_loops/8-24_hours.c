@@ -9,14 +9,14 @@
 void jack_bauer(void)
 {
 	int n;
-	for (n = 0; n < 3; ++n)
+	for (n = 0; n <= 2; ++n)
 	{
 		int i;
 		
-		for (i = 0; i < 4; ++i)
+		for (i = 0; i <= 3; ++i)
 		{
 			int j;
-			for (j = 0; j < 6; ++j)
+			for (j = 0; j <= 5; ++j)
 			{
 				int k;
 				
