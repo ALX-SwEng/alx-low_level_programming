@@ -15,32 +15,32 @@ void print_times_table(int n)
 		{
 			_putchar ('0');
 			_putchar (',');
-			for (a = 1; a <= 3; ++a) 
-				_putchar (' '); }			
+			for (a = 1; a <= 3; ++a)
+				_putchar (' '); }		
 		_putchar ('0');
 		_putchar ('\n');
 		for (i = 1; i <= n; ++i)
 		{
 			for (j = 0; j <= n; ++j)
 			{
-				if (j == 0) 
+				if (j == 0)
 					_putchar ('0');
 				else
 				{
 					p = i * j;
-					rev = len = 0;			
+					rev = len = 0;	
 					while (p > 0)
 					{
-						rev = (rev * 10) + (p % 10);
-						++len;
-						p = p / 10; }
+					rev = (rev * 10) + (p % 10);
+					++len;
+					p = p / 10; }
 					_putchar (',');
 					_putchar (' ');
 					if (len < 3)
 					{
-						_putchar (' ');
-						if (len < 2)
-						_putchar (' '); }
+					_putchar (' ');
+					if (len < 2)
+					_putchar (' '); }
 					while (len > 0)
 					{
 						_putchar ('0' + rev % 10);
