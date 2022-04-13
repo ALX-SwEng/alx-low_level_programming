@@ -39,7 +39,7 @@ void times_table(void)
 					r1 = p % 10;
 					r2 = p / 10;
 					_putchar(r2 + '0');
-					_putchar(r1 + '0'); }}
+					_putchar(r1 + '0'); 
 				}
 			}
 			if (j < 9)
