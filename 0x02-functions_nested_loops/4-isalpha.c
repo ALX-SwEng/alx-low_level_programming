@@ -1,12 +1,16 @@
 #include "stdio.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * _isalpha - check alphabetic character
+ * @c: character input by user
+ * Return: 1 if c is alphabet othrwise 0.
  */
-int main(void)
+
+int _isalpha(int c)
 {
-    print_alphabet();
-    return (0);
+if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
+return (1);
+else
+return (0);
 }
+

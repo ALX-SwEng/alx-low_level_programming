@@ -1,12 +1,14 @@
 #include "stdio.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * _abs - compute the absolute value of integer
+ * @n: an integer number
+ * Return: absolute value.
  */
-int main(void)
+int _abs(int n)
 {
-    print_alphabet();
-    return (0);
+if (n < 0)
+return (-1 * n);
+else
+return (n);
 }

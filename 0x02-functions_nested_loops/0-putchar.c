@@ -1,12 +1,20 @@
 #include "stdio.h"
 
 /**
- * main - check the code
+ * main - print string
  *
  * Return: Always 0.
  */
 int main(void)
 {
-print_alphabet();
+putchar('_');
+putchar('p');
+putchar('u');
+putchar('t');
+putchar('c');
+putchar('h');
+putchar('a');
+putchar('r');
+putchar('\n');
 return (0);
 }
