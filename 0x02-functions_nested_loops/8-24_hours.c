@@ -33,7 +33,7 @@ void jack_bauer(void)
 					_putchar ('\n');
 				}
 			}
-			if (n == 2 && n == 3)
+			if (n == 2 && i == 3)
 				break;
 		}
 	}
