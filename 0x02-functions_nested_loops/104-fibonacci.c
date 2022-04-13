@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdint.h>
+
 /**
  * main - print fibnonic series
  *
