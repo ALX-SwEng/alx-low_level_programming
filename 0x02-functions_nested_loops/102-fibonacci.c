@@ -13,7 +13,7 @@ int main(void)
 	{
 		n3 = n1 + n2;
 
-		if (i < 48)
+		if (i < 50)
 			printf("%ld, ", n3);
 		else
 			printf("%ld", n3);
@@ -21,6 +21,6 @@ int main(void)
 		n2 = n3;
 	}
 	putchar('\n');
-	
+
 	return (0);
 }
