@@ -16,7 +16,7 @@ int main(void)
 		if (i < 48 && n3 != 2)
 			printf("%ul, ", n3);
 		else
-			printf("%ul", n3);
+			printf("%ld", n3);
 		n1 = n2;
 		n2 = n3;
 	}
