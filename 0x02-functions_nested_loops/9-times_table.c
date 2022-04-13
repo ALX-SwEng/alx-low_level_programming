@@ -16,11 +16,9 @@ void times_table(void)
 		{
 			_putchar (',');
 			_putchar (' ');
-			_putchar (' '); 
-		}
-	}
+			_putchar (' ');
+		}}
 	_putchar ('\n');
-	
 	for (i = 1; i <= 9; ++i)
 	{
 		int j, r1, r2, p = 0;
@@ -31,7 +29,7 @@ void times_table(void)
 				_putchar ('0');
 			else
 			{
-				p = i * j;			
+				p = i * j;		
 				if (p <= 9)
 					_putchar (p + '0');
 				else
@@ -39,17 +37,13 @@ void times_table(void)
 					r1 = p % 10;
 					r2 = p / 10;
 					_putchar(r2 + '0');
-					_putchar(r1 + '0'); 
-				}
-			}
+					_putchar(r1 + '0');
+				}}
 			if (j < 9)
-			{					
+			{	
 				_putchar (',');
 				_putchar (' ');
 				if (p <= 9)
-					_putchar (' '); 
-			}
-		}
-		_putchar ('\n'); 
-	}
-}
+					_putchar (' ');
+			}}
+		_putchar ('\n'); }}
