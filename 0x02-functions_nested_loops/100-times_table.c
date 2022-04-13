@@ -1,2 +1,59 @@
+#include "main.h"
 
-void print_times_table(int n);
+/**
+ * print_times_table - print the N times table, starting with 0.
+ * @n: time table size
+ * Return: none.
+ */
+void print_times_table(int n)
+{
+	if (n >= 0 && n <= 15)
+	{
+		int i, a;
+
+		for (i = 1; i <= n+1; ++i)
+		{
+			putchar ('0');
+			if (i <= n)
+			{
+				putchar (',');
+				for (a = 1; i <= 3; ++a)
+					putchar (' ');	}}
+		putchar ('\n');
+		
+		for (i = 1; i <= n; ++i)
+		{
+			int j, r1, r2, r3, p = 0;
+	
+			for (j = 0; j <= n; ++j)
+			{
+				if (j == 0)
+					putchar ('0');
+				else
+				{
+					p = i * j;
+					putchar (',');
+					putchar (' ');
+					if (p <= 9)
+					{
+						putchar (' ');
+						putchar (' ');
+						putchar ('0' + p); }
+					else if (p <= 99)
+					{
+						putchar (' ');
+						r1 = p % 10;
+						r2 = p / 10;					
+						putchar(r2 + '0');
+						putchar(r1 + '0'); }
+					else 
+					{				
+						r1 = p % 10;
+						p = p / 10;
+						r2 = p % 10;
+						p = p / 10;
+						r3 = p % 10;
+						putchar(r3 + '0');
+						putchar(r2 + '0');
+						putchar(r1 + '0'); }}}
+			putchar ('\n');	}}}
