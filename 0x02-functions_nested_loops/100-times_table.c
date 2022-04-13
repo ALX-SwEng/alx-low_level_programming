@@ -17,14 +17,14 @@ void print_times_table(int n)
 			if (i <= n)
 			{
 				putchar (',');
-				for (a = 1; i <= 3; ++a)
+				for (a = 1; a <= 3; ++a)
 					putchar (' ');	}}
 		putchar ('\n');
-		
+
 		for (i = 1; i <= n; ++i)
 		{
 			int j, r1, r2, r3, p = 0;
-	
+
 			for (j = 0; j <= n; ++j)
 			{
 				if (j == 0)
@@ -43,10 +43,10 @@ void print_times_table(int n)
 					{
 						putchar (' ');
 						r1 = p % 10;
-						r2 = p / 10;					
+						r2 = p / 10;				
 						putchar(r2 + '0');
 						putchar(r1 + '0'); }
-					else 
+					else
 					{				
 						r1 = p % 10;
 						p = p / 10;
