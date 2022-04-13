@@ -14,9 +14,9 @@ int main(void)
 		n3 = n1 + n2;
 
 		if (i < 98)
-			printf("%u, ", n3);
+			printf("%lu, ", n3);
 		else
-			printf("%u", n3);
+			printf("%lu", n3);
 		n1 = n2;
 		n2 = n3;
 	}
