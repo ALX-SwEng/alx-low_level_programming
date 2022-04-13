@@ -6,6 +6,7 @@
  *
  * Return: none.
  */
+
 void jack_bauer(void)
 {
 	int n;
@@ -22,12 +23,11 @@ void jack_bauer(void)
 				
 				for (k = 0; k <= 9; ++k)
 				{
-				_putchar ('0' + n);
-                                _putchar ('0' + i);
-                                _putchar (':');
-                                _putchar ('0' + j);
-                                _putchar ('0' + k);
-                                _putchar ('\n');
+					_putchar ('0' + n);
+					_putchar ('0' + i);
+					_putchar (':');
+					_putchar ('0' + j);
+					_putchar ('\n');
 				}
 			}
 		}
