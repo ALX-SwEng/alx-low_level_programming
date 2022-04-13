@@ -29,6 +29,11 @@ void times_table(void)
 				_putchar ('0');
 			else
 			{
+				_putchar (',');
+				_putchar (' ');
+				if (p <= 9)
+					_putchar (' ');
+				
 				p = i * j;
 				if (p <= 9)
 					_putchar (p + '0');
@@ -39,11 +44,6 @@ void times_table(void)
 					_putchar(r2 + '0');
 					_putchar(r1 + '0');
 				}}
-			if (j < 9)
-			{
-				_putchar (',');
-				_putchar (' ');
-				if (p <= 9)
-					_putchar (' ');
-			}}
-		_putchar ('\n'); }}
+		}
+		_putchar ('\n'); 
+	}}
