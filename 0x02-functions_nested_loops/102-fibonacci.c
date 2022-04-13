@@ -14,7 +14,7 @@ int main(void)
 		n3 = n1 + n2;
 
 		if (i < 48 && n3 != 2)
-			printf("%ul, ", n3);
+			printf("%ld, ", n3);
 		else
 			printf("%ld", n3);
 		n1 = n2;
