@@ -17,7 +17,7 @@ int main(void)
 		}
 		++n;
 	}
-	printf("%ld", sum);
+	printf("%d", sum);
 
 	return (0);
 }
