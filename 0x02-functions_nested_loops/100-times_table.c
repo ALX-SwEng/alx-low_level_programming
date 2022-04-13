@@ -26,7 +26,7 @@ void print_times_table(int n)
 				else
 				{
 					p = i * j;
-					rev = 0, len = 0;					
+					rev = len = 0;					
 					while (p > 0)
 					{
 						rev = (rev * 10) + (p % 10);
