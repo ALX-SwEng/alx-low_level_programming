@@ -17,11 +17,9 @@ int main(void)
 
 		if (i < 93)
 			printf("%lu, ", n3);
-		else if (i < 93)
-		{
-			printf("%lu", n3 + (j * 18446744073709,551616));
-			++j;
-		}
+		else 
+			printf("%lu", n3);
+
 		n1 = n2;
 		n2 = n3;
 	}
