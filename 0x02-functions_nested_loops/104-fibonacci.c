@@ -17,7 +17,7 @@ int main(void)
 
 		if (i < 93)
 			printf("%lu, ", n3);
-		else 
+		else
 			printf("%lu", n3);
 
 		n1 = n2;
