@@ -14,19 +14,19 @@ void print_number(int n)
 	else if (n < 0)
 	{
 		n = -1 * n;
-		sign = 1; 
+		sign = 1;
 	}
-		
+
 	while (n > 0)
 	{
 		rev = (rev * 10) + (n % 10);
 		n = n / 10;
 		++len;
 	}
-	
+
 	if (sign == 1)
-		_putchar ('-');	
-	
+		_putchar ('-');
+
 	while (len > 0)
 	{
 		_putchar ('0' + rev % 10);
