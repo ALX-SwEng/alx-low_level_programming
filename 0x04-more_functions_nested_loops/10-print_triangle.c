@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_alphabet -  Make a triangle with #
+ * print_triangle -  Make a triangle with #
  * @size: size of the triangle
  * Return: none.
  */
@@ -14,17 +14,17 @@ void print_triangle(int size)
 		for (i = 0; i < size; ++i)
 		{
 			int j;
-			
-			for (j = size; j > i; --j)    
+
+			for (j = size; j > i; --j)
 				_putchar(' ');
-			
+
 			int k;
-			
-			for (k = 0; k <= i; ++k)    
+
+			for (k = 0; k <= i; ++k) 
 				_putchar('#');
-			
-			_putchar('\n');	
-		}	
+
+			_putchar('\n');
+		}
 	}
 	else
 		_putchar('\n');
