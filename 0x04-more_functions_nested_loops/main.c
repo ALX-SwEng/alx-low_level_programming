@@ -9,9 +9,7 @@
  */
 int main(void)
 { 
-
-
-    printf("%d", INT_MAX);
+     print_number(INT_MAX);
     _putchar('\n');
     
     return (0);
