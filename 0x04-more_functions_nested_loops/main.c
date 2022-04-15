@@ -34,10 +34,10 @@ int main(void)
     print_number(123456789);
     _putchar('\n');
     print_number(INT_MIN);
-    printf("%d", INT_MIN)
+    printf("%d", INT_MIN);
     _putchar('\n');
     print_number(INT_MAX);
-    printf("%d", INT_MAX)
+    printf("%d", INT_MAX);
     _putchar('\n');
     
     return (0);
