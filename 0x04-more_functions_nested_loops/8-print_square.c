@@ -2,19 +2,19 @@
 
 /**
 * print_square - print square shape
-* @n: square side length
+* @size: square side length
 * Return: none.
 */
 
 void print_square(int size)
 {
-	if (n > 0)
+	if (size > 0)
 	{
 		int i, j;
 
-		for (i = 1; i <= n; ++i)
+		for (i = 1; i <= size; ++i)
 		{
-			for (j = 1; j <= n; ++j)
+			for (j = 1; j <= size; ++j)
 				_putchar('#');
  
 			_putchar('\n');
