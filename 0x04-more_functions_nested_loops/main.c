@@ -33,12 +33,12 @@ int main(void)
     _putchar('\n');
     print_number(123456789);
     _putchar('\n');
-    //print_number(INT_MIN);
-    // _putchar('\n');
+    /*print_number(INT_MIN);
+    /* _putchar('\n');*/
     printf("%d", INT_MIN);
     _putchar('\n');
-   // print_number(INT_MAX);
-   //  _putchar('\n');
+   /* print_number(INT_MAX);
+   /*  _putchar('\n');*/
     printf("%d", INT_MAX);
     _putchar('\n');
     
