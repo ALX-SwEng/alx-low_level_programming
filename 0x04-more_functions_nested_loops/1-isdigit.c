@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _isdigit -  Make a triangle with #
+ * _isdigit - check digit 0 - 9
  * @c: character
  * Return: 1 if c is digit otherwise 0.
  */
