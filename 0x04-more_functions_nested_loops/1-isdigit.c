@@ -1,18 +1,14 @@
 #include "main.h"
 
 /**
- * print_alphabet -  Make a triangle with #
- * @c: data
+ * _isdigit -  Make a triangle with #
+ * @c: character
  * Return: 1 if c is digit otherwise 0.
  */
 int _isdigit(int c)
 {
-    	if (if c >= '0' && c <= '9')
-    	{
-        	return (1);
-    	}
-	else
-	{
-		return (0);
-    }
+if (if c >= '0' && c <= '9')
+return (1);
+ else
+return (0);
 }
