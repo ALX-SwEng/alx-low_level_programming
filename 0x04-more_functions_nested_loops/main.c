@@ -9,8 +9,7 @@
  */
 int main(void)
 { 
-    printf("%d", INT_MIN);
-    _putchar('\n');
+
 
     printf("%d", INT_MAX);
     _putchar('\n');
