@@ -7,14 +7,12 @@
  */
 int main(void)
 {
-	int unsigned long i = 2, prime, j;
-	int flag = 0;
+	int i = 2, prime, j, flag = 0;
 	
 	while (i <= 612852475143/2)
 	{
 		if (612852475143 % i == 0)
 		{
-			printf("%lu not\n", i);
 			for(j = 2 ; j < i / 2 ; j++) 
 			{
 		      	if(i % j == 0) 
@@ -28,8 +26,7 @@ int main(void)
 		}
 	    ++i;
    }
-	printf("%lu", prime);
-	printf("done");
+	printf("%d", prime);
     return (0);
 }
 
