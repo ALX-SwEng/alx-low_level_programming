@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include <limits.h>
 
 /**
  * main - check the code.
