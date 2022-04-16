@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	unsigned long long int num = 612852475143, i = 2, prime, j, flag = 0;
+	unsigned long int num = 612852475143, i = 2, prime, j, flag = 0;
 	
 	while (i <= num/2)
 	{
