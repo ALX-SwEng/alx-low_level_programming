@@ -1,5 +1,5 @@
 #include "main.h"
-#include <limits.h>
+
 /**
  * print_number - a function that prints an integer.
  * @n: number
@@ -7,8 +7,7 @@
  */
 void print_number(int n)
 {
-	unsigned int rev = 0;
-	int len = 0, sign = 0;
+	int rev = 0, len = 0, sign = 0;
 
 	if (n == 0)
 		len = 1;
