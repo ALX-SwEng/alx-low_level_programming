@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	int unsigned long i = 2, prime;
-	int j, flag = 0;
+	int unsigned long i = 2, prime, j;
+	int flag = 0;
 	
 	while (i <= 612852475143/2)
 	{
