@@ -7,19 +7,18 @@
  */
 int main(void)
 {
-	int unsigned long long num = 612852475143, i = 1, prime;
+	int unsigned long i = 2, prime;
 	int j, flag = 0;
 	
-	while (i <= num)
+	while (i <= 612852475143/2)
 	{
-		if (num % i == 0)
+		if (612852475143 % i == 0)
 		{
-			printf("not\n");
+			printf("%ul not\n", i);
 			for(j = 2 ; j < i / 2 ; j++) 
 			{
 		      	if(i % j == 0) 
-				{  
-			
+				{			
 				flag = 1;
 		        break;
 		      	}
@@ -29,6 +28,8 @@ int main(void)
 		}
 	    ++i;
    }
-	printf("%d", prime);
+	printf("%ul", prime);
+	printf("done");
     return (0);
 }
+
