@@ -7,11 +7,11 @@
  */
 int main(void)
 {
-	int i = 2, prime, j, flag = 0;
+	unsigned int num = 612852475143, i = 2, prime, j, flag = 0;
 	
-	while (i <= 612852475143/2)
+	while (i <= num/2)
 	{
-		if (612852475143 % i == 0)
+		if (num % i == 0)
 		{
 			for(j = 2 ; j < i / 2 ; j++) 
 			{
