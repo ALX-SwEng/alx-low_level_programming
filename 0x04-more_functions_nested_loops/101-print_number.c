@@ -25,10 +25,10 @@ void print_number(int n)
 		++len;
 	}
 	if (sign == 1)
-		putchar ('-');
+		_putchar ('-');
 	while (len > 0)
 	{
-		putchar ('0' + rev % 10);
+		_putchar ('0' + rev % 10);
 		rev = rev / 10;
 		--len;
 	}
