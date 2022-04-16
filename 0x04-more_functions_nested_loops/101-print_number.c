@@ -28,6 +28,7 @@ void print_number(int n)
 	while (n > 0)
 	{
 		int rem = n % 10;
+
 		if (temp == 1)
 		{
 			rem += 1;
