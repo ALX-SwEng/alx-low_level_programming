@@ -14,7 +14,7 @@ int main(void)
 	{
 		if (612852475143 % i == 0)
 		{
-			printf("%ul not\n", i);
+			printf("%lu not\n", i);
 			for(j = 2 ; j < i / 2 ; j++) 
 			{
 		      	if(i % j == 0) 
@@ -28,7 +28,7 @@ int main(void)
 		}
 	    ++i;
    }
-	printf("%ul", prime);
+	printf("%lu", prime);
 	printf("done");
     return (0);
 }
