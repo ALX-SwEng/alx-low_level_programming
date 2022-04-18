@@ -7,7 +7,8 @@
  */
 int _atoi(char *s)
 {
-	unsigned int len = 0, num = 0, digit, found = 0;
+	unsigned int num = 0;
+	int len = 0, digit, found = 0;
 	char sign, c1, c2;
 
 	while (*(s + len) != '\0')
@@ -17,8 +18,7 @@ int _atoi(char *s)
 		if (c1 == ' ')
 		{
 			++len;
-			continue;
-		}
+			continue; }
 		if (c1 == '-')
 		{
 			if ((c2 >= '0' && c2 <= '9') || c2 == ' ' || c2 == '-' || c2 == '+')
