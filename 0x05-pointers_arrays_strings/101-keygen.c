@@ -26,7 +26,7 @@ int main()
         letter = 'a' + (rand() % 26);
         pass[i + 3] = letter;
 
-        /*printf("%d%c%c", pass[i], pass[i + 2], pass[i + 3]);*/
+        printf("%d%c%c", pass[i], pass[i + 2], pass[i + 3]);
         printf("Tada! Congrats");
     }
     printf("\n");
