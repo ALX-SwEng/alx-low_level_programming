@@ -19,18 +19,15 @@ int _atoi(char *s)
 			++len;
 			continue;
 		}
-
 		if (c1 == '-')
 		{
-			if ((c2 >= '0' && c2 <= '9') || c2 == ' ' || c2 == '-'|| c2 == '+' )
+			if ((c2 >= '0' && c2 <= '9') || c2 == ' ' || c2 == '-' || c2 == '+')
 			{
 				if (sign == '-')
 					sign = ' ';
 				else
 					sign = '-';
-			}
-		}
-
+			}}
 		if (c1 >= '0' && c1 <= '9')
 		{
 			found = 1;
@@ -41,15 +38,12 @@ int _atoi(char *s)
 					num = (num * 10) + digit;
 				++digit;
 			}
-
 			if (!(c2 >= '0' &&  c2 <= '9'))
 				break;
 			}
 			++len;
 		}
-
 		if (found == 1 && sign == '-')
 			num = -1 * num;
-
 	return (num);
 }
