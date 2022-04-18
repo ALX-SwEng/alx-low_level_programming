@@ -5,7 +5,7 @@
  *
  * Return: nothing
  */
- 
+
 void _puts(char *str)
 {
 	int len = 0;
