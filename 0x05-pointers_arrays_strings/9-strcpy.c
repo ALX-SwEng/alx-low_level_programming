@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcpy -   copies the string
+ * _strcpy - copies the string
  * @src: where to copy string
  * @dest: string to be copied
  *
@@ -19,5 +19,5 @@ char *_strcpy(char *dest, char *src)
 	
 	*(dest + len) = '\0';
 
-	return (*src);
+	return (src);
 }
