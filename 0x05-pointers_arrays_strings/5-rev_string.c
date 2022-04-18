@@ -18,7 +18,7 @@ void rev_string(char *s)
 	}
 
 	--len;
-	while (len != i)
+	while (len > i)
 	{
 		char c = *(s + i);
 
