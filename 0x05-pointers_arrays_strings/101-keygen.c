@@ -6,11 +6,9 @@
 int main()
 {
     int i;
-    char letter, capLetter;
+    char letter, capLetter, pass[12];
     
     srand((unsigned int)(time(NULL)));    
- 
-    char pass[12];
 
     for (i = 0; i < 4; i++) 
     {
@@ -25,4 +23,6 @@ int main()
         printf("%d%c%c", pass[i], pass[i + 2], pass[i + 3]);
     }
     printf("\n\n");
+    
+    return (0);
 }
