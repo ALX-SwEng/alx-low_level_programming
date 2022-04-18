@@ -5,18 +5,16 @@
  *
  * Return: if no number in the string 0 otherwise the number.
  */
-
 int _atoi(char *s)
 {
 	int len = 0, num = 0, found = 0;
 	char sign, c;
-	
+
 	while (*(s + len) != '\0')
 	{
 	    if (*(s + len) >= '0' && *(s + len) <= '9')
 	    {
 	    	found = 1;
-
 		if (*(s + len) == '0')
 			num = num * 10;
 		else if (*(s + len) == '1')
@@ -37,20 +35,15 @@ int _atoi(char *s)
 		   	num = (num * 10) + 8;
 		else if (*(s + len) == '9')
 		  	num = (num * 10) + 9;
-			
+
 		c = *(s + len - 1);
 		if (c == '-' || c == '+')
 			sign = c;
-
 		c = *(s + len + 1);
 		if (!(c >= '0' &&  c <= '9'))
 			break;
 		}
-		++len;
-	}
-	
+		++len; }
 	if (found == 1 && sign == '-')
 		num = -1 * num;
-
-return (num);
-}
+return (num); }
