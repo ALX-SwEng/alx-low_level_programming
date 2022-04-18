@@ -34,7 +34,7 @@ int _atoi(char *s)
 			digit = 0;
 			while (digit <= 9)
 			{
-				if (c1 == digit + '0')
+				if (*(s + len) == digit + '0')
 					num = (num * 10) + digit;
 				++digit;
 			}
