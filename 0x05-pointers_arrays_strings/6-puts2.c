@@ -10,7 +10,7 @@
 void puts2(char *str)
 {
 	int len = 0, i = 0;
-	
+
 	while (*(str + len) != '\0')
 	{
 		++len;
@@ -19,7 +19,7 @@ void puts2(char *str)
 	while (i < len)
 	{
 		_putchar(*(str + i));
-		len += 2;
+		i += 2;
 	}
 	_putchar('\n');
 }
