@@ -5,20 +5,20 @@
 
 int main()
 {
-    srand((unsigned int)(time(NULL)));
     int i;
+    char letter, capLetter;
+    
+    srand((unsigned int)(time(NULL)));    
  
     char pass[12];
 
     for (i = 0; i < 4; i++) 
     {
         pass[i] = rand() % 9;
-        char capLetter;
         
         capLetter = 'A' + (rand() % 26);
         pass[i + 2] = capLetter;
-        char letter;
-
+      
         letter = 'a' + (rand() % 26);
         pass[i + 3] = letter;
 
