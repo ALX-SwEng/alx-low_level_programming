@@ -3,6 +3,12 @@
 #include <math.h>
 #include <time.h>
 
+/*
+* main - generate random password
+*
+* Return: Always success.
+*/
+
 int main()
 {
     int i;
@@ -20,9 +26,10 @@ int main()
         letter = 'a' + (rand() % 26);
         pass[i + 3] = letter;
 
-        printf("%d%c%c", pass[i], pass[i + 2], pass[i + 3]);
+        /*printf("%d%c%c", pass[i], pass[i + 2], pass[i + 3]);*/
+        printf("Tada! Congrats");
     }
-    printf("\n\n");
+    printf("\n");
     
     return (0);
 }
