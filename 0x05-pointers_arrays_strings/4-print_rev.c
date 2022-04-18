@@ -18,7 +18,8 @@ void print_rev(char *s)
 	--len;
 	while (len >= 0)
 	{
-		putchar(*(s + len));
+		_putchar(*(s + len));
 		--len;
 	}
+	_putchar('\n');
 }
