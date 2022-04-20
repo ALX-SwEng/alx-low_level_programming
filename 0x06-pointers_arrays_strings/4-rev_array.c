@@ -1,7 +1,7 @@
 /**
  * reverse_array - reverses the content of an array of integers
- * @a: array pointer
- * @b: array size
+ * @a: an array of integer
+ * @b: the number of elements to swap
  *
  * Return: nothing.
  */
