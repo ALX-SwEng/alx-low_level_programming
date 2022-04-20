@@ -7,26 +7,23 @@
  */
 int main(void)
 {
-	unsigned long int num = 612852475143, i = 2, prime, j, flag = 0;
-	
-	while (i <= num/2)
+	unsigned long int num = 612852475143, i = 2, j, prime, flag;
+
+	while (i <= num)
 	{
 		if (num % i == 0)
 		{
+			flag = 0;
 			for(j = 2 ; j < i / 2 ; j++) 
 			{
-		      	if(i % j == 0) 
-				{			
-				flag = 1;
-		        break;
-		      	}
+				if(i % j == 0) 
+					flag = 1;
 		    }
-		    if (flag == 0)
-		    	prime = i;
+		if (flag == 0)
+	   		prime = i;
 		}
 	    ++i;
    }
 	printf("%lu", prime);
     return (0);
 }
-
