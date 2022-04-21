@@ -16,14 +16,14 @@ char *cap_string(char *str)
 	{
 		s1 = *(str + i);
 		
-		if ((s1 >= 'a' && s1 <= 'z') 
-		|| (s1 >= 'A' && s1 <= 'Z') 
+		if ((s1 >= 'a' && s1 <= 'z')
+		|| (s1 >= 'A' && s1 <= 'Z')
 		|| (s1 >= '0' && s1 <= '9'))
 		{
 			++i;
 			continue;
 		}
-		
+
 		for (j = 0; sp[j] != '\0'; ++j)
 		{
 			if (s1 == sp[j])
@@ -36,7 +36,7 @@ char *cap_string(char *str)
 				{
 					++i;
 					*(str + i) = s2 - 32;
-				}					
+				}				
 			}
 
 		}
