@@ -12,30 +12,20 @@ char *cap_string(char *str)
 	char s1, s2;
 	char sp[] = "\t\n,;.!\?\"(){} ";
 
-	while (*(str + i) != '\0')
+	while (str[i] != '\0')
 	{
 		s1 = *(str + i);
-
-		if ((s1 >= 'a' && s1 <= 'z')
-		|| (s1 >= 'A' && s1 <= 'Z')
-		|| (s1 >= '0' && s1 <= '9'))
+		if (s1 >= 'a' && s1 <= 'z')
 		{
-			++i;
-			continue;
-		}
-
-		for (j = 0; sp[j] != '\0'; ++j)
-		{
-			if (s1 == sp[j])
+			if (i == 0)
+				str[i] = s1 - 32;
+			else
 			{
-				if (s1 == '\t')
-					*(str + i) = ' ';
-
-				s2 = *(str + i + 1);
-				if (s2 >= 'a' && s2 <= 'z')
+				s2 = str[i - 1];
+				for (j = 0; sp[j] != '\0'; ++j)
 				{
-					++i;
-					*(str + i) = s2 - 32;
+					if (s2 == sp[j])
+						str[i] = s1 - 32;
 				}
 			}
 
