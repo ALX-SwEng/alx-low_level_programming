@@ -15,7 +15,7 @@ char *cap_string(char *str)
 	while (*(str + i) != '\0')
 	{
 		s1 = *(str + i);
-		
+
 		if ((s1 >= 'a' && s1 <= 'z')
 		|| (s1 >= 'A' && s1 <= 'Z')
 		|| (s1 >= '0' && s1 <= '9'))
@@ -36,7 +36,7 @@ char *cap_string(char *str)
 				{
 					++i;
 					*(str + i) = s2 - 32;
-				}				
+				}			
 			}
 
 		}
