@@ -21,7 +21,7 @@ char *leet(char *str)
 			*(str + i) = '0';
 		else if (s == 't' || s == 'T')
 			*(str + i) = '7';
-    	else if (s == 'l' || s == 'L')
+		else if (s == 'l' || s == 'L')
 			*(str + i) = '1';
 
 		i++;
