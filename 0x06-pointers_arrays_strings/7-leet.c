@@ -6,26 +6,19 @@
  */
 char *leet(char *str)
 {
-	int i = 0;
+	int i = 0, j;
 	char s;
-
+	char rs[11] = {"aAeEoOtTlL"};
+	char rd[6] = {"43071"};
+	
 	while (*(str + i) != '\0')
 	{
 		s = *(str + i);
-
-		if (s == 'a' || s == 'A')
-			*(str + i) = '4';
-		else if (s == 'e' || s == 'E')
-			*(str + i) = '3';
-		else if (s == 'o' || s == 'O')
-			*(str + i) = '0';
-		else if (s == 't' || s == 'T')
-			*(str + i) = '7';
-		else if (s == 'l' || s == 'L')
-			*(str + i) = '1';
+		for (j = 0; j < 10; ++j)
+			if (s == rs[j])
+			*(str + i) = rd[j/2];
 
 		i++;
 	}
-
 	return (str);
 }
