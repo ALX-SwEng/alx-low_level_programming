@@ -21,7 +21,7 @@ char *cap_string(char *str)
 			    || s2 == '\"' || s2 == '(' || s2 == ')' || s2 == '{'
 			    || s2 == '}')
 				*(str + i) = s1 - 32;
-    	}
+		}
 		i++;
 	}
 	return (str);
