@@ -28,7 +28,7 @@ char *cap_string(char *str)
 				{
 					*(str + i + 1) = s2 - 32;
 					++i;
-				}		
+				}
 			}
 
 		}
