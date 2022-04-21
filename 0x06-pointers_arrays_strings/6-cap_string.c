@@ -1,8 +1,8 @@
 /**
- * string_toupper - changes all lowercase letters of a string to uppercase.
+ * cap_string - capitalizes all words of a string.
  * @str: string pointer
  *
- * Return: string in uppercase.
+ * Return: string capitalized string.
  */
 char *cap_string(char *str)
 {
