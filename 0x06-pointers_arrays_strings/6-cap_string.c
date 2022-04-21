@@ -15,8 +15,15 @@ char *cap_string(char *str)
 	while (*(str + i) != '\0')
 	{
 		s1 = *(str + i);
-		s2 = *(str + i + 1);
-
+		
+		if ((s1 >= 'a' && s1 <= 'z') 
+		|| (s1 >= 'A' && s1 <= 'Z') 
+		|| (s1 >= '0' && s1 <= '9'))
+		{
+			++i;
+			continue;
+		}
+		
 		for (j = 0; sp[j] != '\0'; ++j)
 		{
 			if (s1 == sp[j])
@@ -24,11 +31,12 @@ char *cap_string(char *str)
 				if (s1 == '\t')
 					*(str + i) = ' ';
 
+				s2 = *(str + i + 1);
 				if (s2 >= 'a' && s2 <= 'z')
 				{
-					*(str + i + 1) = s2 - 32;
 					++i;
-				}
+					*(str + i) = s2 - 32;
+				}					
 			}
 
 		}
