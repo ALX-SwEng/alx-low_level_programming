@@ -12,13 +12,13 @@ char *leet(char *str)
 	char s;
 	char rs[11] = {"aAeEoOtTlL"};
 	char rd[6] = {"43071"};
-	
+
 	while (*(str + i) != '\0')
 	{
 		s = *(str + i);
 		for (j = 0; j < 10; ++j)
 			if (s == rs[j])
-			*(str + i) = rd[j/2];
+			*(str + i) = rd[j / 2];
 
 		i++;
 	}
