@@ -16,19 +16,19 @@ char *cap_string(char *str)
 	{
 		s1 = *(str + i);
 		s2 = *(str + i + 1);
-		
+
 		for (j = 0; sp[j] != '\0'; ++j)
 		{
 			if (s1 == sp[j])
 			{
 				if (s1 == '\t')
 					*(str + i) = ' ';
-				
+
 				if (s2 >= 'a' && s2 <= 'z')
 				{
 					*(str + i + 1) = s2 - 32;
 					++i;
-				}					
+				}			
 			}
 
 		}
