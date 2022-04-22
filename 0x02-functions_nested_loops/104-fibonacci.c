@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /**
  * main - fibonacci <3
  *
