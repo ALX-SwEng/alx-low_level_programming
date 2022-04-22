@@ -15,10 +15,10 @@ void print_number(int n)
 	else if (n < 0)
 	{
 		_putchar ('-');
-		n = -1 * n;
+		n = -n;
 	}
 
-	while (n != 0)
+	while (n > 0)
 	{
 		rev = (rev * 10) + n % 10;
 		n = n / 10;
