@@ -7,33 +7,19 @@
  */
 void print_number(int n)
 {
-	unsigned int rev = 0, len = 0, sign = 0, rem;
+	unsigned int n1;
 
-	if (n == 0)
-		++len;
+	n1 = n;
 
-	else if (n < 0)
+	if (n < 0)
 	{
-		sign = 1;
+		_putchar('-');
+		n1 = -n;
 	}
 
-	while (n != 0)
+	if (n1 / 10 != 0)
 	{
-		rem = n % 10;
-		if (sign)
-			rem *= -1;
-
-		rev = (rev * 10) + rem;
-		n = n / 10;
-		++len;
+		print_number(n1 / 10);
 	}
-	if (sign == 1)
-		_putchar ('-');
-
-	while (len > 0)
-	{
-		_putchar ('0' + rev % 10);
-		rev = rev / 10;
-		--len;
-	}
+	_putchar((n1 % 10) + '0');
 }
