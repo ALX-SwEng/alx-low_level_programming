@@ -18,8 +18,6 @@ int main(void)
 	unsigned long int b1;
 	unsigned long int b2;
 
-	printf("%lu", n2);
-
 	for (i = 1; i < 91; i++)
 	{
 		n3 = n1 + n2;
