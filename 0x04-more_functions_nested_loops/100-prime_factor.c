@@ -6,13 +6,12 @@
  * Return: Success Always
  */
 
-
 int main(void)
 {
 	long int num = 612852475143;
 	long int prime;
 
-	for (prime = 2; prime < num / 2; prime++)
+	for (prime = 2; prime < num; prime++)
 	{
 		if (num % prime == 0)
 		{
@@ -22,4 +21,3 @@ int main(void)
 	printf("%ld\n", prime);
 	return (0);
 }
-
