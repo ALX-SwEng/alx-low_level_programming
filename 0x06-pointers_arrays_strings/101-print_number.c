@@ -28,6 +28,6 @@ void print_number(int n)
 	while (len--)
 	{
 		_putchar((rev % 10) + '0');
-		rev = rev/10;
+		rev = rev / 10;
 	}
 }
