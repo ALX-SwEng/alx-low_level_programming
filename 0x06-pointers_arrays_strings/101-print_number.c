@@ -8,9 +8,10 @@
 void print_number(int n)
 {
 	unsigned int n1 = n, rev = 0, len = 0;
+
 	if (n == 0)
 		_putchar('0');
-	
+
 	else if (n < 0)
 	{
 		_putchar('-');
@@ -23,7 +24,7 @@ void print_number(int n)
 		n1 = n1 / 10;
 		++len;
 	}
-	
+
 	while (len--)
 	{
 		_putchar((rev % 10) + '0');
