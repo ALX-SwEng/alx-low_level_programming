@@ -30,6 +30,7 @@ int main()
 			putchar(n + '0');
 			break;
 		}
+    }
     printf("\n");
     
     return (0);
