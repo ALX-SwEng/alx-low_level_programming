@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - fibonacci <3
+ * main - the 1st 98 fibonacci series
  *
  * Return:  (Success)
  */
@@ -9,35 +9,36 @@
 int main(void)
 {
 	unsigned long int i;
-	unsigned long int n2 = 1;
-	unsigned long int n3 = 2;
-	unsigned long int limit = 1000000000;
-	unsigned long int a1;
-	unsigned long int a2;
-	unsigned long int b1;
-	unsigned long int b2;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
 
-	printf(", %lu", n2);
+	printf("%lu", bef);
+
 	for (i = 1; i < 91; i++)
 	{
-		printf(", %lu", n3);
-		n3 += n2;
-		n2 = n3 - n2;
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
 	}
 
-	a1 = (n2 / limit);
-	a2 = (n2 % limit);
-	b1 = (n3 / limit);
-	b2 = (n3 % limit);
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
 
 	for (i = 92; i < 99; ++i)
 	{
-		printf(", %lu", b1 + (b2 / limit));
-		printf("%lu", b2 % limit);
-		b1 = b1 + a1;
-		a1 = b1 - a1;
-		b2 = b2 + a2;
-		a2 = b2 - a2;
+		printf(", %lu", aft1 + (aft2 / l));
+		printf("%lu", aft2 % l);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
 	}
 	printf("\n");
 	return (0);
