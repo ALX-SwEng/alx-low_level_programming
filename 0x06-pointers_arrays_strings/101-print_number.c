@@ -23,7 +23,7 @@ void print_number(int n)
 		rev = (rev * 10) + n % 10;
 		n = n / 10;
 		++len;
-	}		
+	}
 
 	while (len > 0)
 	{
