@@ -10,6 +10,8 @@
 int main(void)
 {
 	unsigned long int n1 = 0, n2 = 1, n3, i;
+	unsigned long int limit;
+	unsigned long int n2a, n2b, n3a, n3b;
 
 	for (i = 1; i <= 91; ++i)
 	{
@@ -19,17 +21,11 @@ int main(void)
 		n1 = n2;
 		n2 = n3;
 	}
-	
-	unsigned long int limit;
-	unsigned long int n2a;
-	unsigned long int n2b;
-	unsigned long int n3a;
-	unsigned long int n3b;
-	
+
 	limit = 1000000000;
 	n2a = (n2 / limit);
 	n2b = (n2 % limit);
-	
+
 	n3a = (n3 / limit);
 	n3b = (n3 % limit);
 
@@ -42,8 +38,7 @@ int main(void)
 		n3b = n3b + n2b;
 		n2b = n3b - n2b;
 	}
-	
-	putchar('\n');
 
+	putchar('\n');
 	return (0);
 }
