@@ -9,24 +9,22 @@
 int main(void)
 {
 	unsigned long int i;
-	unsigned long int n1 = 0;
 	unsigned long int n2 = 1;
-	unsigned long int n3;
+	unsigned long int n3 = 2;
 	unsigned long int limit = 1000000000;
 	unsigned long int a1;
 	unsigned long int a2;
 	unsigned long int b1;
 	unsigned long int b2;
 
+	printf(", %lu", n2);
 	for (i = 1; i < 91; i++)
 	{
-		n3 = n1 + n2;
 		printf(", %lu", n3);
-		n1 = n2;
-		n2 = n3;
+		n3 += n2;
+		n2 = n3 - n2;
 	}
-	
-	n3 = n1 + n2;
+
 	a1 = (n2 / limit);
 	a2 = (n2 % limit);
 	b1 = (n3 / limit);
