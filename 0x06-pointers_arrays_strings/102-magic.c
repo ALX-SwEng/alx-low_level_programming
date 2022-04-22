@@ -6,7 +6,7 @@ int main(void)
   int a[5];
   int *p;
 
-  a[3] = 1024;
+  a[4] = 1024;
   p = &n;
   /*
    * write your line of code here...
@@ -16,8 +16,8 @@ int main(void)
    * - only one statement
    * - you are not allowed to code anything else than this line of code
    */
-  *(p + 6) = 98;
+  *(p + 7) = 98;
   /* ...so that this prints 98\n */
-  printf("a[3] = %d\n", a[3]);
+  printf("a[4] = %d\n", a[4]);
   return (0);
 }
