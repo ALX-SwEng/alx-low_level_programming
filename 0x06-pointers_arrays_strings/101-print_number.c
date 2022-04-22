@@ -11,12 +11,12 @@ void print_number(int n)
 
 	if (n == 0)
 		++len;
-	
+
 	else if (n < 0)
 	{
 		sign = 1;
 	}
-	
+
 	while (n != 0)
 	{
 		rem = n % 10;
