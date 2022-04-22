@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	long int num = 32;
+	long int num = 612852475143;
 	long int prime;
 
 	for (prime = 2; prime < num / 2; prime++)
