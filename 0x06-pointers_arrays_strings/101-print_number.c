@@ -25,9 +25,10 @@ void print_number(int n)
 		++len;
 	}
 
-	while (len--)
+	while (len)
 	{
 		_putchar((rev % 10) + '0');
 		rev = rev / 10;
+		--len;
 	}
 }
