@@ -1,29 +1,25 @@
 #include <stdio.h>
 
 /**
- * main - print prime factor of a number
+ * main -  calculate largest prime of 612852475143
  *
- * Return: Always 0.
+ * Return: Success Always
  */
+
+
 int main(void)
 {
-	unsigned long int num = 612852475143, i = 2, j, prime, flag;
+	long int x = 612852475143;
+	long int py;
 
-	while (i <= num)
+	for (py = 2; py < x; py++)
 	{
-		if (num % i == 0)
+		if (x % py == 0)
 		{
-			flag = 0;
-			for(j = 2 ; j < i / 2 ; j++) 
-			{
-				if(i % j == 0) 
-					flag = 1;
-		    }
-		if (flag == 0)
-	   		prime = i;
+			x = x / py;
 		}
-	    ++i;
-   }
-	printf("%lu", prime);
-    return (0);
+	}
+	printf("%ld\n", py);
+	return (0);
 }
+
