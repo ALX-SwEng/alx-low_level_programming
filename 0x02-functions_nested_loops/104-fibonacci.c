@@ -25,7 +25,8 @@ int main(void)
 		n1 = n2;
 		n2 = n3;
 	}
-
+	
+	n3 = n1 + n2;
 	a1 = (n2 / limit);
 	a2 = (n2 % limit);
 	b1 = (n3 / limit);
