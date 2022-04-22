@@ -6,7 +6,7 @@
  *
  * Return: encoded string.
  */
- 
+
 char *rot13(char *str)
 {
 	int i = 0;
@@ -23,7 +23,7 @@ char *rot13(char *str)
 			str[i] = s;
 		}
 		else if (s >= 'A' && s <= 'Z')
-		{	
+		{
 			s += 13;
 			if (s > 'Z')
 				s -= 26;
