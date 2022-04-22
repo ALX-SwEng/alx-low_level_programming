@@ -6,7 +6,7 @@ int main(void)
   int a[5];
   int *p;
 
-  a[0] = 1024;
+  a[3] = 1024;
   p = &n;
   /*
    * write your line of code here...
