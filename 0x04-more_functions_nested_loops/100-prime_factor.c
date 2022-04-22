@@ -16,6 +16,7 @@ int main(void)
 	{
 		if (x % py == 0)
 		{
+			ptintf ("%d\n", x);
 			x = x / py;
 		}
 	}
