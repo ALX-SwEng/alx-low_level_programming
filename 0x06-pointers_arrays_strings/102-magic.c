@@ -16,6 +16,11 @@ int main(void)
    * - only one statement
    * - you are not allowed to code anything else than this line of code
    */
+   printf("\na: %p ", n);
+   printf("\na: %p ", n+1);
+  
+   printf("\na: %p ", a);
+  
   *(p + 7) = 98;
   /* ...so that this prints 98\n */
   printf("a[4] = %d\n", a[4]);
