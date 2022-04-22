@@ -9,27 +9,18 @@
 
 int main(void)
 {
-	long int num = 612852475143;
-	long int pr, j, lpr;
-	int flag;
+	long int num = 32;
+	long int prime;
 
-	for (pr = 2; pr < num / 2; pr++)
+	for (prime = 2; prime < num / 2; prime++)
 	{
-		if (num % pr == 0)
+		if (num % prime == 0)
 		{
-			printf ("%ld\n", pr);
-			/*num = num / pr;*/
-			flag = 0;
-			for(j = 2 ; j < pr / 2 ; j++) 
-			{
-				if(pr % j == 0) 
-					flag = 1;
-		   	 }
-			if (flag == 0)
-	   			lpr = pr;
+			printf ("%ld\n", prime);
+			num = num / prime;
 		}
 	}
-	printf("%ld\n", lpr);
+	printf("%ld\n", pr);
 	return (0);
 }
 
