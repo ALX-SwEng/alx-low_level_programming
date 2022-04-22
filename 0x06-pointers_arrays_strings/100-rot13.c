@@ -13,16 +13,16 @@ char *rot13(char *str)
 
 	char encode[] = {"ABCDEFGHILJKMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
 	char decode[] = {"NOPQRSTUVWXYZABCDEFGHILJKMnopqrstuvwxyzabcdefghijklm"};
-	
+
 	while (str[i] != '\0')
 	{
 		for (j = 0; encode[j] != '\0'; ++j)
 		{
-			 if (str[i] == encode[j])
-			 {
-			 	str[i] = decode[j];
-			 	break;
-			 }			 	
+			if (str[i] == encode[j])
+			{
+			str[i] = decode[j];
+			break;
+			}
 		}
 		i++;
 	}
