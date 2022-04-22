@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (num % pr == 0)
 		{
-			printf ("%ld\n", num);
+			printf ("%ld\n", pr);
 			/*num = num / pr;*/
 			flag = 0;
 			for(j = 2 ; j < pr / 2 ; j++) 
