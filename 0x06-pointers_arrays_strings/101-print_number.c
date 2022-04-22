@@ -20,7 +20,7 @@ void print_number(int n)
 
 	while (n1 != 0)
 	{
-		rev = (rev * 10) + (n % 10);
+		rev = (rev * 10) + (n1 % 10);
 		n1 = n1 / 10;
 		++len;
 	}
