@@ -18,7 +18,7 @@ int main(void)
 		if (num % pr == 0)
 		{
 			printf ("%ld\n", num);
-			//num = num / pr;
+			/*num = num / pr;*/
 			flag = 0;
 			for(j = 2 ; j < pr / 2 ; j++) 
 			{
@@ -29,7 +29,7 @@ int main(void)
 	   			lpr = pr;
 		}
 	}
-	printf("%ld\n", py);
+	printf("%ld\n", lpr);
 	return (0);
 }
 
