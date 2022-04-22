@@ -3,8 +3,6 @@
 /**
  * main - fibonacci <3
  *
- * Purpose - no hardcode
- *
  * Return:  (Success)
  */
 
@@ -20,11 +18,12 @@ int main(void)
 	unsigned long int b1;
 	unsigned long int b2;
 
+	printf("%lu", n2);
+
 	for (i = 1; i < 91; i++)
 	{
 		n3 = n1 + n2;
 		printf(", %lu", n3);
-
 		n1 = n2;
 		n2 = n3;
 	}
@@ -42,7 +41,6 @@ int main(void)
 		a1 = b1 - a1;
 		b2 = b2 + a2;
 		a2 = b2 - a2;
-		
 	}
 	printf("\n");
 	return (0);
