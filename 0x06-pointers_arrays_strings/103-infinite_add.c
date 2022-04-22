@@ -33,9 +33,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int overflow = 0, i, j, digits = 0;
 	int val1 = 0, val2 = 0, temp_tot = 0;
 
-	for (i = -1; *(n1 + i) != '\0'; ++i);
-	for (j = -1; *(n2 + j) != '\0'; ++j);
-	
+	for (i = -1; *(n1 + i) != '\0'; ++i)
+	for (j = -1; *(n2 + j) != '\0'; ++j)
+
 	if (j >= size_r || i >= size_r)
 		return (0);
 
