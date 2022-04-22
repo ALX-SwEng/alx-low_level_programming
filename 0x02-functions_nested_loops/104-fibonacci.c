@@ -1,44 +1,45 @@
-#include <stdio.h>
-#include <stdint.h>
-
 /**
- * main - print fibnonic series
+ * main - fibonacci <3
  *
- * Return: Always success.
+ * Purpose - no hardcode
+ *
+ * Return:  (Success)
  */
 
 int main(void)
 {
-	unsigned long int n1 = 0, n2 = 1, n3, i;
-	unsigned long int limit;
-	unsigned long int n2a, n2b, n3a, n3b;
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
 
-	for (i = 1; i <= 91; ++i)
+	printf("%lu", bef);
+
+	for (i = 1; i < 91; i++)
 	{
-		n3 = n1 + n2;
-		printf("%lu, ", n3);
-
-		n1 = n2;
-		n2 = n3;
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
 	}
 
-	limit = 1000000000;
-	n2a = (n2 / limit);
-	n2b = (n2 % limit);
-
-	n3a = (n3 / limit);
-	n3b = (n3 % limit);
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
 
 	for (i = 92; i < 99; ++i)
 	{
-		printf(", %lu", n3a + (n3b / limit));
-		printf("%lu", n3b % limit);
-		n3a = n3a + n2a;
-		n2a = n3a - n2a;
-		n3b = n3b + n2b;
-		n2b = n3b - n2b;
+		printf(", %lu", aft1 + (aft2 / l));
+		printf("%lu", aft2 % l);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
 	}
-
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
