@@ -20,12 +20,13 @@ int main(void)
 		n2 = n3;
 	}
 	
-	unsigned long int limit = 1000000000;
+	unsigned long int limit;
 	unsigned long int n2a;
 	unsigned long int n2b;
 	unsigned long int n3a;
 	unsigned long int n3b;
 	
+	limit = 1000000000;
 	n2a = (n2 / limit);
 	n2b = (n2 % limit);
 	
