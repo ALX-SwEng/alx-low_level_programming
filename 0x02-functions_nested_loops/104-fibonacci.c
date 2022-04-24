@@ -29,7 +29,7 @@ int main(void)
 	a1 = (n1 / limit);
 	a2 = (n1 % limit);
 	b1 = (n2 / limit);
-	b3 = (n2 % limit);
+	b2 = (n2 % limit);
 
 	for (i = 92; i < 99; ++i)
 	{
