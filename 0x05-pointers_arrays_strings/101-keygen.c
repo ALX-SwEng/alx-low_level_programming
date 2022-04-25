@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include <stdlib.h>  
 #include <time.h>
 
 /*
@@ -11,23 +10,25 @@
 
 int main()
 {
-    int i;
-    char letter, capLetter, pass[12];
-    
-    srand((unsigned int)(time(NULL)));    
+	int i, sum = 0, n;
+	int pass[100];
 
-    for (i = 0; i < 4; i++) 
+    srand(time(NULL));    
+
+    for (i = 0; i < 100; i++) 
     {
-        pass[i] = rand() % 9;
-        
-        capLetter = 'A' + (rand() % 26);
-        pass[i + 2] = capLetter;
-      
-        letter = 'a' + (rand() % 26);
-        pass[i + 3] = letter;
+        pass[i] = rand() % 78;
 
-        printf("%d%c%c", pass[i], pass[i + 2], pass[i + 3]);
-        printf("Tada! Congrats");
+		sum += (pass[i] + '0');
+		putchar(pass[i] + '0');
+
+		if ((2772 - sum) - '0' < 78)
+		{
+			n = 2772 - sum - '0';
+			sum += n;
+			putchar(n + '0');
+			break;
+		}
     }
     printf("\n");
     

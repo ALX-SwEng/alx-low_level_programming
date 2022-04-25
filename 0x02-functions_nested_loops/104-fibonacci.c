@@ -1,44 +1,45 @@
 #include <stdio.h>
-#include <stdint.h>
 
 /**
- * main - print fibnonic series
+ * main - the 1st 98 fibonacci series
  *
- * Return: Always success.
+ * Return:  (Success)
  */
 
 int main(void)
 {
-	unsigned long int n1 = 0, n2 = 1, n3, i;
-	unsigned long int limit;
-	unsigned long int n2a, n2b, n3a, n3b;
+	unsigned long int i;
+	unsigned long int n1 = 1;
+	unsigned long int n2 = 2;
+	unsigned long int limit = 1000000000;
+	unsigned long int a1;
+	unsigned long int a2;
+	unsigned long int b1;
+	unsigned long int b2;
 
-	for (i = 1; i <= 91; ++i)
+	printf("%lu", n1);
+
+	for (i = 1; i < 91; i++)
 	{
-		n3 = n1 + n2;
-		printf("%lu, ", n3);
-
-		n1 = n2;
-		n2 = n3;
+		printf(", %lu", n2);
+		n2 += n1;
+		n1 = n2 - n1;
 	}
 
-	limit = 1000000000;
-	n2a = (n2 / limit);
-	n2b = (n2 % limit);
-
-	n3a = (n3 / limit);
-	n3b = (n3 % limit);
+	a1 = (n1 / limit);
+	a2 = (n1 % limit);
+	b1 = (n2 / limit);
+	b2 = (n2 % limit);
 
 	for (i = 92; i < 99; ++i)
 	{
-		printf(", %lu", n3a + (n3b / limit));
-		printf("%lu", n3b % limit);
-		n3a = n3a + n2a;
-		n2a = n3a - n2a;
-		n3b = n3b + n2b;
-		n2b = n3b - n2b;
+		printf(", %lu", b1 + (b2 / limit));
+		printf("%lu", b2 % limit);
+		b1 = b1 + a1;
+		a1 = b1 - a1;
+		b2 = b2 + a2;
+		a2 = b2 - a2;
 	}
-
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
