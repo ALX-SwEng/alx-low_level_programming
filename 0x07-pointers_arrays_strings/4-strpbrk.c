@@ -13,14 +13,14 @@
 char *_strpbrk(char *s, char *accept)
 {
 	if ((s == NULL) || (accept == NULL))
-		return (len);
+		return (NULL);
 
 	 while(*s1)
-   {
-     if(strchr(accept, *s1))
-       return s1;
-     else
-       s++;
+	 {
+		 if(strchr(accept, *s1))
+			 return s1;
+		 else
+			 s++;
 	}
 
 return (NULL);
