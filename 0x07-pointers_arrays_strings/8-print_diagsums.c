@@ -9,18 +9,14 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, sumd1 = *a , sumd2 = 0;
+	int i, sumd1 = *a, sumd2 = 0;
 
 	for (i = 1; i <= size ; ++i)
 	{
 		if (i != size)
-		{
-			int d1 = (i * size) + i ;
-			sumd1 += *(a + d1);
-		}
+			sumd1 += *(a + (i * size) + i);
 
-		int d2 = (size - 1) * i;		
-		sumd2 += *(a + d2);
+		sumd2 += *(a + (size - 1) * i);
 	}
 
 	printf("%d, ", sumd1);
