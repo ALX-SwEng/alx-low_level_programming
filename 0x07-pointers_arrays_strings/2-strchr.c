@@ -22,6 +22,8 @@ char *_strchr(char *s, char c)
 		}
 		++s;
 	}
+	if (*s == c)
+		isFound = s;
 
 return (isFound);
 }
