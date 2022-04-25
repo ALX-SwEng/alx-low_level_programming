@@ -13,12 +13,12 @@
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	char *p = dest;
+	char *pdest = dest, *psrc = src;
 	
 	if (src != NULL)
 	{
 		while (n--)
-			*p++ = *src++;
+			*pdest++ = *psrc++;
 	}
 
 return (dest);
