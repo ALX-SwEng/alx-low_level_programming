@@ -2,7 +2,7 @@
 
 /**
  * factorial - compute factorial.
- * @s: integer number
+ * @n: integer number
  *
  * Return: factorial of a number.
  */
@@ -15,7 +15,7 @@ int factorial(int n)
 		fact = n * factorial(n - 1);
 		return (fact);
 	}
-	
+
 	else if (n == 0)
 		return (1);
 
