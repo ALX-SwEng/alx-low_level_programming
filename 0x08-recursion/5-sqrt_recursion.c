@@ -7,10 +7,10 @@
  *
  * Return: sqrt root
  */
- 
+
 int _sqrt_recursion(int n)
 {
-	return (_sqrt(n, 1));		
+	return (_sqrt(n, 1));
 }
 
 /**
@@ -21,7 +21,7 @@ int _sqrt_recursion(int n)
  *
  * Return: sqrt root
  */
- 
+
 int _sqrt(int n, int i)
 {
 	if (n < 0)
