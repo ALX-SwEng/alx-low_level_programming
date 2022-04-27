@@ -6,7 +6,7 @@
  *
  * Return: factorial of a number.
  */
-
+int factorial(int n)
 {
 	int fact;
 
