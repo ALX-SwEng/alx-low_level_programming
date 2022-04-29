@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 			if (!isnumber(argv[i]))
 				++count;
 			else
-				sum += atoi (argv[i]);
+				sum += atoi(argv[i]);
 		}
 	}
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	else 
+	else
 		printf("%d\n", sum);
 
 return (0);
