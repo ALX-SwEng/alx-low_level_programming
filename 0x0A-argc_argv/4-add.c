@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	if (argc - 1 == 0 || count == argc - 1)
 		printf("0\n");
 
-	else if (count > 1)
+	else if (count > 0)
 	{
 		printf("Error\n");
 		return (1);
