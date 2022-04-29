@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	if (argc - 1 != 1)
 	{
 		printf("Error\n");
-		return (1); 
+		return (1);
 	}
 
 	if (atoi(argv[1]) < 0)
@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
 			change = change % 2; }
 		if (change >= 1)
 			c1 = change;
-		
+
 		printf("%d\n", c25 + c10 + c5 + c2 + c1);
 	}
-return (0); 
+return (0);
 }
