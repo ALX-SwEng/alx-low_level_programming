@@ -1,5 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+/**
+* isNumber - check if string is number.
+* @str: string parameter
+*
+* Return: 0 if number otherwise 0.
+*/
+
+int isNumber(char *str)
+{
+    int j = strlen(str);
+
+    while(j--)
+    {
+        if(str[j] > 47 && str[j] < 58)
+            continue;
+        return 0;
+    }
+    return 1;
+}
 
 /**
 * main - prints name name of program.
