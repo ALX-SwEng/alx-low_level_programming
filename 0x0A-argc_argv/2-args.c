@@ -1,6 +1,22 @@
 #include <stdio.h>
-int main (int argc, char *argv[])
+
+/**
+* main - prints name name of program.
+* @argc: number of command line arguments
+* @argv: An array containing the program command line arguments
+*
+* Return: Always success.
+*/
+
+int main(int argc, char *argv[])
 {
-	printf (argv[0]);
-  return 0;
+	int i;
+
+	if (argc > 0)
+	{
+		for (i = 0; i < argc; ++i)
+			printf("%s\n", argv[i]);
+	}
+
+return (0);
 }
