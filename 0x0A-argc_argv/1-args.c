@@ -8,7 +8,7 @@
 * Return: Always success.
 */
 
-int main(int argc, char *argv[] __attribute__((unused)))
+int main(int argc, (void) char *argv[])
 {
 	if (argc > 0)
 		printf("%d\n", argc - 1);
