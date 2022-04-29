@@ -30,10 +30,10 @@ int main(int argc, char *argv[])
 	else if (count > 1)
 	{
 		printf("Error\n");
-		return (1)
+		return (1);
 	}
-	
-	else		 
+
+	else 
 		printf("%d\n", sum);
 
 return (0);
