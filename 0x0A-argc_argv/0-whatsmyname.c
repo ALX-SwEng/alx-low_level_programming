@@ -1,6 +1,7 @@
 #include <stdio.h>
+
 int main (int argc, char *argv[])
 {
-	printf (argv[0]);
-  return 0;
+	printf ("%s", argv[0]);
+  return (argc);
 }
