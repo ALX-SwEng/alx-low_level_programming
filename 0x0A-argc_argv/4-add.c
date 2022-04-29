@@ -23,11 +23,11 @@ return (1);
 }
 
 /**
-* main - prints name name of program.
+* main - adds positive numbers recieved by command line.
 * @argc: number of command line arguments
 * @argv: An array containing the program command line arguments
 *
-* Return: Always success.
+* Return: 0 if success otherwise 0.
 */
 
 int main(int argc, char *argv[])
