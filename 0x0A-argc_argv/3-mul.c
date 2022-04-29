@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
 * main - prints name name of program.
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	else
-		printf("%d\n", atoi(argv[1]) * aoti(argv[2]));
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 
 return (0);
 }
