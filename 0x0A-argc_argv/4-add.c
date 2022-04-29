@@ -6,7 +6,7 @@
 * isNumber - check if string is number.
 * @str: string parameter
 *
-* Return: 0 if number otherwise 0.
+* Return: 1 if number otherwise 0.
 */
 
 int isNumber(char *str)
@@ -27,7 +27,7 @@ return (1);
 * @argc: number of command line arguments
 * @argv: An array containing the program command line arguments
 *
-* Return: 0 if success otherwise 0.
+* Return: 0 if success otherwise 1.
 */
 
 int main(int argc, char *argv[])
