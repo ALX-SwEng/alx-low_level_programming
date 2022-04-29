@@ -11,15 +11,15 @@
 
 int isNumber(char *str)
 {
-    int j = strlen(str);
+	int j = strlen(str);
 
-    while(j--)
-    {
-        if(str[j] > 47 && str[j] < 58)
-            continue;
-        return 0;
-    }
-    return 1;
+	while (j--)
+	{
+		if (str[j] > 47 && str[j] < 58)
+			continue;
+		return (0);
+	}
+return (1);
 }
 
 /**
