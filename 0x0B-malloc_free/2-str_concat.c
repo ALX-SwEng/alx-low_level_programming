@@ -2,9 +2,8 @@
 #include "main.h"
 
 /**
-* _strdup - create a pointer to a new string
-* which is a duplicate of the string str.
-* Memory for the new string is obtained with malloc.
+* str_concat - function that concatenates two strings,
+* using dynamic memory allocation (malloc).
 *
 * @s1: a pointer to 1st string
 * @s2: a pointer to 2nd string
