@@ -13,7 +13,7 @@ char **strtow(char *str)
 	int wc = 0, i = 0, j = 0, k, wlen;
 	char **newStr, *temp;
 
-	if (str == NULL || *str == "")
+	if (str == NULL || !*str)
 		return (NULL);
 
 	while (*(str+i))
