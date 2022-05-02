@@ -13,7 +13,6 @@
 int **alloc_grid(int width, int height)
 {
 	int **newArray, i, j;
-	unsigned int size, size1 = 0, size2 = 0;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -28,7 +27,7 @@ int **alloc_grid(int width, int height)
 		if (newArray[i] == NULL)
 		{
 			for (; i >= 0; i--)
-				free(s[i]);
+				free(newArray[i]);
 			free(newArray);
 			return (NULL);
 		}
