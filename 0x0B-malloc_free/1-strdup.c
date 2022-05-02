@@ -17,13 +17,13 @@ char *_strdup(char *str)
 	char *newstr;
 	unsigned int i, size = strlen(str);
 
-	if (str == NULL)
+	if (!str)
 	{
 		return (NULL);
 	}
 	else
 	{
-		newstr = malloc(size * sizeof(char));
+		newstr = malloc(size * sizeof(char) + 1);
 		if (newstr == NULL)
 		{
 			return (NULL);
