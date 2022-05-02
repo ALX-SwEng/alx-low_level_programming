@@ -14,34 +14,41 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *newstr;
-	unsigned int i, j = 0, size1 = 0, size2 = 0;
+	unsigned int i, j = 0, size, size1 = 0, size2 = 0;
 
-	if (s1 == NULL)
-		*s1 = '\0';
-	if (s2 == NULL)
-		*s2 = '\0';
+	if (!s1)
+		s1 = "";
+	else 
+		while (*(s1 + size1++))
+			;
 
-	while (*(s1 + size1++))
-		;
-	while (*(s2 + size2++))
-		;
+	if (!s2)
+		s2 = "";
+	else
+		while (*(s2 + size2++))
+			;
 
-	newstr = malloc((size1 + size2 - 1) * sizeof(char));
-	if (newstr == NULL)
+	if (size1 == 0 && size2 == 0)
 	{
-		return (NULL);
+		newstr = "";
+		return (newstr);
 	}
 	else
 	{
-		for (i = 0; i < size1 - 1; ++i, ++j)
+		size = size1 + size2;
+		newstr = malloc(size * sizeof(char));
+	}
+
+	if (newstr)
+	{	
+		for (i = 0; i < size1; ++i, ++j)
 			newstr[j] = s1[i];
 
 		for (i = 0; i < size2; ++i, ++j)
 			newstr[j] = s2[i];
-	}
-	
-	if (!newstr)
-		*newstr = '\0';
 
-return (newstr);
+		return (newstr);
+	}
+
+return (NULL);
 }
