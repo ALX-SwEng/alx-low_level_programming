@@ -25,13 +25,13 @@ char **strtow(char *str)
 
 	if (wc == 0)
 		return (NULL);
-	
+
 	newStr = malloc(++wc * sizeof(char *));
 	if (newStr == NULL)
 		return (NULL);
-	 
+
 	while (*str)
-	{	
+	{
 		while (*str == ' ' && *str)
 			++str;
 
@@ -40,26 +40,26 @@ char **strtow(char *str)
 			++wlen;
 
 		temp = malloc(wlen + 1);
-	
+
 		if (temp == NULL)
 		{
 			for (; j - 1 >= 0; j--)
 				free(newStr[j]);
-	
+
 			free(newStr);
 			return (NULL);
 		}
-		
+
 		for (k = 0; k < wlen; ++k)
 			*(temp + k) = *str++;
 		*(temp + k) = '\0';
-		
+
 		*(newStr + j) = temp;
-		
+
 		if (j < (wc - 1))
 			j++;
 	}
-	
+
 	*(newStr + j) = NULL;
 
 return (newStr);
