@@ -18,7 +18,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (!s1)
 		s1 = "";
-	else 
+	else
 		while (*(s1 + size1++))
 			;
 
@@ -40,7 +40,7 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	if (newstr)
-	{	
+	{
 		for (i = 0; i < size1; ++i, ++j)
 			newstr[j] = s1[i];
 
