@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -22,7 +21,8 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	while (*(str + size++));
+	while (*(str + size++))
+		;
 
 	newstr = malloc(size * sizeof(char));
 	if (newstr == NULL)
