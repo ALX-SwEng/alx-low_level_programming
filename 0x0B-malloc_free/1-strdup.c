@@ -15,25 +15,25 @@
 char *_strdup(char *str)
 {
 	char *newstr;
-	unsigned int i, size = strlen(str);
+	unsigned int i, size = 0;
 
 	if (!str)
 	{
 		return (NULL);
 	}
+
+	while (*(str + size++));
+
+	newstr = malloc(size * sizeof(char));
+	if (newstr == NULL)
+	{
+		return (NULL);
+	}
 	else
 	{
-		newstr = malloc(size * sizeof(char) + 1);
-		if (newstr == NULL)
-		{
-			return (NULL);
-		}
-		else
-		{
-			for (i = 0; i < size; ++i)
-				newstr[i] = str[i];
-		}
+		for (i = 0; i < size; ++i)
+			newstr[i] = str[i];
 	}
 
-	return (newstr);
+return (newstr);
 }
