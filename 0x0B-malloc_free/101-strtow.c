@@ -14,12 +14,10 @@ char **strtow(char *str)
 		return (NULL);
 	while (*(str + i))
 	{
-		if (*(str + i) != ' ')
-			if (*(str + i + 1) == ' ' || *(str + i + 1) == '\0')
+		if (*(str + i) != ' ' && (*(str + i + 1) == ' ' || *(str + i + 1) == '\0'))
 				wc++;
 		++i;
 	}
-
 	if (wc == 0)
 		return (NULL);
 
@@ -29,12 +27,11 @@ char **strtow(char *str)
 
 	while (*str)
 	{
-		while (*str == ' ' && *str)
+		while (*str++ == ' ' && *str)
 			++str;
 		wlen = 0;
 		while (*(str + wlen) != ' ' && *(str + wlen))
 			++wlen;
-
 		temp = malloc((wlen + 1) * sizeof(char));
 		if (temp == NULL)
 		{
@@ -46,7 +43,6 @@ char **strtow(char *str)
 		for (k = 0; k < wlen; ++k)
 			*(temp + k) = *str++;
 		*(temp + k) = '\0';
-
 		*(newStr + j) = temp;
 		if (j < wc - 1)
 			j++;
