@@ -25,12 +25,11 @@ char *argstostr(int ac, char **av)
 
 		while (*str++ != '\0')
 			len++;
-			
+
 		argsLen += len + 1;
 	}
-	
-	str = malloc(sizeof(char) * argsLen + 1);
 
+	str = malloc(sizeof(char) * argsLen + 1);
 	if (str == NULL)
 		return (NULL);
 
@@ -39,14 +38,12 @@ char *argstostr(int ac, char **av)
 		len = 0;
 		while (*av[i]++ != '\0')
 			len++;
-			
 
 		for (j = 0; j < len; j++, k++)
 			str[k] = av[i][j];
-
 		str[k++] = '\n';
 	}
-	
+
 	str[k] = '\0';
 	return (str);
 }
