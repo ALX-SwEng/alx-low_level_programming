@@ -40,7 +40,7 @@ char **strtow(char *str)
 		while (*(str + wlen) != ' ' && *(str + wlen))
 			++wlen;
 
-		++wlen
+		++wlen;
 		temp = malloc(wlen * sizeof(char));
 
 		if (temp == NULL)
