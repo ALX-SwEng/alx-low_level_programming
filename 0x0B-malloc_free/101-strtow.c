@@ -26,8 +26,7 @@ char **strtow(char *str)
 	if (wc == 0)
 		return (NULL);
 
-	++wc;
-	newStr = malloc(wc * sizeof(char *));
+	newStr = malloc((wc + 1) * sizeof(char *));
 	if (newStr == NULL)
 		return (NULL);
 
@@ -40,7 +39,7 @@ char **strtow(char *str)
 		while (*(str + wlen) != ' ' && *(str + wlen))
 			++wlen;
 
-		temp = malloc(wlen * sizeof(char));
+		temp = malloc((wlen + 1) * sizeof(char));
 
 		if (temp == NULL)
 		{
