@@ -25,9 +25,8 @@ char **strtow(char *str)
 
 	if (wc == 0)
 		return (NULL);
-	
-	++wc;
-	newStr = malloc(wc  * sizeof(char *));
+
+	newStr = malloc(wc + 1  * sizeof(char *));
 	if (newStr == NULL)
 		return (NULL);
 
