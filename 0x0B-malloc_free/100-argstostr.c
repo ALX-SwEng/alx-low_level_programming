@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 /**
  * argstostr - concatenate command line arguments.
  *
