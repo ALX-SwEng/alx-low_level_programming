@@ -2,10 +2,12 @@
 #include "main.h"
 
 /**
- * _memset - copy char
- * @s: string
- * @b: input
- * @n: bytes
+ * _memset - set memory
+ *
+ * @str: string
+ * @ch: input character
+ * @n: amount of bytes
+ *
  * Return: string
  */
 
@@ -31,10 +33,10 @@ char *_memset(char *str, char ch, unsigned int n)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
-	
+
 	if (size <= 0 || nmemb == 0)
 		return (0);
- 
+
 	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (0);
