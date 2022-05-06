@@ -28,11 +28,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n);
 	else
 		while (*(s2 + size2++))
 			;
-    if (n >= size2)
-      size = size1 + size2 - 1;
-     else 
-        size = size1 + n;
-    
+
+	if (n >= size2)
+		size = size1 + size2 - 1;
+	else
+		size = size1 + n;
+
 	newstr = malloc(size * sizeof(char));
 
 	if (!newstr)
