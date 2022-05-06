@@ -13,8 +13,8 @@ void *malloc_checked(unsigned int b)
 {
 	if (malloc(b))
 	{
-		return (malloc(b));
+		return ((void *)malloc(b));
 	}
 
-	return (98);
+	return ((void *)98);
 }
