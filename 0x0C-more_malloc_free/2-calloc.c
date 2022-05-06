@@ -20,24 +20,24 @@ char *_memset(char *str, char ch, unsigned int n)
 }
 
 /**
-* malloc_checked - allocates memory using malloc.
+* _calloc - allocates memory for an array using malloc.
 *
-* @b: size of the pointer to be created.
+* @nmemb: n elements of an array.
+* @size: byte amount.
 *
-* Return:  pointer to the allocated memory, or 98 if it fails.
+* Return:  pointer to the allocated memory, or NULL if it fails.
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-  void *ptr;
- 
-  if (size <= 0 || nmemb == 0)
-   return (0);
+	void *ptr;
+	
+	if (size <= 0 || nmemb == 0)
+		return (0);
  
 	ptr = malloc(nmemb * size);
 	if (!ptr)
-    return (0);
-
+		return (0);
 
 	return (_memset(ptr, 0, nmemb * size));
 }
