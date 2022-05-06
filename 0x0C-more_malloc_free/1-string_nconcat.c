@@ -44,6 +44,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	while (size1++ < size - 1)
 		*temp++ = *s2++;
+	*temp = '\0';
 
 return (newstr);
 }
