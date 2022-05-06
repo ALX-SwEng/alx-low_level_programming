@@ -38,7 +38,7 @@ char *str_concat(char *s1, char *s2)
 	while (*s1)
 		*temp++ = *s1++;
 
-	while (i++ < size)
+	while (*s2)
 		*temp++ = *s2++;
 
 return (newstr);
