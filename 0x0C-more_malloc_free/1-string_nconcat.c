@@ -35,16 +35,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		size1 = 1;
 
 	size = size1 + n;
-	newstr = malloc((size) * sizeof(char));
+	newstr = malloc(size * sizeof(char));
 
 	if (!newstr)
 		return (NULL);
 
 	temp = newstr;
-	while (i++ < size1)
+	while (*s1)
 		*temp++ = *s1++;
 
-	while (i++ < size)
+	while (size1++ < size)
 		*temp++ = *s2++;
 	*temp = '\0';
 
