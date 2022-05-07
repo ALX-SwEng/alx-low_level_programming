@@ -20,14 +20,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!s1)
 		s1 = "";
 	else
-		while (*(s1 + size1++))
-			;
+		while (*(s1 + size1))
+			size1++;
 
 	if (!s2)
 		s2 = "";
 	else
-		while (*(s2 + size2++))
-			;
+		while (*(s2 + size2))
+			size2++;
 
 	if (n > size2)
 		n = size2;
