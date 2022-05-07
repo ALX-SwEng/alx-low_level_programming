@@ -50,5 +50,49 @@ int main(void)
     }
     simple_print_buffer(p, 98);
     free(p);
+    
+    p = malloc(sizeof(char) * 30); 
+    p = _realloc(p, sizeof(char) * 30, sizeof(char) * 120);
+    i = 0;
+    while (i < 120)
+    {
+        p[i++] = 120;
+    }
+    simple_print_buffer(p, 120);
+    free(p);
+    
+    _realloc(NULL, sizeof(char) * 30, sizeof(char) * 120);
+    
+    p = malloc(sizeof(char) * 30);
+    new_p = _realloc(p, sizeof(char) * 30, sizeof(char) * 30);
+     i = 0;
+    while (i < 30)
+    {
+        p[i++] = 30;
+    }
+    simple_print_buffer(p, 30);
+    free(p);
+    
+    p = malloc(sizeof(char) * 30);
+    p = _realloc(p, sizeof(char) * 30, sizeof(char) * 0);
+     i = 0;
+    while (i < 0)
+    {
+        p[i++] = 0;
+    }
+    simple_print_buffer(p, 0);
+    free(p);
+   
+    _realloc(NULL, sizeof(char) * 30, sizeof(char) * 0);
+ 
+    p = malloc(sizeof(char) * 30);
+    p = _realloc(NULL, sizeof(char) * 30, sizeof(char) * 20);
+    i = 0;
+    while (i < 20)
+    {
+        p[i++] = 20;
+    }
+    simple_print_buffer(p, 20);
+    free(p);
     return (0);
 }
