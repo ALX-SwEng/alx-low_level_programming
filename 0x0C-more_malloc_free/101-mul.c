@@ -50,8 +50,8 @@ int main(int argc, char *argv[])
 		}
 	}
 	
-	mul = atol(argv[1]) * atol(argv[2]);
-	printf("%lu\n", mul);
+	mul = atoll(argv[1]) * atoll(argv[2]);
+	printf("%llu\n", mul);
 
 return (0);
 }
