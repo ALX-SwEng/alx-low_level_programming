@@ -83,8 +83,6 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	if (i == len1 + len2)
 		_putchar('0');
 
-	_putchar('\n');
-	_putchar('\n');
 	for (; i < len1 + len2; i++)
 		_putchar(product[i] + '0');
 	_putchar('\n');
