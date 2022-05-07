@@ -50,7 +50,7 @@ int main(void)
     }
     simple_print_buffer(p, 98);
     free(p);
-    
+   /* 
     p = malloc(sizeof(char) * 30); 
     p = _realloc(p, sizeof(char) * 30, sizeof(char) * 120);
     i = 0;
@@ -94,5 +94,6 @@ int main(void)
     }
     simple_print_buffer(p, 20);
     free(p);
+    */
     return (0);
 }
