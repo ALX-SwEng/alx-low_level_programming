@@ -82,11 +82,6 @@ int main(void)
     }
     simple_print_buffer(p, 0);
     free(p);
-   
-    _realloc(NULL, sizeof(char) * 30, sizeof(char) * 0);
-
-    simple_print_buffer(p, 20);
-    free(p);
     
     return (0);
 }
