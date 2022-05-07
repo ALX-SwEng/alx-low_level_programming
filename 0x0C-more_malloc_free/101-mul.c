@@ -31,6 +31,8 @@ return (1);
 
 int main(int argc, char *argv[])
 {
+	int i;
+
 	if (argc - 1 != 2)
 	{
 		printf("Error\n");
