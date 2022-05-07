@@ -34,21 +34,21 @@ int main(int argc, char *argv[])
 	if (argc - 1 != 2)
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
-	
+
   	for (i = 1; i < argc; ++i)
-		{
-			if (!isNumber(argv[i]))
-				++count;
-		}
+	{
+		if (!isNumber(argv[i]))
+			++count;
+	}
 	
 	if (count > 0)
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
-	
+
 	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 
 return (0);
