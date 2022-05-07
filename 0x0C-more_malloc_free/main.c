@@ -74,9 +74,9 @@ int main(void)
     free(p);
     */
     p = malloc(sizeof(char) * 30);
-    p = _realloc(p, sizeof(char) * 30, sizeof(char) * 0);
+    p = _realloc(p, sizeof(char) * 30, sizeof(char) * 20);
      i = 0;
-    while (i < 0)
+    while (i < 20)
     {
         p[i++] = 0;
     }
