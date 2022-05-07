@@ -32,7 +32,7 @@ return (1);
 
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, count = 0;
 
 	if (argc - 1 != 2)
 	{
