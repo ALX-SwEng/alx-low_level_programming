@@ -33,6 +33,7 @@ return (1);
 int main(int argc, char *argv[])
 {
 	int i;
+	unsigned long mul;
 
 	if (argc - 1 != 2)
 	{
@@ -48,8 +49,9 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 	}
-
-	printf("%lu\n", atol(argv[1]) * atol(argv[2]));
+	
+	mul = atol(argv[1]) * atol(argv[2]);
+	printf("%lu\n", mul);
 
 return (0);
 }
