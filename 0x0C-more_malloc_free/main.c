@@ -12,7 +12,7 @@ int main(void)
 {
 	char *s;
 
-	s = string_nconcat("", "Hello a", 12);
+	s = string_nconcat("Hello", NULL, 12);
 	if (s == NULL)
 	{
 		printf("failed\n");
@@ -20,8 +20,8 @@ int main(void)
 	}
 	printf("%s\n", s);
 	free(s);
-	
-	s = string_nconcat("Hello b", NULL, 12); 
+
+	s = string_nconcat(NULL, "Hello", 0);
 	if (s == NULL)
 	{
 		printf("failed\n");
@@ -29,22 +29,14 @@ int main(void)
 	}
 	printf("%s\n", s);
 	free(s);
-	
-	s = string_nconcat(NULL, "Hello c", 0); 
-	if (s == NULL)
-	{
-		printf("failed\n");
-		return (1);
-	}
-	printf("%s\n", s);
-	free(s);
+
 	s = string_nconcat(NULL, NULL, 10);
 	if (s == NULL)
 	{
 		printf("failed\n");
 		return (1);
 	}
-	printf("%s Both NULL\n", s);
+	printf("%s\n", s);
 	free(s);
 	return (0);
 }
