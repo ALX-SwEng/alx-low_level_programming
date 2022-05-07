@@ -32,7 +32,7 @@ return (1);
 
 int main(int argc, char *argv[])
 {
-	int i, count = 0;
+	int i;
 
 	if (argc - 1 != 2)
 	{
@@ -43,16 +43,13 @@ int main(int argc, char *argv[])
 	for (i = 1; i < argc; ++i)
 	{
 		if (!isNumber(argv[i]))
-			++count;
+		{
+			printf("Error\n");
+			exit(98);
+		}
 	}
 
-	if (count > 0)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	printf("%lu\n", atol(argv[1]) * atol(argv[2]));
 
 return (0);
 }
