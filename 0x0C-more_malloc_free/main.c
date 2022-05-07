@@ -38,7 +38,7 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-    char *p, *new_p;
+    char *p;
     int i;
 
     p = malloc(sizeof(char) * 10);
@@ -64,7 +64,7 @@ int main(void)
     _realloc(NULL, sizeof(char) * 30, sizeof(char) * 120);
     
     p = malloc(sizeof(char) * 30);
-    new_p = _realloc(p, sizeof(char) * 30, sizeof(char) * 30);
+    p = _realloc(p, sizeof(char) * 30, sizeof(char) * 30);
      i = 0;
     while (i < 30)
     {
