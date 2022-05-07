@@ -38,7 +38,7 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-    char *p;
+    char *p, *newp;
     int i;
 
     p = malloc(sizeof(char) * 10);
