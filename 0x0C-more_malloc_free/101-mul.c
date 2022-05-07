@@ -32,6 +32,7 @@ return (1);
 int *int_calloc(int nmemb, unsigned int size)
 {
 	int *p, n;
+
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
