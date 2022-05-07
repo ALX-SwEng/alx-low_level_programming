@@ -15,7 +15,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *newstr, *temp;
-	unsigned int size, size1 = 0, size2 = 0;
+	unsigned int size, size1 = 0, size2 = 0, i = 0;
 
 	if (!s1)
 		s1 = "";
@@ -39,10 +39,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	temp = newstr;
-	while (*s1)
+	while (i++ < size1)
 		*temp++ = *s1++;
 
-	while (size1++ < size)
+	while (i++ < size)
 		*temp++ = *s2++;
 	*temp = '\0';
 
