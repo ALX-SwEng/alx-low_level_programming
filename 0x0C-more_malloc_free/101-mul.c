@@ -37,12 +37,12 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-  	for (i = 1; i < argc; ++i)
+	for (i = 1; i < argc; ++i)
 	{
 		if (!isNumber(argv[i]))
 			++count;
 	}
-	
+
 	if (count > 0)
 	{
 		printf("Error\n");
