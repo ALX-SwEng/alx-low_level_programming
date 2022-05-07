@@ -12,31 +12,31 @@
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-  void *newPtr;
-  int i = 0;
+	void *newPtr;
+	int i = 0;
 
 	if (old_size > new_size)
 		return (ptr);
 
 	if (new_size == 0 && !ptr)
-  {
-    free(ptr)
-    return (ptr);
-  }
-  
-  if (ptr == NULL)
-  {
-    newPtr = malloc(new_size);
-    if (newPtr == NULL)
-    {
-          free(ptr)
-          return (NULL);
-    }
-    else 
-    {
-      while (i < old_size)
-        newPtr[i++] = *ptr++
-      return (newPtr);
-    }
-  }
+	{
+		free(ptr)
+		return (ptr);
+	}
+
+	if (ptr == NULL)
+	{
+		newPtr = malloc(new_size);
+		if (newPtr == NULL)
+		{
+			free(ptr)
+			return (NULL);
+		}
+		else 
+		{
+			while (i < old_size)
+				newPtr[i++] = *ptr++
+			return (newPtr);
+		}
+	}
 }
