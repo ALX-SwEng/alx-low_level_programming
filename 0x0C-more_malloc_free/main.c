@@ -40,7 +40,7 @@ int main(void)
 {
     char *p;
     int i;
-
+/*
     p = malloc(sizeof(char) * 10);
     p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
     i = 0;
@@ -50,7 +50,7 @@ int main(void)
     }
     simple_print_buffer(p, 98);
     free(p);
-   /* 
+   */
     p = malloc(sizeof(char) * 30); 
     p = _realloc(p, sizeof(char) * 30, sizeof(char) * 120);
     i = 0;
@@ -62,7 +62,7 @@ int main(void)
     free(p);
     
     _realloc(NULL, sizeof(char) * 30, sizeof(char) * 120);
-    
+    /*
     p = malloc(sizeof(char) * 30);
     p = _realloc(p, sizeof(char) * 30, sizeof(char) * 30);
      i = 0;
