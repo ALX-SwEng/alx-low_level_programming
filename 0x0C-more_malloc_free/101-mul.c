@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "main.h"
 
 /**
 * isNumber - check if string is number.
@@ -131,7 +132,7 @@ int main(int argc, char *argv[])
 	}
 
 	mult(mul, argv[1], argv[2], len1, len2);
-	free(res);
+	free(mul);
 
 return (0);
 }
