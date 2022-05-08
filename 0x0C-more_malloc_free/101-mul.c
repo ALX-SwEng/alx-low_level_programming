@@ -1,91 +1,144 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
+int isNumber(char *str);
+int *int_calloc(int nmemb, unsigned int size);
+void mult(int *product, char *n1, char *n2, int len1, int len2);
+
 /**
- * _puts - prints a string, followed by a new line,
- * @str: pointer to the string to print
- * Return: void
+* main - multiplies two numbers recieved through command line.
+* @argc: number of command line arguments
+* @argv: An array containing the program command line arguments
+*
+* Return: 0 if success otherwise 1.
 */
 
-
-void _puts(char *str)
+int main(int argc, char *argv[])
 {
-int i = 0;
-while (str[i])
-{
-	_putchar(str[i]);
-	i++;
-}
+	int *mul, i, j, len1 = 0, len2 = 0;
 
-}
-
-/**
- * _atoi - convert a string to an integer.
- * @s: char type string
- * Return: integer converted
- */
-
-int _atoi(const char *s)
-{
-    int sign = 1;
-	unsigned long int resp = 0, firstNum, i;
-
-	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
+	if (argc - 1 != 2)
 	{
-		if (s[firstNum] == '-')
+		printf("Error\n");
+		exit(98);
+	}
+
+	for (i = 1; i < argc; ++i)
+	{
+		if (!isNumber(argv[i]))
 		{
-			sign *= -1;
+			printf("Error\n");
+			exit(98);
+		}
+		if (i == 1)
+		{
+			for (j = 0; argv[i][j]; j++)
+				++len1;
+		}
+		if (i == 2)
+		{
+			for (j = 0; argv[i][j]; j++)
+				++len2;
 		}
 	}
 
-	for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
+	mul = int_calloc(len1 + len2, sizeof(int));
+	if (mul == NULL)
 	{
-		resp *= 10;
-		resp += (s[i] - 48);
+		printf("Error\n");
+		exit(98);
 	}
 
-	return (sign * resp);
-}
-
-/**
- * print_int - prints an integer.
- * @n: int
- * Return: 0
- */
-
-void print_int(unsigned long int n)
-{
-
-unsigned  long int divisor = 1, i, resp;
-
-for (i = 0; n / divisor > 9; i++, divisor *= 10)
-;
-
-for (; divisor >= 1; n %= divisor, divisor /= 10)
-{
-	resp = n / divisor;
-	_putchar('0' + resp);
-}
-
-}
-
-/**
- * main - print the result of the multiplication, followed by a new line
- * @argc: int
- * @argv: list
- * Return: 0
- */
-
-int main(int argc, char const *argv[])
-{
-(void)argc;
-
-if (argc != 3)
-{
-	_puts("Error ");
-	exit(98);
-}
-print_int(_atoi(argv[1]) * _atoi(argv[2]));
-_putchar('\n');
+	mult(mul, argv[1], argv[2], len1, len2);
+	free(mul);
 
 return (0);
+}
+
+/**
+* isNumber - check if string is number.
+* @str: string parameter
+*
+* Return: 1 if number otherwise 0.
+*/
+
+int isNumber(char *str)
+{
+	int j = strlen(str);
+
+	while (j--)
+	{
+		if (str[j] > 47 && str[j] < 58)
+			continue;
+		return (0);
+	}
+return (1);
+}
+
+/**
+  * int_calloc - special calloc for int arrays
+  * @nmemb: n memb
+  * @size: size of array
+  * Return: int *
+  */
+int *int_calloc(int nmemb, unsigned int size)
+{
+	int *p, n;
+
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+
+	/* malloc the space & check for fail */
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (NULL);
+
+	for (n = 0; n < nmemb; n++)
+		p[n] = 0;
+
+	return (p);
+}
+
+/**
+  * mult - perform multiplication
+  *
+  * @product: int pointer for mul answer
+  * @n1: num1 as a string param
+  * @n2: num2 as a string param
+  * @len1: len of num1
+  * @len2: len of num2
+  *
+  * Return: void
+  */
+
+void mult(int *product, char *n1, char *n2, int len1, int len2)
+{
+	int i, j, res1, res2, sum;
+
+	/* the long math */
+	for (i = len1 - 1; i >= 0; i--)
+	{
+		sum = 0;
+		res1 = n1[i] - '0';
+		for (j = len2 - 1; j >= 0; j--)
+		{
+			res2 = n2[j] - '0';
+			sum += product[i + j + 1] + (res1 * res2);
+			product[i + j + 1] = sum % 10;
+			sum /= 10;
+		}
+		if (sum > 0)
+			product[i + j + 1] += sum;
+	}
+	for (i = 0; product[i] == 0 && i < len1 + len2; i++)
+	{}
+
+	if (i == len1 + len2)
+		_putchar('0');
+
+	for (; i < len1 + len2; i++)
+		_putchar(product[i] + '0');
+	_putchar('\n');
 }
