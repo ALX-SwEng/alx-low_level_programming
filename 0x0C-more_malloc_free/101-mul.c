@@ -67,13 +67,13 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		sum = 0;
-		res1 = n1[i] - '0';
-		_putchar(res1 + '0');
+		res1 = n1[i];
+		_putchar(res1);
 		_putchar('X');
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			res2 = n2[j] - '0';
-			_putchar(res2 + '0');
+			res2 = n2[j];
+			_putchar(res2);
 			_putchar('=');
 			sum += product[i + j + 1] + (res1 * res2);
 			_putchar(sum + '0');
