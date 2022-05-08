@@ -1,162 +1,134 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "main.h"
-
-int isNumber(char *str);
-int *int_calloc(int nmemb, unsigned int size);
-void mult(int *product, char *n1, char *n2, int len1, int len2);
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
-  * error - print error message.
-  * @code: error code for exit
-  * Return: void
-  */
-void error(int code)
+ * _memset - fills memory with a constant byte
+ *
+ * @s: input pointer that represents memory block
+ *     to fill
+ * @b: characters to fill/set
+ * @n: number of bytes to be filled
+ *
+ * Return: pointer to the filled memory area
+*/
+
+char *_memset(char *s, char b, unsigned int n)
 {
-	_putchar('E');
-	_putchar('r');
-	_putchar('r');
-	_putchar('o');
-	_putchar('r');
-	_putchar('\n');
-	exit(code);
+	unsigned int i = 0;
+
+	while (i < n)
+	{
+		s[i] = b;
+		i++;
+	}
+	return (s);
 }
 
 /**
-* main - multiplies two numbers recieved through command line.
-* @argc: number of command line arguments
-* @argv: An array containing the program command line arguments
-*
-* Return: 0 if success otherwise 1.
+ * _calloc - function that allocates memory
+ *           for an array using memset
+ *
+ * @nmemb: size of array
+ * @size: size of each element
+ *
+ * Return: pointer to new allocated memory
+*/
+
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *ptr;
+
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	_memset(ptr, 0, nmemb * size);
+
+	return (ptr);
+}
+
+
+/**
+ * multiply - initialize array with 0 byte
+ *
+ * @s1: string 1
+ * @s2: string 2
+ *
+ * Return: nothing
+*/
+
+void multiply(char *s1, char *s2)
+{
+	int i, l1, l2, total_l, f_digit, s_digit, res = 0, tmp;
+	char *ptr;
+	void *temp;
+
+	l1 = _length(s1);
+	l2 = _length(s2);
+	tmp = l2;
+	total_l = l1 + l2;
+	ptr = _calloc(sizeof(int), total_l);
+
+	/* store our pointer address to free later */
+	temp = ptr;
+
+	for (l1--; l1 >= 0; l1--)
+	{
+		f_digit = s1[l1] - '0';
+		res = 0;
+		l2 = tmp;
+		for (l2--; l2 >= 0; l2--)
+		{
+			s_digit = s2[l2] - '0';
+			res += ptr[l2 + l1 + 1] + (f_digit * s_digit);
+			ptr[l1 + l2 + 1] = res % 10;
+			res /= 10;
+		}
+		if (res)
+			ptr[l1 + l2 + 1] = res % 10;
+	}
+
+	while (*ptr == 0)
+	{
+		ptr++;
+		total_l--;
+	}
+
+	for (i = 0; i < total_l; i++)
+		printf("%i", ptr[i]);
+	printf("\n");
+	free(temp);
+}
+
+
+/**
+ * main - Entry point
+ *
+ * Description: a program that multiplies
+ *            two positive numbers
+ *
+ * @argc: number of arguments
+ * @argv: arguments array
+ *
+ * Return: 0 on success 98 on faliure
 */
 
 int main(int argc, char *argv[])
 {
-	int *mul, i, j, len1 = 0, len2 = 0;
+	char *n1 = argv[1];
+	char *n2 = argv[2];
 
-	if (argc - 1 != 2)
-		error(98);
+	if (argc != 3 || check_number(n1) || check_number(n2))
+		error_exit();
 
-	for (i = 1; i < argc; ++i)
-	{
-		if (!isNumber(argv[i]))
-			error(98);
-		if (i == 1)
-		{
-			for (j = 0; argv[i][j]; j++)
-				++len1;
-		}
-		if (i == 2)
-		{
-			for (j = 0; argv[i][j]; j++)
-				++len2;
-		}
-	}
-
-	mul = int_calloc(len1 + len2, sizeof(int));
-	if (mul == NULL)
-		error(98);
-
-	mult(mul, argv[1], argv[2], len1, len2);
-	free(mul);
-return (0);
-}
-
-/**
-* isNumber - check if string is number.
-* @str: string parameter
-*
-* Return: 1 if number otherwise 0.
-*/
-
-int isNumber(char *str)
-{
-	int j = strlen(str);
-
-	while (j--)
-	{
-		if (str[j] > 47 && str[j] < 58)
-			continue;
-		return (0);
-	}
-return (1);
-}
-
-/**
-  * int_calloc - special calloc for int arrays
-  * @nmemb: n memb
-  * @size: size of array
-  * Return: int *
-  */
-int *int_calloc(int nmemb, unsigned int size)
-{
-	int *p, n;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
-	/* malloc the space & check for fail */
-	p = malloc(nmemb * size);
-	if (p == NULL)
-		return (NULL);
-
-	for (n = 0; n < nmemb; n++)
-		p[n] = 0;
-
-	return (p);
-}
-
-/**
-  * mult - perform multiplication
-  *
-  * @product: int pointer for mul answer
-  * @n1: num1 as a string param
-  * @n2: num2 as a string param
-  * @len1: len of num1
-  * @len2: len of num2
-  *
-  * Return: void
-  */
-
-void mult(int *product, char *n1, char *n2, int len1, int len2)
-{
-	int i, j, i_n1 = 0, i_n2 = 0, res1, res2, sum, carry;
-
-	/* the long math */
-	/* Go from right to left in num1 */
-	for (i = len1 - 1; i >= 0; i--)
-	{
-		sum = 0;
-		carry = 0;
-		i_n2 = 0;
-		res1 = n1[i] - '0';
-
-		/* Go from right to left in num2 */
-		for (j = len2 - 1; j >= 0; j--)
-		{
-			res2 = n2[j] - '0';
-			sum = (res1 * res2) + product[i_n1 + i_n2] + carry;
-			 product[i_n1 + i_n2] = sum % 10;
-			carry = sum / 10;
-			i_n2++;
-		}
-
-		if (carry > 0)
-			product[i_n1 + i_n2] += carry;
-		i_n1++;
-	}
-	i = len1 + len2;
-	while (i > 0 && product[i] == 0)
-		--i;
-
-	if (i == -1)
+	if (*n1 == '0' || *n2 == '0')
 	{
 		_putchar('0');
-		error(98);
+		_putchar('\n');
 	}
-
-	while (i >= 0)
-		_putchar(product[i--] + '0');
-	_putchar('\n');
+	else
+		multiply(n1, n2);
+	return (0);
 }
