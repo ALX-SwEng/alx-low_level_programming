@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 		error(98);
 
 	mult(mul, argv[1], argv[2], len1, len2);
-
+	free(mul);
 return (0);
 }
 
@@ -159,6 +159,4 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	while (i >= 0)
 		_putchar(product[i--] + '0');
 	_putchar('\n');
-
-	free(product);
 }
