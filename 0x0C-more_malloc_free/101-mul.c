@@ -67,11 +67,11 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		sum = 0;
-		res1 = n1[i];
+		res1 = atoi(n1[i]);
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			res2 = n2[j];
-			sum += product[i + j + 1] + (res1 * res2);
+			res2 = atoi(n2[j]);
+			sum += atoi(product[i + j + 1]) + (res1 * res2);
 			product[i + j + 1] = sum % 10;
 			sum /= 10;
 			_putchar(product[i + j + 1]);
