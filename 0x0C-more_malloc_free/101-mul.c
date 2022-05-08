@@ -5,7 +5,7 @@
 
 int isNumber(char *str);
 int *int_calloc(int nmemb, unsigned int size);
-void multiply(char *n1, char *n2, int len1, int len2);
+void mult(int *product, char *n1, char *n2, int len1, int len2);
 
 /**
   * error - print error message.
@@ -33,7 +33,7 @@ void error(int code)
 
 int main(int argc, char *argv[])
 {
-	int i, j, len1 = 0, len2 = 0;
+	int *mul, i, j, len1 = 0, len2 = 0;
 
 	if (argc - 1 != 2)
 		error(98);
@@ -53,8 +53,13 @@ int main(int argc, char *argv[])
 				++len2;
 		}
 	}
-	multiply(argv[1], argv[2], len1, len2);
 
+	mul = int_calloc(len1 + len2, sizeof(int));
+	if (mul == NULL)
+		error(98);
+
+	mult(mul, argv[1], argv[2], len1, len2);
+	free(mul);
 return (0);
 }
 
@@ -103,8 +108,9 @@ int *int_calloc(int nmemb, unsigned int size)
 }
 
 /**
-  * multiply - perform multiplication
+  * mult - perform multiplication
   *
+  * @product: int pointer for mul answer
   * @n1: num1 as a string param
   * @n2: num2 as a string param
   * @len1: len of num1
@@ -113,15 +119,9 @@ int *int_calloc(int nmemb, unsigned int size)
   * Return: void
   */
 
-void multiply(char *n1, char *n2, int len1, int len2)
+void mult(int *product, char *n1, char *n2, int len1, int len2)
 {
-	int *product;
-	int i, j, cn1 = 0, cn2;
-	int num1, num2, sum, carry;
-
-	product = int_calloc(len1 + len2, sizeof(int));
-	if (product == NULL)
-		error(98);
+	int i, j, i_n1 = 0, i_n2 = 0, res1, res2, sum, carry;
 
 	/* the long math */
 	/* Go from right to left in num1 */
@@ -129,30 +129,31 @@ void multiply(char *n1, char *n2, int len1, int len2)
 	{
 		sum = 0;
 		carry = 0;
-		cn2 = 0;
-		num1 = n1[i] - '0';
+		i_n2 = 0;
+		res1 = n1[i] - '0';
 
 		/* Go from right to left in num2 */
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			num2 = n2[j] - '0';
-			sum = (num1 * num2) + product[cn1 + cn2] + carry;
-			 product[cn1 + cn2] = sum % 10;
+			res2 = n2[j] - '0';
+			sum = (res1 * res2) + product[i_n1 + i_n2] + carry;
+			 product[i_n1 + i_n2] = sum % 10;
 			carry = sum / 10;
-			cn2++;
+			i_n2++;
 		}
 
 		if (carry > 0)
-			product[cn1 + cn2] += carry;
-		cn1++;
+			product[i_n1 + i_n2] += carry;
+		i_n1++;
 	}
 	i = len1 + len2;
-	while (i > 0  && product[i] == 0)
+	while (i > 0 && product[i] == 0)
 		--i;
+
+	if (i == -1)
+		_putchar('0');
 
 	while (i >= 0)
 		_putchar(product[i--] + '0');
 	_putchar('\n');
-
-	free(product);
 }
