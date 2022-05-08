@@ -121,31 +121,42 @@ int *int_calloc(int nmemb, unsigned int size)
 
 void mult(int *product, char *n1, char *n2, int len1, int len2)
 {
-	int i, j, res1, res2, sum;
+	int i, j, i_n1 = 0, i_n2 = 0, res1, res2, sum, carry;
 
 	/* the long math */
+	/* Go from right to left in num1 */
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		sum = 0;
+		carry = 0;
+		i_n2 = 0;
 		res1 = n1[i] - '0';
+
+		/* Go from right to left in num2 */
 		for (j = len2 - 1; j >= 0; j--)
 		{
 			res2 = n2[j] - '0';
-			sum += product[i + j + 1] + (res1 * res2);
-			product[i + j + 1] = sum % 10;
-			sum /= 10;
+			sum = (res1 * res2) + product[i_n1 + i_n2] + carry;
+			 product[i_n1 + i_n2] = sum % 10;
+			carry = sum / 10;
+			i_n2++;
 		}
-		if (sum > 0)
-			product[i + j + 1] += sum;
+		if (carry > 0)
+			 product[i_n1 + i_n2] += carry;
+		i_n1++;
 	}
-	for (i = 0; product[i] == 0 && i < len1 + len2; i++)
-	{}
+	i = len1 + len2;
+	while (i > 0 && product[i] == 0)
+		--i;
 
-	if (i == len1 + len2)
+	if (i == -1)
+	{
 		_putchar('0');
+		error(98);
+	}
 
-	for (; i < len1 + len2; i++)
-		_putchar(product[i] + '0');
+	while(i > 0)
+		_putchar(product[i--] + '0');
 	_putchar('\n');
 
 	free(product);
