@@ -147,12 +147,12 @@ void multiply(char *n1, char *n2, int len1, int len2)
 			product[cn1 + cn2] = (product[cn1 + cn2] - '0') + carry;
 		cn1++;
 	}
-	i = 0;
-	while (i < len1 + len2 && product[i] == '0')
-		++i;
+	i = len1 + len2;
+	while (i >= 0  && product[i] == '0')
+		--i;
 
-	while (i <= len1 + len2)
-		_putchar(product[i++]);
+	while (i > 0)
+		_putchar(product[i--]);
 	_putchar('\n');
 
 	free(product);
