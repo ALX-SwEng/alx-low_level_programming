@@ -8,8 +8,8 @@ int *int_calloc(int nmemb, unsigned int size);
 void mult(int *product, char *n1, char *n2, int len1, int len2);
 
 /**
-  * error - errors r us
-  * @status: error code 4 exit
+  * error - print error message.
+  * @code: error code for exit
   * Return: void
   */
 void error(int code)
@@ -147,6 +147,6 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	for (; i < len1 + len2; i++)
 		_putchar(product[i] + '0');
 	_putchar('\n');
-	
+
 	free(product);
 }
