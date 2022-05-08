@@ -119,7 +119,7 @@ void multiply(char *n1, char *n2, int len1, int len2)
 	int *product;
 	int i, j, cn1 = 0, cn2;
 	int num1, num2, sum, carry;
-	
+
 	product = int_calloc(len1 + len2, sizeof(int));
 	if (product == NULL)
 		error(98);
@@ -154,6 +154,6 @@ void multiply(char *n1, char *n2, int len1, int len2)
 	while (i >= 0)
 		_putchar(product[i--] + '0');
 	_putchar('\n');
-	
+
 	free(product);
 }
