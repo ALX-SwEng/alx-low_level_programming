@@ -4,7 +4,7 @@
 #include "main.h"
 
 int isNumber(char *str);
-int *int_calloc(int nmemb, unsigned int size);
+int *_calloc(int nmemb, unsigned int size);
 void multiply(char *n1, char *n2, int len1, int len2);
 
 /**
@@ -84,7 +84,7 @@ return (1);
   * @size: size of array
   * Return: int *
   */
-int *int_calloc(int nmemb, unsigned int size)
+char *_calloc(int nmemb, unsigned int size)
 {
 	char *p, n;
 
@@ -120,7 +120,7 @@ void multiply(char *n1, char *n2, int len1, int len2)
 	int i, j, cn1 = 0, cn2;
 	int num1, num2, sum, carry;
 
-	product = int_calloc(len1 + len2, sizeof(char));
+	product = _calloc(len1 + len2, sizeof(char));
 	if (product == NULL)
 		error(98);
 
