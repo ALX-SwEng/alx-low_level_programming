@@ -74,9 +74,9 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 		{
 			res2 = n2[j];
 			_putchar(res2);
-			sum += product[i + j + 1] + (res1 * res2);
+			sum += (res1 * res2);
 			_putchar('=');
-			_putchar(sum );
+			_putchar(sum);
 			product[i + j + 1] = sum % 10;
 			sum /= 10;
 		}
