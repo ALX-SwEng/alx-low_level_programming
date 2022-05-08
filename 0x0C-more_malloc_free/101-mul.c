@@ -86,7 +86,8 @@ return (1);
   */
 char *int_calloc(int nmemb, unsigned int size)
 {
-	char *p, n;
+	char *p;
+	int n;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
