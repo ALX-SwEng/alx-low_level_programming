@@ -8,6 +8,22 @@ int *int_calloc(int nmemb, unsigned int size);
 void mult(int *product, char *n1, char *n2, int len1, int len2);
 
 /**
+  * error - errors r us
+  * @status: error code 4 exit
+  * Return: void
+  */
+void error(int code)
+{
+	_putchar('E');
+	_putchar('r');
+	_putchar('r');
+	_putchar('o');
+	_putchar('r');
+	_putchar('\n');
+	exit(code);
+}
+
+/**
 * main - multiplies two numbers recieved through command line.
 * @argc: number of command line arguments
 * @argv: An array containing the program command line arguments
@@ -20,18 +36,12 @@ int main(int argc, char *argv[])
 	int *mul, i, j, len1 = 0, len2 = 0;
 
 	if (argc - 1 != 2)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+		error(98);
 
 	for (i = 1; i < argc; ++i)
 	{
 		if (!isNumber(argv[i]))
-		{
-			printf("Error\n");
-			exit(98);
-		}
+			error(98);
 		if (i == 1)
 		{
 			for (j = 0; argv[i][j]; j++)
@@ -46,10 +56,7 @@ int main(int argc, char *argv[])
 
 	mul = int_calloc(len1 + len2, sizeof(int));
 	if (mul == NULL)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+		error(98);
 
 	mult(mul, argv[1], argv[2], len1, len2);
 
