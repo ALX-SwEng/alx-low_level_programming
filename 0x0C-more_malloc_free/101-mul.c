@@ -4,7 +4,7 @@
 #include "main.h"
 
 int isNumber(char *str);
-int *_calloc(int nmemb, unsigned int size);
+char *_calloc(int nmemb, unsigned int size);
 void multiply(char *n1, char *n2, int len1, int len2);
 
 /**
