@@ -76,13 +76,13 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 			_putchar(res2);
 			sum += (res1 * res2);
 			_putchar('=');
-			_putchar(sum);
+			_putchar(4);
+			_putchar('\n');
 			product[i + j + 1] = sum % 10;
 			sum /= 10;
 		}
 		if (sum > 0)
 			product[i + j + 1] += sum;
-		_putchar('\n');
 	}
 	for (i = 0; product[i] == 0 && i < len1 + len2; i++)
 		;
