@@ -4,7 +4,7 @@
 #include "main.h"
 
 int isNumber(char *str);
-char *int_calloc(int nmemb, unsigned int size);
+int *int_calloc(int nmemb, unsigned int size);
 void multiply(char *n1, char *n2, int len1, int len2);
 
 /**
@@ -84,10 +84,9 @@ return (1);
   * @size: size of array
   * Return: int *
   */
-char *int_calloc(int nmemb, unsigned int size)
+int *int_calloc(int nmemb, unsigned int size)
 {
-	char *p;
-	int n;
+	int *p, n;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -98,7 +97,7 @@ char *int_calloc(int nmemb, unsigned int size)
 		return (NULL);
 
 	for (n = 0; n < nmemb; n++)
-		p[n] = '0';
+		p[n] = 0;
 
 	return (p);
 }
@@ -116,7 +115,7 @@ char *int_calloc(int nmemb, unsigned int size)
 
 void multiply(char *n1, char *n2, int len1, int len2)
 {
-	char *product;
+	int *product;
 	int i, j, cn1 = 0, cn2;
 	int num1, num2, sum, carry;
 
@@ -137,22 +136,22 @@ void multiply(char *n1, char *n2, int len1, int len2)
 		for (j = len2 - 1; j >= 0; j--)
 		{
 			num2 = n2[j] - '0';
-			sum = (num1 * num2) + (product[cn1 + cn2] - '0') + carry;
-			 product[cn1 + cn2] = sum % 10 + '0';
+			sum = (num1 * num2) + product[cn1 + cn2] + carry;
+			 product[cn1 + cn2] = sum % 10 ;
 			carry = sum / 10;
 			cn2++;
 		}
 
 		if (carry > 0)
-			product[cn1 + cn2] = (product[cn1 + cn2] - '0') + carry;
+			product[cn1 + cn2] += carry;
 		cn1++;
 	}
 	i = len1 + len2;
-	while (i >= 0  && product[i] == '0')
+	while (i > 0  && product[i] == 0)
 		--i;
 
 	while (i > 0)
-		_putchar(product[i--]);
+		_putchar(product[i--] + '0');
 	_putchar('\n');
 
 	free(product);
