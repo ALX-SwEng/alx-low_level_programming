@@ -1,134 +1,151 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
- * _memset - fills memory with a constant byte
- *
- * @s: input pointer that represents memory block
- *     to fill
- * @b: characters to fill/set
- * @n: number of bytes to be filled
- *
- * Return: pointer to the filled memory area
-*/
+ * _atoi_digit - convert a char to integer.
+ * @x: character to convert.
+ * Return: integer.
+ **/
 
-char *_memset(char *s, char b, unsigned int n)
+int _atoi_digit(char x)
 {
-	unsigned int i = 0;
+	unsigned int res;
 
-	while (i < n)
-	{
-		s[i] = b;
-		i++;
-	}
-	return (s);
+	if (x <= '9' && x >= '0')
+		res = x - '0';
+	return (res);
 }
 
 /**
- * _calloc - function that allocates memory
- *           for an array using memset
- *
- * @nmemb: size of array
- * @size: size of each element
- *
- * Return: pointer to new allocated memory
-*/
+ * _isNumber - Define if a string is a number.
+ * @argv: Pointer to string.
+ * Return: success (0).
+ **/
+int _isNumber(char *argv)
+{
+	int i;
+
+	for (i = 0; argv[i]; i++)
+		if (argv[i] < 48 || argv[i] > 57)
+			return (1);
+	return (0);
+}
+
+/**
+ *_calloc - allocate array of size * nmemb.
+ * @nmemb: number of elements.
+ * @size: size of element.
+ * Return: pointer to array.
+ **/
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
+	char *tab;
+	unsigned int i;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-		return (NULL);
-	_memset(ptr, 0, nmemb * size);
+	tab = malloc(size * nmemb);
 
-	return (ptr);
+	if (tab == NULL)
+		return (NULL);
+
+	for (i = 0; i < (size * nmemb); i++)
+		tab[i] = '0';
+
+	return (tab);
 }
 
-
 /**
- * multiply - initialize array with 0 byte
- *
- * @s1: string 1
- * @s2: string 2
- *
- * Return: nothing
-*/
+ * mul_array - multiply two arrays.
+ * @a1: first array.
+ * @len1: length of array a1.
+ * @a2:  char.
+ * @a3: array for result.
+ * @lena: length of array a3.
+ * Return: pointer to array.
+ **/
 
-void multiply(char *s1, char *s2)
+void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
 {
-	int i, l1, l2, total_l, f_digit, s_digit, res = 0, tmp;
-	char *ptr;
-	void *temp;
+	int mul = 0, i, k;
 
-	l1 = _length(s1);
-	l2 = _length(s2);
-	tmp = l2;
-	total_l = l1 + l2;
-	ptr = _calloc(sizeof(int), total_l);
-
-	/* store our pointer address to free later */
-	temp = ptr;
-
-	for (l1--; l1 >= 0; l1--)
+	k = lena;
+	for (i = len1 - 1; i >= 0 ; i--)
 	{
-		f_digit = s1[l1] - '0';
-		res = 0;
-		l2 = tmp;
-		for (l2--; l2 >= 0; l2--)
+		mul += (a1[i] - '0') * (a2 - '0') + (a3[k] - '0');
+		a3[k] = (mul % 10) + '0';
+		mul /= 10;
+		k--;
+	}
+
+		while (mul != 0)
 		{
-			s_digit = s2[l2] - '0';
-			res += ptr[l2 + l1 + 1] + (f_digit * s_digit);
-			ptr[l1 + l2 + 1] = res % 10;
-			res /= 10;
+			mul += a3[k] - '0';
+			a3[k] = (mul % 10) + '0';
+			mul /= 10;
+			k--;
 		}
-		if (res)
-			ptr[l1 + l2 + 1] = res % 10;
-	}
 
-	while (*ptr == 0)
+	return (a3);
+}
+/**
+ * print_array - print all digits of array.
+ * @nb: number of elements to print.
+ * @a: array of elements.
+ **/
+void print_array(char *a, int nb)
+{
+	int i = 0;
+
+	while (a[i] == '0' && (i + 1) < nb)
 	{
-		ptr++;
-		total_l--;
+		i++;
 	}
-
-	for (i = 0; i < total_l; i++)
-		printf("%i", ptr[i]);
-	printf("\n");
-	free(temp);
+	for (; i < nb; i++)
+	{
+		_putchar(a[i]);
+	}
+	_putchar('\n');
 }
 
-
 /**
- * main - Entry point
- *
- * Description: a program that multiplies
- *            two positive numbers
- *
- * @argc: number of arguments
- * @argv: arguments array
- *
- * Return: 0 on success 98 on faliure
-*/
+ *main - print the multiplication of 2 numbers.
+ *@argc: array length.
+ *@argv: array.
+ *Return: 0.
+ */
 
 int main(int argc, char *argv[])
 {
-	char *n1 = argv[1];
-	char *n2 = argv[2];
+	int i, c, len1, len2, lenres;
+	char E[6] = {'E', 'r', 'r', 'o', 'r', '\n'};
+	char *tabres;
 
-	if (argc != 3 || check_number(n1) || check_number(n2))
-		error_exit();
-
-	if (*n1 == '0' || *n2 == '0')
+	if (argc != 3 || _isNumber(argv[1]) == 1 || _isNumber(argv[2]) == 1)
 	{
-		_putchar('0');
-		_putchar('\n');
+		for (i = 0; i < 6; i++)
+		{
+			_putchar(E[i]);
+		}
+		exit(98);
 	}
-	else
-		multiply(n1, n2);
+	for (len1 = 0; argv[1][len1]; len1++)
+	;
+	for (len2 = 0; argv[2][len2]; len2++)
+	;
+	lenres = len1 + len2;
+	tabres = _calloc(lenres, sizeof(int));
+	if (tabres == NULL)
+	{
+		free(tabres);
+		return (0);
+	}
+	for (i = len2 - 1, c = 0; i >= 0; i--)
+	{
+	tabres = mul_array(argv[1], len1, argv[2][i], tabres, (lenres - 1 - c));
+	c++;
+	}
+	print_array(tabres, lenres);
+	free(tabres);
+	exit(EXIT_SUCCESS);
 	return (0);
 }
