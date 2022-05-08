@@ -141,8 +141,9 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 			carry = sum / 10;
 			i_n2++;
 		}
+
 		if (carry > 0)
-			 product[i_n1 + i_n2] += carry;
+			product[i_n1 + i_n2] += carry;
 		i_n1++;
 	}
 	i = len1 + len2;
@@ -155,7 +156,7 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 		error(98);
 	}
 
-	while(i > 0)
+	while (i > 0)
 		_putchar(product[i--] + '0');
 	_putchar('\n');
 
