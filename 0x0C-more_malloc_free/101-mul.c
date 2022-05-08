@@ -147,8 +147,8 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 		i_n1++;
 	}
 	i = len1 + len2;
-	while (i > 0 && product[i] == 0)
-		--i;
+	while (--i > 0 && product[i] == 0)
+		;
 
 	if (i == -1)
 		_putchar('0');
