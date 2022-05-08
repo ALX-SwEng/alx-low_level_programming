@@ -104,9 +104,8 @@ char *int_calloc(int nmemb, unsigned int size)
 }
 
 /**
-  * mult - perform multiplication
+  * multiply - perform multiplication
   *
-  * @product: int pointer for mul answer
   * @n1: num1 as a string param
   * @n2: num2 as a string param
   * @len1: len of num1
