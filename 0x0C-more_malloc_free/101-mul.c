@@ -138,7 +138,7 @@ void multiply(char *n1, char *n2, int len1, int len2)
 		{
 			num2 = n2[j] - '0';
 			sum = (num1 * num2) + (product[cn1 + cn2] - '0') + carry;
-			 product[cn1 + cn2] = sum % 10;
+			 product[cn1 + cn2] = sum % 10 + '0';
 			carry = sum / 10;
 			cn2++;
 		}
@@ -152,7 +152,7 @@ void multiply(char *n1, char *n2, int len1, int len2)
 		--i;
 
 	while (i >= 0)
-		_putchar(product[i--]);
+		_putchar(product[--i]);
 	_putchar('\n');
 
 	free(product);
