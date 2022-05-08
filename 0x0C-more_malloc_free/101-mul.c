@@ -151,7 +151,7 @@ void multiply(char *n1, char *n2, int len1, int len2)
 	while (i < len1 + len2 && product[i] == '0')
 		++i;
 
-	while (i < len1 + len2)
+	while (i <= len1 + len2)
 		_putchar(product[i++]);
 	_putchar('\n');
 
