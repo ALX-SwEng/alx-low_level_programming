@@ -5,7 +5,7 @@
 
 int isNumber(char *str);
 int *int_calloc(int nmemb, unsigned int size);
-void mult(int *product, char *n1, char *n2, int len1, int len2);
+void multiply(int *product, char *n1, char *n2, int len1, int len2);
 
 /**
   * error - print error message.
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 	if (mul == NULL)
 		error(98);
 
-	mult(mul, argv[1], argv[2], len1, len2);
+	multiply(mul, argv[1], argv[2], len1, len2);
 	free(mul);
 return (0);
 }
@@ -119,7 +119,7 @@ int *int_calloc(int nmemb, unsigned int size)
   * Return: void
   */
 
-void mult(int *product, char *n1, char *n2, int len1, int len2)
+void multiply(int *product, char *n1, char *n2, int len1, int len2)
 {
 	int i, j, i_n1 = 0, i_n2 = 0, res1, res2, sum, carry;
 
