@@ -67,10 +67,10 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		sum = 0;
-		res1 = n1[i];
+		res1 = n1[i] - '0';
 		for (j = len2 - 1; j >= 0; j--)
 		{
-			res2 = n2[j];
+			res2 = n2[j] - '0';
 			sum += (res1 * res2) + product[i + j + 1];
 			product[i + j + 1] = sum % 10;
 			sum /= 10;
