@@ -86,7 +86,7 @@ return (1);
   */
 int *int_calloc(int nmemb, unsigned int size)
 {
-	int *p, n;
+	char *p, n;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -97,7 +97,7 @@ int *int_calloc(int nmemb, unsigned int size)
 		return (NULL);
 
 	for (n = 0; n < nmemb; n++)
-		p[n] = 0;
+		p[n] = '0';
 
 	return (p);
 }
@@ -116,11 +116,11 @@ int *int_calloc(int nmemb, unsigned int size)
 
 void multiply(char *n1, char *n2, int len1, int len2)
 {
-	int *product;
+	char *product;
 	int i, j, cn1 = 0, cn2;
 	int num1, num2, sum, carry;
 
-	product = int_calloc(len1 + len2, sizeof(int));
+	product = int_calloc(len1 + len2, sizeof(char));
 	if (product == NULL)
 		error(98);
 
@@ -137,22 +137,22 @@ void multiply(char *n1, char *n2, int len1, int len2)
 		for (j = len2 - 1; j >= 0; j--)
 		{
 			num2 = n2[j] - '0';
-			sum = (num1 * num2) + product[cn1 + cn2] + carry;
-			 product[cn1 + cn2] = sum % 10;
+			sum = (num1 * num2) + (product[cn1 + cn2] - '0') + carry;
+			 product[cn1 + cn2] = (sum % 10 + '0');
 			carry = sum / 10;
 			cn2++;
 		}
 
 		if (carry > 0)
-			product[cn1 + cn2] += carry;
+			product[cn1 + cn2] = (product[cn1 + cn2] - '0') + carry;
 		cn1++;
 	}
 	i = len1 + len2;
-	while (i > 0 && product[i] == 0)
+	while (i > 0 && product[i] == '0')
 		--i;
 
 	while (i >= 0)
-		_putchar(product[i--] + '0');
+		_putchar(product[i--]);
 	_putchar('\n');
 
 	free(product);
