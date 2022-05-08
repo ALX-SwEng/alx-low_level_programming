@@ -3,6 +3,60 @@
 #include <string.h>
 #include "main.h"
 
+int isNumber(char *str);
+int *int_calloc(int nmemb, unsigned int size);
+void mult(int *product, char *n1, char *n2, int len1, int len2);
+
+/**
+* main - multiplies two numbers recieved through command line.
+* @argc: number of command line arguments
+* @argv: An array containing the program command line arguments
+*
+* Return: 0 if success otherwise 1.
+*/
+
+int main(int argc, char *argv[])
+{
+	int *mul, i, j, len1 = 0, len2 = 0;
+
+	if (argc - 1 != 2)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	for (i = 1; i < argc; ++i)
+	{
+		if (!isNumber(argv[i]))
+		{
+			printf("Error\n");
+			exit(98);
+		}
+		if (i == 1)
+		{
+			for (j = 0; argv[i][j]; j++)
+				++len1;
+		}
+		if (i == 2)
+		{
+			for (j = 0; argv[i][j]; j++)
+				++len2;
+		}
+	}
+
+	mul = int_calloc(len1 + len2, sizeof(int));
+	if (mul == NULL)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+
+	mult(mul, argv[1], argv[2], len1, len2);
+	free(mul);
+
+return (0);
+}
+
 /**
 * isNumber - check if string is number.
 * @str: string parameter
@@ -87,54 +141,4 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 	for (; i < len1 + len2; i++)
 		_putchar(product[i] + '0');
 	_putchar('\n');
-}
-
-/**
-* main - multiplies two numbers recieved through command line.
-* @argc: number of command line arguments
-* @argv: An array containing the program command line arguments
-*
-* Return: 0 if success otherwise 1.
-*/
-
-int main(int argc, char *argv[])
-{
-	int *mul, i, j, len1 = 0, len2 = 0;
-
-	if (argc - 1 != 2)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	for (i = 1; i < argc; ++i)
-	{
-		if (!isNumber(argv[i]))
-		{
-			printf("Error\n");
-			exit(98);
-		}
-		if (i == 1)
-		{
-			for (j = 0; argv[i][j]; j++)
-				++len1;
-		}
-		if (i == 2)
-		{
-			for (j = 0; argv[i][j]; j++)
-				++len2;
-		}
-	}
-
-	mul = int_calloc(len1 + len2, sizeof(int));
-	if (mul == NULL)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	mult(mul, argv[1], argv[2], len1, len2);
-	free(mul);
-
-return (0);
 }
