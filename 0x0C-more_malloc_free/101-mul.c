@@ -156,7 +156,7 @@ void mult(int *product, char *n1, char *n2, int len1, int len2)
 		error(98);
 	}
 
-	while (i > 0)
+	while (i >= 0)
 		_putchar(product[i--] + '0');
 	_putchar('\n');
 
