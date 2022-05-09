@@ -10,13 +10,13 @@
 
 void new_dog (char *name, float age, char *owner)
 {
-  struct dog *newDog;
+	struct dog *newDog;
 
-  newDog = malloc (sizeof(struct dog));
-  if (!newDog)
-    return (NULL);
-  
-  newDog->name = name;
-  newDog->age = age;
-  newDog->owner = owner;
+	newDog = malloc (sizeof(struct dog));
+	if (!newDog)
+		return (NULL);
+
+	newDog->name = name;
+	newDog->age = age;
+	newDog->owner = owner;
 }
