@@ -15,7 +15,7 @@ void int_dog(struct dog *d, char *name, float age, char *owner)
 	{
 		int i = 0, j = 0;
 
-		while(*name)
+		while (*name)
 			d->name[i++] = *name++;
 
 		d->age = age;
