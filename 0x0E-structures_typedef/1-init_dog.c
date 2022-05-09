@@ -13,12 +13,14 @@ void int_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d)
 	{
+		int i = 0, j = 0;
+
 		while(*name)
-			d->name++ = *name++;
+			d->name[i++] = *name++;
 
 		d->age = age;
 
 		while (*owner)
-			d->owner++ = *owner++;
+			d->owner[j++] = *owner++;
 	}
 }
