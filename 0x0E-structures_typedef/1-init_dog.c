@@ -1,7 +1,7 @@
 #include "dog.h"
 
 /**
-* int_dog - initialize dog structure
+* init_dog - initialize dog structure
 *
 * @d: structure object
 * @name: 1st member
@@ -9,7 +9,7 @@
 * @owner: 3rd member
 */
 
-void int_dog(struct dog *d, char *name, float age, char *owner)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d)
 	{
