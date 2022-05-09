@@ -1,9 +1,11 @@
+#include <stdio.h>
+
 /**
 * struct dog - structure for dog object
 *
-*@name: 1st member 
-*@age: 2nd member 
-*@owner: 3rd member 
+*@name: 1st member
+*@age: 2nd member
+*@owner: 3rd member
 */
 
 struct dog 
