@@ -7,6 +7,8 @@
 * @name: 1st member
 * @age: 2nd member
 * @owner: 3rd member
+*
+*Return: pointer to structure, Null if fail
 */
 
 dog_t *new_dog(char *name, float age, char *owner)
