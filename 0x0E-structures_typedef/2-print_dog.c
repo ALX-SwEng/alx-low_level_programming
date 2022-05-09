@@ -1,17 +1,28 @@
 #include "dog.h"
 
 /**
-* int_dog - initialize dog structure
+* print_dog - print dog structure
 *
-* @d: structure object
-* @name: 1st member 
-* @age: 2nd member 
-* @owner: 3rd member 
+* @d: dog structure object
 */
 
-oid print_dog(struct dog *d)
+void print_dog(struct dog *d)
 {
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	if (d != NULL)
+	{
+		if (d->name == NULL)
+			printf("Name: (nil)");
+		else
+			printf("Name: %s", d->name);
+
+		if (d->age == NULL)
+			printf("Age: (nil)");
+		else
+			printf("age: %d", d->name);
+
+		if (d->owner == NULL)
+			printf("Owner: (nil)");
+		else
+			printf("Owner: %s", d->owner);
+	}
 }
