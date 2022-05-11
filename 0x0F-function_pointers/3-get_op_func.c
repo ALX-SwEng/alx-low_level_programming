@@ -4,8 +4,6 @@
  * get_op_func - function pointer
  *
  * @s: operator passed as argument
- * @num1: 1st number, integer
- * @num2: 2nd number, integer
  *
  * Return: pointer to function, fails otherwise.
  */
