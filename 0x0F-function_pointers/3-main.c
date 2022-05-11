@@ -18,14 +18,14 @@ int main(int argc, char *argv[])
 
 	if (argc - 1 != 3)
 	{
-		printf("Error\n");
+		printf("Error1\n");
 		exit(98);
 	}
 
 	if (*argv[2] != '+' || *argv[2] != '-' || *argv[2] != '*' ||
 	    *argv[2] != '/' || *argv[2] != '%')
 	{
-		printf("Error\n");
+		printf("Error2\n");
 		exit(98);
 	}
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
 	if ((*argv[2] != '/' || *argv[2] != '%') && num2 == 0)
 	{
-		printf("Error\n");
+		printf("Error3\n");
 		exit(100);
 	}
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	if (!func)
 	{
-		printf("Error1\n");
+		printf("Error4\n");
 		exit(99);
 	}
 	printf("%d\n", func (num1, num2));	
