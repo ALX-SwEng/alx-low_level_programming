@@ -11,11 +11,11 @@
  * Return: Always 0.
  */
 
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) int argc, char *argv[])
 {
 	int (*func)(int, int);
 
-	if (argc - 1 != 3)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
