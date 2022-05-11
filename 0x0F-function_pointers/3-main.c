@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	
-	get_op_func(argv[2]);
+	get_op_func(argv[2], num1, num2);
 
 return (0);
 }
