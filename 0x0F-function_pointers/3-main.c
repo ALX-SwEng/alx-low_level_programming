@@ -36,6 +36,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
+	
+	get_op_func(argv[2]);
 
 return (0);
 }
