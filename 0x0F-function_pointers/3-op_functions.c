@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 /**
 * op_add - add two numbers
 * @a: 1st number, integer
