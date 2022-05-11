@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "3_calc.h"
 
 /**
  * main - validate input number and operator
