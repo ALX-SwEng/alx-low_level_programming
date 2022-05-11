@@ -42,7 +42,7 @@ int op_mul(int a, int b)
 * @a: 1st number, integer
 * @b: 2nd number, integer
 *
-* Return: quotient 
+* Return: quotient
 */
 
 int op_div(int a, int b)
@@ -60,5 +60,5 @@ int op_div(int a, int b)
 
 int op_mod(int a, int b)
 {
-	  return (a % b);
+	return (a % b);
 }
