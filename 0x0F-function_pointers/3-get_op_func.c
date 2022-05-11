@@ -1,5 +1,15 @@
 #include "calc.h"
 
+/**
+ * get_op_func - function pointer
+ *
+ * @s: operator passed as argument
+ * @num2: 1st number, integer
+ * @num1: 2nd number, integer
+ *
+ * Return: pointer to function, fails otherwise.
+ */
+
 int (*get_op_func(char *s))(int num1, int num2)
 {
 	op_t ops[] = {
