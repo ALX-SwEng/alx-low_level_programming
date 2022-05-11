@@ -18,9 +18,10 @@ int (*get_op_func(char *s))(int num1, int num2)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
 
-	while (i++ < 5)
+	int i = 0;
+
+	while (ops[i])
 	{
 		if (*s == ops[i].op[0])
 			return (ops[i].f)
