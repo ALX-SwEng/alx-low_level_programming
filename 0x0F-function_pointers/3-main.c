@@ -13,7 +13,6 @@
 
 int main(int argc, char *argv[])
 {
-	int num1, num2;
 	int (*func)(int, int);
 
 	if (argc - 1 != 3)
@@ -29,9 +28,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-
 	func = get_op_func(argv[2]);
 
 	if (!func)
@@ -39,7 +35,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	printf("%d\n", func(num1, num2));
+	printf("%d\n", func(atoi(argv[1]), atoi(argv[3])));
 
 return (0);
 }
