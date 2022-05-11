@@ -1,5 +1,5 @@
 /**
-* op_add - add two numbers 
+* op_add - add two numbers
 * @a: 1st number, integer
 * @b: 2nd number, integer
 *
@@ -12,7 +12,7 @@ int op_add(int a, int b)
 }
 
 /**
-* op_sub - find difference of two number 
+* op_sub - find difference of two number
 * @a: 1st number, integer
 * @b: 2nd number, integer
 *
@@ -25,7 +25,7 @@ int op_sub(int a, int b)
 }
 
 /**
-* op_mul - multiply two number 
+* op_mul - multiply two number
 * @a: 1st number, integer
 * @b: 2nd number, integer
 *
@@ -38,7 +38,7 @@ int op_mul(int a, int b)
 }
 
 /**
-* op_div - divide 1st number by the 2nd  
+* op_div - divide 1st number by the 2nd
 * @a: 1st number, integer
 * @b: 2nd number, integer
 *
@@ -51,7 +51,7 @@ int op_div(int a, int b)
 }
 
 /**
-* op_mod - find reminder  
+* op_mod - find reminder
 * @a: 1st number, integer
 * @b: 2nd number, integer
 *
