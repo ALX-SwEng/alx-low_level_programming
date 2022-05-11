@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	if (!func)
 	{
-		printf("Error\n");
+		printf("Error1\n");
 		exit(99);
 	}
 	printf("%d\n", func (num1, num2));	
