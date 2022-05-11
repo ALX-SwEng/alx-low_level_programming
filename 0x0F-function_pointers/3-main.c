@@ -14,6 +14,7 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2;
+	char *func;
 
 	if (argc - 1 != 3)
 	{
@@ -37,7 +38,8 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	get_op_func(argv[2], num1, num2);
+	get_op_func(argv[2]);
+	
 
 return (0);
 }
