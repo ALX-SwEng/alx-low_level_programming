@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 {
 	int num1, num2;
 	int (*func)(int, int);
-	printf("Error1 %d\n", argc);
+
 	if (argc - 1 != 3)
 	{
 		printf("Error1\n");
