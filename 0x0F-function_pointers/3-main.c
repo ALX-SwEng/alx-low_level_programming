@@ -11,7 +11,7 @@
  * Return: Always 0.
  */
 
-int main(int __attribute__((__unused__)) int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int (*func)(int, int);
 
