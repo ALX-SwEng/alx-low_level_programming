@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 
 /**
- * is_98 - check if a number is equal to 98
+ * print_name - print a name
  * @name: string param
  * @f: pointer to function
  *
@@ -10,5 +10,5 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-  f(name);
+	f(name);
 }
