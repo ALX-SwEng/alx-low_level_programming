@@ -17,7 +17,6 @@ void print_all(const char * const format, ...)
 	{
 		if (j != 0)
 			printf(", ");
-		start = 1;
 
 		switch (format[j])
 		{
