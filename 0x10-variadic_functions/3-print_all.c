@@ -9,13 +9,13 @@
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	int j = 0, start = 0;
+	unsigned int j = 0, start = 0;
 	char *str;
 
 	va_start(list, format);
 	while (format && format[j] != '\0')
 	{
-		switch (format[j++])
+		switch (format[j])
 		{
 		case 'c':
 			switch (start)
@@ -44,7 +44,8 @@ void print_all(const char * const format, ...)
 			{ printf("%s", str);
 			break; }
 			printf("(nill)");
-			break; }}
+			break; }
+	++j; }
 	va_end(list); /* Clean up argument list. */
 	printf("\n");
 }
