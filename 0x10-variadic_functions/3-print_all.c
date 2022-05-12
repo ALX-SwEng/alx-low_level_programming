@@ -15,14 +15,14 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	while (format && format[j] != '\0')
 	{
-		switch (start)
+		if (start == 1)
 		{
+			switch (format[j])
+			{
 			case 'c':
 			case 'i':
 			case 'f':
-			case 's':
-			case 1:
-				printf(", ");
+			case 's': printf(", "); }
 		}
 		start = 1;
 		switch (format[j++])
