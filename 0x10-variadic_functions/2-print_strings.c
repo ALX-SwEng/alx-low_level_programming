@@ -3,15 +3,15 @@
 #include "variadic_functions.h"
 
 /**
-* print_numbers - prints numbers, followed by a new line.
+* print_strings - prints strings, followed by a new line.
 *
-* @separator: the string to be printed between numbers.
-* @n: number of integers passed to the function.
+* @separator: the string to be printed between strings.
+* @n: number of strings passed to the function.
 *
 * Return: Nothing.
 */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...);
 {
 	va_list list;
 	unsigned int i;
