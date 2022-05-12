@@ -21,13 +21,14 @@ void print_all(const char * const format, ...)
 		while (*format)
 		{
 			switch (start)
-			{ 
-			case 1: printf(", "); 
+			{
+			case 1: 
+			printf(", "); 
 			}
 			start = 1;
 
 			switch (*format)
-			{ 
+			{
 			case 'c':
 			printf("%c", va_arg(list, int));
 			break;
@@ -39,14 +40,14 @@ void print_all(const char * const format, ...)
 			case 'f':
 			printf("%f", va_arg(list, float));
 			break;
-	
+
 			case's':
 			str = va_arg(list, char*);
 			if (str)
 				printf("%s", p);
-			break; 
+			break;
 			printf("(nill)");
-			break; 
+			break;
 			}
 			++format;
 		}
