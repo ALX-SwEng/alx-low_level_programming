@@ -13,37 +13,32 @@ void print_all(const char * const format, ...)
 	char *str;
 
 	va_start(list, format);
-	if (format)
+	while (format[j])
 	{
-		while (format[j])
-		{
-			switch (start)
-			{
-			case 1:
+		if (j != 0)
 			printf(", ");
-			}
-			start = 1;
-			switch (format[j])
-			{
-			case 'c':
+		start = 1;
+
+		switch (format[j])
+		{
+		case 'c':
 			printf("%c", va_arg(list, int));
 			break;
-			case 'i':
+		case 'i':
 			printf("%i", va_arg(list, int));
 			break;
-			case 'f':
+		case 'f':
 			printf("%f", va_arg(list, double));
 			break;
-			case's':
+		case's':
 			str = va_arg(list, char*);
 			if (str)
 				printf("%s", str);
 			break;
 			printf("(nill)");
 			break;
-			}
-			++j;
 		}
+		++j;
 	}
 	va_end(list); /* Clean up argument list. */
 	printf("\n");
