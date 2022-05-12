@@ -22,6 +22,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	}
 
 	func = get_op_func(argv[2]);
+	while (*argv[2] != "\0")
+		putchar(*argv[2]++);
 
 	if (!func)
 	{
