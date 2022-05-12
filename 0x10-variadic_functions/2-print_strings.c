@@ -22,7 +22,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		str = va_arg(list, char*); /* Get the next value. */
 		if (str)
-			printf("%s", str); 
+			printf("%s", str);
 		else
 			printf("(nil)");
 
