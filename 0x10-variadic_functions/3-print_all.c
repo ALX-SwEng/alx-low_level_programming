@@ -13,7 +13,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	unsigned int j = 0, k = 0, start = 0;
+	unsigned int j = 0, start = 0;
 	char *str, *type = "cifs";
 
 	va_start(list, format);
