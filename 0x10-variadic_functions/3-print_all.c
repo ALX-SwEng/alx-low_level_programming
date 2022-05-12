@@ -41,8 +41,8 @@ void print_all(const char * const format, ...)
 			start = 1;
 			str = va_arg(list, char*);
 			if (str)
-				printf("%s", str);
-			break;
+			{ printf("%s", str);
+			 break; }
 			printf("(nill)");
 			break; }
 		++j; }
