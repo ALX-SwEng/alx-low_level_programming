@@ -17,22 +17,19 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *str;
 
-	if (n != 0)
+	va_start(list, n);
+	for (i = 0; i < n; i++)
 	{
-		va_start(list, n);
-		for (i = 0; i < n; i++)
-		{
-			str = va_arg(list, char*); /* Get the next value. */
-			if (str)
-				printf("%s", str); 
-			else
-				printf("(nil)");
+		str = va_arg(list, char*); /* Get the next value. */
+		if (str)
+			printf("%s", str); 
+		else
+			printf("(nil)");
 
-			if (separator && i + 1 < n)
-				printf("%s", separator);
-		}
-
-		va_end(list); /* Clean up argument list. */
+		if (separator && i < n - 1)
+			printf("%s", separator);
 	}
-printf("\n");
+
+	va_end(list); /* Clean up argument list. */
+	printf("\n");
 }
