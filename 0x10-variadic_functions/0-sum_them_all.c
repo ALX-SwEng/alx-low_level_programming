@@ -12,20 +12,20 @@
 
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list app;
+	va_list list;
 	int i, sum, count;
 
 	if (n == 0)
 		return (0);
 
-	va_start(app, count); /* Initialize the argument list. */
+	va_start(list, count); /* Initialize the argument list. */
 
 	sum = 0;
 
 	for (i = 0; i < count; i++)
-		sum += va_arg(app, int);    /* Get the next argument value. */
+		sum += va_arg(list, int);    /* Get the next argument value. */
 
-	va_end(app); /* Clean up argument list. */
+	va_end(list); /* Clean up argument list. */
 
 return (sum);
 }
