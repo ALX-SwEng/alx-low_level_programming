@@ -22,7 +22,8 @@ void print_all(const char * const format, ...)
 			case 'c':
 			case 'i':
 			case 'f':
-			case 's': printf(", "); }
+			case 's': 
+				printf(", "); }
 		}
 		start = 1;
 		switch (format[j++])
