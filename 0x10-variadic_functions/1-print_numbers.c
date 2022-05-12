@@ -3,11 +3,12 @@
 #include "variadic_functions.h"
 
 /**
-* sum_them_all - compute sum of all its parameters.
+* print_numbers - prints numbers, followed by a new line.
 *
-* @n: number of parameters passed to function.
+* @separator: the string to be printed between numbers.
+* @n: number of integers passed to the function.
 *
-* Return: sum, fail otherwise.
+* Return: Nothing.
 */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -22,9 +23,13 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(list, n); /* Initialize the argument list. */
 
 	for (i = 0; i < n; i++)
-		sum += va_arg(list, int);    /* Get the next argument value. */
+	{
+		printf("%d", va_arg(list, int));     /* Get and print the next argument value. */
+		if (separator)
+			printf("%s", separator);
+	}
 
 	va_end(list); /* Clean up argument list. */
 
-return (sum);
+printf("\n");
 }
