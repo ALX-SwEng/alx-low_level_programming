@@ -38,7 +38,8 @@ void print_all(const char * const format, ...)
 			printf("%f", va_arg(list, double));
 			break;
 		case's':
-			if (str = va_arg(list, char*))
+			str = va_arg(list, char*)
+			if (str)
 			{
 			printf("%s", str);
 			break; }
