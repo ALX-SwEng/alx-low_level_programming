@@ -35,10 +35,10 @@ void print_all(const char * const format, ...)
 			if (!str)
 				str = "(nill)";
 			printf("%s%s", sep, str);
-			break; 
+			break;
 		}
-	sep = ", ";
-	++j; 
+		sep = ", ";
+		++j;
 	}
 	va_end(list); /* Clean up argument list. */
 	printf("\n");
