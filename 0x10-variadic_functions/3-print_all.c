@@ -19,6 +19,13 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	while (format && format[j] != '\0')
 	{
+		if (format[j] != 'c' && format[j] != 'i' &&
+		    format[j] != 'f' && format[j] != 's')
+		{
+			continue;
+			++j;
+		}
+
 		switch (format[j])
 		{
 		case 'c':
