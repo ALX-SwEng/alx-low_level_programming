@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	while (format && format[j] != '\0')
 	{
-		if (start == 1)
+		if (j > 0)
 		{
 			switch (format[j])
 			{
@@ -25,7 +25,6 @@ void print_all(const char * const format, ...)
 			case 's':
 				printf(", "); }
 		}
-		start = 1;
 		switch (format[j++])
 		{
 		case 'c':
@@ -44,7 +43,8 @@ void print_all(const char * const format, ...)
 			printf("%s", str);
 			break; }
 			printf("(nill)");
-			break; }}
+			break; 
+		}}
 	va_end(list); /* Clean up argument list. */
 	printf("\n");
 }
