@@ -22,8 +22,8 @@ void print_all(const char * const format, ...)
 		{
 			switch (start)
 			{
-			case 1: 
-			printf(", "); 
+			case 1:
+			printf(", ");
 			}
 			start = 1;
 
