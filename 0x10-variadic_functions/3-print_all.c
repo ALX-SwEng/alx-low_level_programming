@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	unsigned int j = 0;
-	char *str, *sep = "";
+	char *str, *sep = " ";
 
 	va_start(list, format);
 	while (format && format[j] != '\0')
