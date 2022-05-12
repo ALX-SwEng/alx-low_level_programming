@@ -20,7 +20,7 @@ void print_all(const char * const format, ...)
 	while (format && format[j] != '\0')
 	{
 		k = 0;
-		while (type[k] != format[j] && k < 4)
+		while (k < 4 && type[k] != format[j])
 			++k;
 		if (k == 4)
 			continue;
