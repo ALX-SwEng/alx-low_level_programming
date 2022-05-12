@@ -18,31 +18,30 @@ void print_all(const char * const format, ...)
 		switch (format[j++])
 		{
 		case 'c':
-			switch (start) 
+			switch (start)
 			{ case 1: printf(", "); }
 			start = 1;
 			printf("%c", va_arg(list, int));
 			break;
 		case 'i':
-			switch (start) 
+			switch (start)
 			{ case 1: printf(", "); }
 			start = 1;
 			printf("%i", va_arg(list, int));
 			break;
 		case 'f':
-			switch (start) 
+			switch (start)
 			{ case 1: printf(", "); }
 			start = 1;
 			printf("%f", va_arg(list, double));
 			break;
 		case's':
-			switch (start) 
+			switch (start)
 			{ case 1: printf(", "); }
 			start = 1;
 			str = va_arg(list, char*);
 			if (str)
-			{
-			printf("%s", str);
+			{ printf("%s", str);
 			break; }
 			printf("(nill)");
 			break; }}
