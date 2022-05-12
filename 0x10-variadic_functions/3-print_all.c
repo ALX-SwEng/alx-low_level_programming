@@ -22,8 +22,8 @@ void print_all(const char * const format, ...)
 		if (format[j] != 'c' && format[j] != 'i' &&
 		    format[j] != 'f' && format[j] != 's')
 		{
-			continue;
 			++j;
+			continue;
 		}
 
 		switch (format[j])
