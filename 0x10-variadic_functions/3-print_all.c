@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 			case 'c':
 			case 'i':
 			case 'f':
-			case 's': 
+			case 's':
 				printf(", "); }
 		}
 		start = 1;
