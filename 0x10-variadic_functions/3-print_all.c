@@ -21,13 +21,13 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	while (*format)
 	{
-		if (*format == 'd') 
+		if (*format == 'd')
 		{
 			i = va_arg(list, int);
 			printf("%d", i);
 		}
 
-		else if (*format == 'd') 
+		else if (*format == 'd')
 		{
 			j = va_arg(list, float);
 			printf("%f", j);
@@ -46,7 +46,7 @@ void print_all(const char * const format, ...)
 				printf("%s", str);
 			else if (!str)
 				printf("(nil)");
-		}	
+		}
 		printf(", ");
 	}
 
