@@ -4,6 +4,11 @@
 /**
 * print_all - prints anything.
 * @format: a list of types of arguments passed to the function.
+ * @...: A variable number of arguments to be printed.
+ *
+ * Description: Any argument not of type char, int, float,
+ *              or char * is ignored.
+ *              If a string argument is NULL, (nil) is printed instead.
 */
 void print_all(const char * const format, ...)
 {
