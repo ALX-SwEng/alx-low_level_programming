@@ -15,14 +15,16 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list list;
 	unsigned int i;
+	char *str;
 
 	if (n != 0)
 	{
 		va_start(list, n);
 		for (i = 0; i < n; i++)
 		{
-			if (va_arg(list, char*))
-				printf("%s", va_arg(list, char*)); /* Get & print the next value. */
+			str = va_arg(list, char*); /* Get the next value. */
+			if (str)
+				printf("%s", str); 
 			else
 				printf("(nil)");
 
