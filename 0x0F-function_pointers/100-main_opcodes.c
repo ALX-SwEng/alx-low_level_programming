@@ -10,15 +10,21 @@
  * Return: Always 0.
  */
 
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int (*func)(int, int);
-
-	if (argc != 4)
+	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(1);
 	}
+	
+	if (argc < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	
 
 return (0);
 }
