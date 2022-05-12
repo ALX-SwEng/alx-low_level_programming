@@ -17,14 +17,14 @@ int sum_them_all(const unsigned int n, ...)
 	if (n == 0)
 		return (0);
 
-	va_start (list, count); /* Initialize the argument list. */
+	va_start(list, count); /* Initialize the argument list. */
 
 	sum = 0;
 
 	for (i = 0; i < count; i++)
-		sum += va_arg (ap, int);    /* Get the next argument value. */
+		sum += va_arg(ap, int);    /* Get the next argument value. */
 		
-	va_end (ap); /* Clean up argument list. */
+	va_end(ap); /* Clean up argument list. */
 	
 return (sum);
 }
