@@ -19,6 +19,7 @@ void print_all(const char * const format, ...)
 	va_start(list, format);
 	while (format && format[j] != '\0')
 	{
+		k = 0;
 		while (type[k] != format[j] && k < 4)
 			++k;
 		if (k == 4)
