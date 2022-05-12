@@ -16,16 +16,19 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list list;
 	unsigned int i;
 
-	va_start(list, n); /* Initialize the argument list. */
-
-	for (i = 0; i < n; i++)
+	if (n != 0)
 	{
-		printf("%d", va_arg(list, int)); /* Get & print the next argument value. */
-		if (separator)
-			printf("%s", separator);
+		va_start(list, n); /* Initialize the argument list. */
+
+		for (i = 0; i < n - 1; i++)
+		{
+			printf("%d", va_arg(list, int)); /* Get & print the next argument value. */
+			if (separator)
+				printf("%s", separator);
+		}
+		printf("%d", va_arg(list, int)); /* print last argument value */
+
+		va_end(list); /* Clean up argument list. */
 	}
-
-	va_end(list); /* Clean up argument list. */
-
 printf("\n");
 }
