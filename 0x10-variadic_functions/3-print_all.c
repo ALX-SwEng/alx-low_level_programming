@@ -1,17 +1,19 @@
+#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include "variadic_functions.h"
+
 /**
 * print_all - prints anything.
 * @format: a list of types of arguments passed to the function.
 */
 void print_all(const char * const format, ...)
 {
-	va_list list;
 	int j = 0;
 	char *str, *sep = "";
 
+	va_list list;
 	va_start(list, format);
+	
 	if (format)
 	{
 		while (format[j])
@@ -41,6 +43,6 @@ void print_all(const char * const format, ...)
 			j++;
 		}
 	}
-	va_end(list); /* Clean up argument list. */
 	printf("\n");
+	va_end(list); /* Clean up argument list. */
 }
