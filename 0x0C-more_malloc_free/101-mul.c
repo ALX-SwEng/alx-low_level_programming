@@ -38,24 +38,30 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 		error(98);
-	
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
 
-	if (num1 == 0 || num2 == 0)
+	for (i = 1; i < argc; ++i)
+	{
+		if (!isNumber(argv[i]))
+			error(98);
+		if (i == 1)
+		{
+			for (j = 0; argv[i][j]; j++)
+				++len1;
+		}
+		if (i == 2)
+		{
+			for (j = 0; argv[i][j]; j++)
+				++len2;
+		}
+	}
+
+	mul = int_calloc(len1 + len2, sizeof(int));
+	if (mul == NULL)
 		error(98);
 
-	result = num1 * num2;
-	printf("%ld\n", result);
+	multiply(mul, argv[1], argv[2], len1, len2);
+	free(mul);
 
-	/**
-	* mul = int_calloc(len1 + len2, sizeof(int));
-	* if (mul == NULL)
-	*	error(98);
-	*
-	* multiply(mul, argv[1], argv[2], len1, len2);
-	* free(mul);
-	*/
 return (0);
 }
 
