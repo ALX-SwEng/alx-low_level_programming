@@ -1,5 +1,5 @@
-#ifndef FILE_VARIADIC_FUNCTIONS
-#define FILE_VARIADIC_FUNCTIONS
+#ifndef _VARIADIC_FUNCTIONS_H_
+#define _VARIADIC_FUNCTIONS_H_
 
 int _putchar(char c);
 
