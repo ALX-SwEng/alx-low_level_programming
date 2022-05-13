@@ -39,7 +39,6 @@ int main(int argc, char *argv[])
 		printf(" ");
 		address++;
 	}
-	
 
 return (0);
 }
