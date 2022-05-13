@@ -33,8 +33,7 @@ void error(int code)
 
 int main(int argc, char *argv[])
 {
-	/*int *mul, i, j, len1 = 0, len2 = 0;*/
-	long num1, num2, result;
+	int *mul, i, j, len1 = 0, len2 = 0;
 
 	if (argc != 3)
 		error(98);
