@@ -8,12 +8,11 @@
 */
 void print_all(const char * const format, ...)
 {
+	va_list list;
 	int j = 0;
 	char *str, *sep = "";
 
-	va_list list;
 	va_start(list, format);
-
 	if (format)
 	{
 		while (format[j])
