@@ -14,6 +14,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *new_node, *tmp_node; /* Create a new node */
 	unsigned int c = 0;
 
+	if (str == NULL)
+		return (NULL);
+
 	while (str[c++])
 		;
 
