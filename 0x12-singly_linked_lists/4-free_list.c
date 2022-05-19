@@ -14,8 +14,8 @@ void free_list(list_t *head)
 
 	while ((*head)->next)
 	{
-		tmp_node = *head;
-		*head = (*head)->next;
+		tmp_node = head;
+		head = head->next;
 		free(tmp_node);
 	}
 }
