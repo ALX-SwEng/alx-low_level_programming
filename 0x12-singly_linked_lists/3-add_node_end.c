@@ -32,7 +32,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		while((*head)->next != NULL)
-			(*head) = *head->next;
+			(*head) = (*head)->next;
 	}
 	(*head) = new_node;	/* Point head to new node */
 
