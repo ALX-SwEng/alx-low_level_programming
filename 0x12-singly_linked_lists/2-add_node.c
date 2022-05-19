@@ -12,9 +12,9 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_s *new_node = new list_s; /* Create a new node */
-	
+
 	new_node->str = str;
-	
+
 	new_node->next = head;	 /* Point it to old head */
 	head = new_node;	/* Point head to new node */
 
