@@ -25,16 +25,15 @@ list_t *add_node_end(list_t **head, const char *str)
 	new_node->len = --c;
 
 	new_node->next = NULL; /* Point it to null */
-  
-  /* if head is NULL, it is an empty list */
-  if(*head == NULL)
-    *head = newNode;
-  else
-  {
-    while(*head->next != NULL)
-    {
-      *head = *head->next;
-    }
+	
+	/* if head is NULL, it is an empty list */
+	if(*head == NULL)
+		*head = new_node;
+	else
+	{
+		while(*head->next != NULL)
+			*head = *head->next;
+	}
 	(*head) = new_node;	/* Point head to new node */
 
 	return (*head);
