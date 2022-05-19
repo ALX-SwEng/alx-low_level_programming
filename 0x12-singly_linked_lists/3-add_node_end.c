@@ -28,11 +28,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	
 	/* if head is NULL, it is an empty list */
 	if(*head == NULL)
-		*head = new_node;
+		(*head) = new_node;
 	else
 	{
-		while(*head->next != NULL)
-			*head = *head->next;
+		while((*head)->next != NULL)
+			(*head) = *head->next;
 	}
 	(*head) = new_node;	/* Point head to new node */
 
