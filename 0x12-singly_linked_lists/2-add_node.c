@@ -11,7 +11,7 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_s *new_node = new list_s; /* Create a new node */
+	struct list_s *new_node = struct new list_s; /* Create a new node */
 
 	new_node->str = str;
 
