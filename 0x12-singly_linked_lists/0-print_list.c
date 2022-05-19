@@ -20,9 +20,9 @@ size_t print_list(const list_t *h)
 		else
 			printf("%s", h->str);
 
-    	printf("%d", h->len);
-    	++counter;
+	printf("%d", h->len);
+	++counter;
 	}
 
-return (counter;
+return (counter);
 }
