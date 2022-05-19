@@ -14,12 +14,12 @@ list_t *add_node(list_t **head, const char *str)
 	/* Create a new node */
 	list_s *new_node = new list_s;
 	new_node->str = str;
-	
+
 	/* Point it to old head */
 	new_node->next = head;
-	
-	// Point head to new node
+
+	/* Point head to new node */
 	head = new_node;
-	
+
 	return (head);
 }
