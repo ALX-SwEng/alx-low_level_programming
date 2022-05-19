@@ -25,23 +25,18 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 
 	new_node->str = strdup(str);
-	if (new_node->str == NULL)
-	{
-		free(new_node);
-		return (NULL);
-	}
 	new_node->len = --c;
 	new_node->next = NULL; /* Point it to null */
 
 	/* if head is NULL, it is an empty list */
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		(*head) = new_node;
 		return (new_node);
 	}
 
 	tmp_node = *head;
-	while(tmp_node->next)
+	while (tmp_node->next)
 		tmp_node = tmp_node->next;
 
 	tmp_node->next = new_node;	/* Point head to new node */
