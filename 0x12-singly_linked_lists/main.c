@@ -1,8 +1,4 @@
 #include <stdio.h>
-#include "lists.h"
-
-void first(void) __attribute__ ((constructor));
-
 
 /**
  * main - check the code
