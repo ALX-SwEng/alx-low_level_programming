@@ -11,7 +11,7 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_s *new_node; /* Create a new node */
+	struct list_s *new_node; /* Create a new node */
 	unsigned int c = 0;
 
 	while (str[c++])
