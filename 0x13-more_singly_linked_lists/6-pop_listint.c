@@ -16,10 +16,10 @@ int pop_listint(listint_t **head)
 
 	tmp_node = malloc(sizeof(listint_t));
 	if (!head)
-		exit (0);
+		exit(0);
 
 	value = (*head)->len;
-	tmp_node = (*head); 
+	tmp_node = (*head);
 	(*head) = tmp_node->next;
 	free(tmp_node);
 
