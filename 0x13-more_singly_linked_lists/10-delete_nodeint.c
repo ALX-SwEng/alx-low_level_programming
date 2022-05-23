@@ -1,0 +1,35 @@
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+* delete_nodeint_at_index - remove the nth node of a linked list.
+* @head: a linked list to print
+* @index: the position where new node added.
+*
+* Return: the nth node, NULL otherwise.
+*/
+
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
+{
+	unsigned int i;
+	listint_t *new_node, *tmp_node;
+
+	tmp_node = *head;
+	new_node = malloc(sizeof(listint_t));
+	if (head == NULL)
+		return (NULL);
+
+	for (i = 0; i < idx - 1; i++)
+	{
+		tmp_node = tmp_node->next;
+		if (tmp_node == NULL)
+			return (NULL);
+	}
+
+	new_node = tmp_node->next;
+	tmp_node->next = new_node->next;
+  free(new_node);
+
+return (*head);
+}
