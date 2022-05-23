@@ -5,7 +5,7 @@
 /**
 * delete_nodeint_at_index - remove the nth node of a linked list.
 * @head: a linked list to print
-* @index: the position where new node added.
+* @index: index of the node that should be deleted. Index starts at 0.
 *
 * Return: the nth node, NULL otherwise.
 */
@@ -18,7 +18,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	tmp_node = *head;
 	new_node = malloc(sizeof(listint_t));
 	if (head == NULL)
-		return (NULL);
+		return (-1);
 
 	for (i = 0; i < idx - 1; i++)
 	{
@@ -31,5 +31,5 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	tmp_node->next = new_node->next;
 	free(new_node);
 
-return (*head);
+return (1);
 }
