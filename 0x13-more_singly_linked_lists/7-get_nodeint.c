@@ -4,7 +4,7 @@
 
 /**
 * get_nodeint_at_index - find the nth node of a listint_t linked list.
-* @h: a linked list to print
+* @head: a linked list to print
 * @index: the index of the node, starting at 0.
 *
 * Return: the nth node, NULL otherwise.
