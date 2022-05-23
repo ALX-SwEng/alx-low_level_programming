@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
-* sum_listint - find the the sum of all the data (n) of a listint_t linked list.
+* sum_listint - find the the sum of all the data in a linked list.
 * @head: a linked list to print
 *
 * Return: the nth node, NULL otherwise.
