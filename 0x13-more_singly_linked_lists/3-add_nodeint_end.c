@@ -4,7 +4,7 @@
 /**
 * add_nodeint_end - adds a new node at the end of a singly linked list.
 * @head: a linked list to print
-* @str: needs to be duplicated.
+* @n: value to be added.
 *
 * Return: the address of the new element, or NULL if it failed.
 */
