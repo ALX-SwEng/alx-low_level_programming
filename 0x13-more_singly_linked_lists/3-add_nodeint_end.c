@@ -1,26 +1,37 @@
-#include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    listint_t *head;
+* add_nodeint_end - adds a new node at the end of a singly linked list.
+* @head: a linked list to print
+* @n: value to be added.
+*
+* Return: the address of the new element, or NULL if it failed.
+*/
 
-    head = NULL;
-    add_nodeint_end(&head, 0);
-    add_nodeint_end(&head, 1);
-    add_nodeint_end(&head, 2);
-    add_nodeint_end(&head, 3);
-    add_nodeint_end(&head, 4);
-    add_nodeint_end(&head, 98);
-    add_nodeint_end(&head, 402);
-    add_nodeint_end(&head, 1024);
-    print_listint(head);
-    return (0);
+listint_t *add_nodeint_end(listint_t **head, const int n)
+{
+	listint_t *new_node, *tmp_node; /* Create a new node */
+
+	new_node = malloc(sizeof(listint_t));
+	if (new_node == NULL)
+		return (NULL);
+
+	new_node->len = n;
+	new_node->next = NULL; /* Point it to null */
+
+	/* if head is NULL, it is an empty list */
+	if (*head == NULL)
+	{
+		(*head) = new_node;
+		return (new_node);
+	}
+
+	tmp_node = *head;
+	while (tmp_node->next)
+		tmp_node = tmp_node->next;
+
+	tmp_node->next = new_node;	/* Point head to new node */
+
+	return (new_node);
 }
