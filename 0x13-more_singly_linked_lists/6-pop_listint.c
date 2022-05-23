@@ -15,7 +15,7 @@ int pop_listint(listint_t **head)
 	int value = 0;
 
 	if (*head == NULL)
-		return (NULL);
+		return (-1);
 
 	value = (*head)->n;
 	tmp_node = (*head);
