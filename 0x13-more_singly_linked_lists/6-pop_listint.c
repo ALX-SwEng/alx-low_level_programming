@@ -14,11 +14,10 @@ int pop_listint(listint_t **head)
 	listint_t *tmp_node; /* Create a new node */
 	int value = 0;
 
-	tmp_node = malloc(sizeof(listint_t));
-	if (!head)
-		exit(0);
+	if (*head == NULL)
+		return;
 
-	value = (*head)->len;
+	value = (*head)->n;
 	tmp_node = (*head);
 	(*head) = tmp_node->next;
 	free(tmp_node);
