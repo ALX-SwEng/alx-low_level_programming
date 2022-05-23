@@ -12,6 +12,7 @@ void free_listint2(listint_t **head)
 {
 	listint_t *tmp_node; /* Create a temporary node */
 
+	tmp_node = malloc(sizeof(listint_t));
 	while (head)
 	{
 		tmp_node = *head;
