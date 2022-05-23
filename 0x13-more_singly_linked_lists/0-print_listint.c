@@ -12,12 +12,14 @@
 size_t print_listint(const listint_t *h)
 {
 	unsigned int counter = 0;
+	const listint_t *tmp;
 
+	tmp = h;
 	while (h)
 	{
-		printf("%d\n", h->n);
+		printf("%d\n", tmp->n);
 		++counter;
-		h = h->next;
+		tmp = tmp->next;
 	}
 
 return (counter);
