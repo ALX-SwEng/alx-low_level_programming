@@ -1,26 +1,27 @@
 #include <string.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
-* add_nodeint - adds a new node at the beginning of a singly linked list.
+* pop_listint - adds a new node at the beginning of a singly linked list.
 * @head: a linked list to print
-* @n: value to be added to the node
 *
 * Return: the address of the new element, or NULL if it failed.
 */
 
-listint_t *add_nodeint(listint_t **head, const int n)
+int pop_listint(listint_t **head)
 {
-	list_t *new_node; /* Create a new node */
-	unsigned int c = 0;
+	listint_t *tmp_node; /* Create a new node */
+	int value = 0;
 
-	new_node = malloc(sizeof(listint_t));
-	if (new_node == NULL)
-		return (NULL);
+	tmp_node = malloc(sizeof(listint_t));
+	if (!head)
+		exit (0);
 
-	new_node->len = n;
-	new_node->next = (*head); /* Point it to old head */
-	(*head) = new_node;	/* Point head to new node */
+	value = (*head)->len;
+	tmp_node = (*head); 
+	(*head) = tmp_node->next;
+	free(tmp_node);
 
-	return (*head);
+	return (value);
 }
