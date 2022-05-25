@@ -1,7 +1,5 @@
 #include "lists.h"
 
-size_t loop__checker_listint(listint_t *head);
-
 /**
  * loop__checker_listint - check if there is loop in a linked list and
  *            counts the number of unique nodes in a looped linked list
