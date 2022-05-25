@@ -10,6 +10,7 @@
  *
  * Description: The function sets the head to NULL.
  */
+
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *tmp;
@@ -17,17 +18,16 @@ size_t free_listint_safe(listint_t **h)
 
 	nodes = looped_listint_count(*h);
 
-	if (nodes == 0)
+	if (nodes == 0) /* print not looped list */
 	{
-		for (; h != NULL && *h != NULL; nodes++)
+		while(h)
 		{
 			tmp = (*h)->next;
 			free(*h);
 			*h = tmp;
 		}
 	}
-
-	else
+	else /* print looped list */
 	{
 		for (index = 0; index < nodes; index++)
 		{
@@ -35,11 +35,9 @@ size_t free_listint_safe(listint_t **h)
 			free(*h);
 			*h = tmp;
 		}
-
 		*h = NULL;
 	}
 
-	h = NULL;
-
-	return (nodes);
+h = NULL;
+return (nodes);
 }
