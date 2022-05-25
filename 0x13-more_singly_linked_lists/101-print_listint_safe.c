@@ -14,7 +14,7 @@
 size_t loop__checker_list(const listint_t *head)
 {
 	const listint_t *tortoise  = head->next;
-	const listint_t *hare  = head->next->next;
+	const listint_t *hare  = (head->next)->next;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
