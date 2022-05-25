@@ -37,5 +37,6 @@ size_t free_listint_safe(listint_t **h);
 
 
 size_t check_looped_listint(const listint_t *head);
+size_t check_looped_listint(listint_t *head);
 
 #endif
