@@ -27,7 +27,10 @@ size_t print_listint_safe(const listint_t *head)
 		fast = fast->next->next;
 
 		if (slow == fast)
+		{
+			head = fast;
 			break;
+		}
 	}
 
 return (nodes);
