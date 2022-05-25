@@ -34,7 +34,7 @@ size_t loop__checker_listint(listint_t *head)
 		hare = (hare->next)->next;
 	}
 	
-	if if (tortoise == hare)
+	if (tortoise == hare)
 	{
 		tortoise = head;
 		while (tortoise != hare)
