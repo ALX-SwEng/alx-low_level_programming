@@ -13,7 +13,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index;
 
-	nodes = looped_listint_count(*h);
+	nodes = loop__checker_listint(*h);
 
 	if (nodes == 0) 	/* print not looped list */
 	{
