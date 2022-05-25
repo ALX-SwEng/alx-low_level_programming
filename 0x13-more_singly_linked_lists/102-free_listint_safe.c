@@ -1,31 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@cherelemma 
-tariktesfa
-/
-alx-low_level_programming
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-alx-low_level_programming/0x13-more_singly_linked_lists/102-free_listint_safe.c
-@tariktesfa
-tariktesfa More Exercise on Singly Linked List
-Latest commit ba12091 21 hours ago
- History
- 1 contributor
-Executable File  97 lines (80 sloc)  1.65 KB
-  
 #include "lists.h"
 
 size_t looped_listint_count(listint_t *head);
