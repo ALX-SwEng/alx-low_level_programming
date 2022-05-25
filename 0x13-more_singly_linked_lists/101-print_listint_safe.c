@@ -23,14 +23,12 @@ size_t print_listint_safe(const listint_t *head)
 		++nodes;
 		printf("[%p] %d\n", (void *)slow, slow->n);
 
+		fast = slow->next;
 		if (slow != fast)
-		{
 			slow = slow->next;
-			fast = fast->next;
-		}
 		else
 		{
-			printf("[%p] %d\n", (void *)slow->next, slow->next->n);
+			printf("-> [%p] %d\n", (void *)slow->next, slow->next->n);
 			break;
 		}
 
