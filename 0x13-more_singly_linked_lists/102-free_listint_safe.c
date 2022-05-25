@@ -13,7 +13,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *tmp_node; /* Create a temporary node */
 
 	if (*h == NULL || h == NULL)
-		return;
+		return (-1);
 
 	while (*h)
 	{
