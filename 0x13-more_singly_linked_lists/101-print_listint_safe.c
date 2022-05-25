@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
 
@@ -17,7 +18,7 @@ size_t print_listint_safe(const listint_t *head)
 	if (head == NULL)
 		exit(98);
 
-	while (slow != null && fast != null && fast.next != null)
+	while (slow != NULL && fast != NULL && fast.next != NULL)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
@@ -25,10 +26,7 @@ size_t print_listint_safe(const listint_t *head)
 		++nodes;
 
 		if (slow == fast)
-		{
-			loop = 1;
 			break;
-		}
 	}
 
 return (nodes);
