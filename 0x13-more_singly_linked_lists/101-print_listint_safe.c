@@ -28,7 +28,7 @@ size_t check_looped_listint(const listint_t *head)
 		tortoise = tortoise->next;
 		hare = (hare->next)->next;
 	}
-	
+
 	if (tortoise == hare) /* count unique node in a looped list */
 	{
 		tortoise = head;
