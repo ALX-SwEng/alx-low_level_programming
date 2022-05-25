@@ -12,7 +12,7 @@
  *         Otherwise - the number of unique nodes in the list.
  */
  
-size_t loop__checker_listint(const listint_t *head)
+size_t loop__checker_list(const listint_t *head)
 {
 	const listint_t *tortoise;
 	const listint_t *hare;
@@ -68,7 +68,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index;
 
-	nodes = loop__checker_listint(head);
+	nodes = loop__checker_list(head);
 
 	if (nodes == 0) 	/* print not looped list */
 	{
