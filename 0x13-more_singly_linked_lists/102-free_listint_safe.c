@@ -11,33 +11,33 @@
 
 size_t check_looped_listfree(listint_t *head)
 {
-	listint_t *tortoise = head->next;
-	listint_t *hare = head->next->next;
+	listint_t *tortoise, *hare;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
-	while (hare) /* check if there is a loop */
+	tortoise = head->next;
+	hare = (head->next)->next;
+
+	while (hare) /* check if there is loop in the list */
 	{
 		if (tortoise == hare)
 			break;
-
 		tortoise = tortoise->next;
 		hare = (hare->next)->next;
 	}
 
-	if (tortoise == hare) /* count unique nodes if the list is looped */
+	if (tortoise == hare) /* count unique node in a looped list */
 	{
 		tortoise = head;
-		while (tortoise != hare) /* count the noodes till the point of loop */
+		while (tortoise != hare)
 		{
 			nodes++;
 			tortoise = tortoise->next;
 			hare = hare->next;
 		}
-
-		tortoise = tortoise->next; /* count the noodes after the point of loop */
+		tortoise = tortoise->next;
 		while (tortoise != hare)
 		{
 			nodes++;
