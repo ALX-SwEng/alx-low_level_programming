@@ -26,7 +26,7 @@ size_t loop__checker_listint(listint_t *head)
 		tortoise = tortoise->next;
 		hare = (hare->next)->next;
 	}
-	
+
 	if (tortoise == hare) /* count unique nodes if the list is looped */
 	{
 		tortoise = head;
