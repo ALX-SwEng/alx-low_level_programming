@@ -19,8 +19,8 @@ size_t looped_listint_count(listint_t *head)
 	if (head == NULL || head->next == NULL)
 		return (0);
 
-	tortoise = head->next;
-	hare = (head->next)->next;
+	tortoise = head;
+	hare = head->next;
 
 	while (hare)
 	{
