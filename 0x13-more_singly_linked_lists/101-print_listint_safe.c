@@ -13,14 +13,14 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index;
 
-	nodes = loop__checker_listint(*head);
+	nodes = loop__checker_listint(head);
 
 	if (nodes == 0) 	/* print not looped list */
 	{
-		while(h)
+		while(head)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
-			*h = (*h)->next;
+			*head = (*head)->next;
 		}
 	}
 	else 	/* print looped list */
@@ -28,7 +28,7 @@ size_t print_listint_safe(const listint_t *head)
 		for (index = 0; index < nodes; index++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
-			*h = (*h)->next;
+			*head = (*head)->next;
 		}
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
