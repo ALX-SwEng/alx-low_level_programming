@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * free_listint_safe - Frees a listint_t list safely (ie.
- *                     can free lists containing loops)
+ * free_listint_safe - Frees a listint_t list safely 
+ *                 (i.e. can free lists containing loops)
  * @h: A pointer to the address of
  *     the head of the listint_t list.
  *
