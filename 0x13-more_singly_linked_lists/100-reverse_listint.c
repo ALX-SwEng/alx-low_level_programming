@@ -17,11 +17,11 @@ listint_t *reverse_listint(listint_t **head)
 	{
 		curr_list_head = (*head)->next;
 		(*head)->next = rev_list_head;
-		*rev_list_head = *head;
+		rev_list_head = *head;
 		*head = curr_list_head;
 	}
 
-	*head = *rev_list_head;
+	*head = rev_list_head;
 
 	return (*head);
 }
