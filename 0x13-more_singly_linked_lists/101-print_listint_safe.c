@@ -20,10 +20,11 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (slow != NULL && fast != NULL && fast->next != NULL)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
 		printf("%d\n", slow->n);
 		++nodes;
+
+		slow = slow->next;
+		fast = fast->next->next;
 
 		if (slow == fast)
 			break;
