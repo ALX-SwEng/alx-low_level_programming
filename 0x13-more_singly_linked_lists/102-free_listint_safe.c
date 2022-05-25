@@ -1,23 +1,20 @@
 #include "lists.h"
 
-size_t loop__checker_listint(listint_t *head);
+size_t looped_listint_count(listint_t *head);
 size_t free_listint_safe(listint_t **h);
 
 /**
- * loop__checker_listint - check if there is loop in a linked list and
- *            counts the number of unique nodes in a looped linked list
- *
+ * looped_listint_count - Counts the number of unique nodes
+ *                      in a looped listint_t linked list.
  * @head: A pointer to the head of the listint_t to check.
  *
- * Return: 0 - if the list is not looped,
+ * Return: If the list is not looped - 0.
  *         Otherwise - the number of unique nodes in the list.
  */
- 
-size_t loop__checker_listint(listint_t *head)
+size_t looped_listint_count(listint_t *head)
 {
-	listint_t *tortoise = head;
-	listint_t *hare = head->next;
-	size_t nodes = 0;
+	listint_t *tortoise, *hare;
+	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
@@ -25,26 +22,33 @@ size_t loop__checker_listint(listint_t *head)
 	tortoise = head->next;
 	hare = (head->next)->next;
 
-	while (tortoise && hare && hare->next)
+	while (hare)
 	{
 		if (tortoise == hare)
-			break;
-		
+		{
+			tortoise = head;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+				hare = hare->next;
+			}
+
+			tortoise = tortoise->next;
+			while (tortoise != hare)
+			{
+				nodes++;
+				tortoise = tortoise->next;
+			}
+
+			return (nodes);
+		}
+
 		tortoise = tortoise->next;
 		hare = (hare->next)->next;
 	}
-	
-	if (tortoise == hare)
-	{
-		tortoise = head;
-		while (tortoise != hare)
-		{
-			nodes++;
-			tortoise = tortoise->next;
-			hare = hare->next;
-		}
-	}
-return (nodes);
+
+	return (0);
 }
 
 /**
@@ -62,7 +66,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *tmp;
 	size_t nodes, index;
 
-	nodes = loop__checker_listint(*h);
+	nodes = looped_listint_count(*h);
 
 	if (nodes == 0)
 	{
