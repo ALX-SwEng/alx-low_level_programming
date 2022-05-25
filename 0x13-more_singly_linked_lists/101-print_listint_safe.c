@@ -60,10 +60,9 @@ size_t print_listint_safe(const listint_t *head)
 	size_t nodes, index;
 
 	nodes = loop__checker_list(head);
-
-	if (nodes == 0) 	/* print not looped list */
+	if (nodes == 0) /* print not looped list */
 	{
-		while(head)
+		while (head)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
