@@ -14,6 +14,9 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t *slow = *head;
 	int nodes = 0;
 	
+	if (*head == NULL || head == NULL)
+		exit(98);
+	
 	while (slow != null && fast != null && fast.next != null)
 	{
 		slow = slow->next;
