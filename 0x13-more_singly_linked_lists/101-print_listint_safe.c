@@ -14,8 +14,8 @@
  
 size_t loop__checker_listint(const listint_t *head)
 {
-	listint_t *tortoise;
-	listint_t *hare;
+	const listint_t *tortoise;
+	const listint_t *hare;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
