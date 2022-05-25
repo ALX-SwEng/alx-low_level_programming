@@ -3,7 +3,6 @@
 /**
  * loop__checker_listint - check if there is loop in a linked list and
  *            counts the number of unique nodes in a looped linked list
- *
  * @head: A pointer to the head of the listint_t to check.
  *
  * Return: 0 - if the list is not looped,
@@ -12,17 +11,14 @@
 
 size_t loop__checker_listint(listint_t *head)
 {
-	listint_t *tortoise;
-	listint_t *hare;
+	listint_t *tortoise = head->next;
+	listint_t *hare = head->next->next;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
-	/* check if there is a loop */
-	tortoise = head->next;
-	hare = head->next->next;
-	while (hare)
+	while (hare) /* check if there is a loop */
 	{
 		if (tortoise == hare)
 			break;
@@ -30,21 +26,18 @@ size_t loop__checker_listint(listint_t *head)
 		tortoise = tortoise->next;
 		hare = (hare->next)->next;
 	}
-
-	/* count unique nodes if the list is looped */
-	if (tortoise == hare)
+	
+	if (tortoise == hare) /* count unique nodes if the list is looped */
 	{
-		/* count the noodes till the point of loop */
 		tortoise = head;
-		while (tortoise != hare)
+		while (tortoise != hare) /* count the noodes till the point of loop */
 		{
 			nodes++;
 			tortoise = tortoise->next;
 			hare = hare->next;
 		}
 
-		/* count the noodes after the point of loop */
-		tortoise = tortoise->next;
+		tortoise = tortoise->next; /* count the noodes after the point of loop */
 		while (tortoise != hare)
 		{
 			nodes++;
