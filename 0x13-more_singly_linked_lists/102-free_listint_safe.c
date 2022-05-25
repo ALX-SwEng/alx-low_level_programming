@@ -69,7 +69,7 @@ size_t free_listint_safe(listint_t **h)
 	{
 		while (h != NULL && *h != NULL)
 		{
-			nodes++
+			nodes++;
 			tmp = (*h)->next;
 			free(*h);
 			*h = tmp;
