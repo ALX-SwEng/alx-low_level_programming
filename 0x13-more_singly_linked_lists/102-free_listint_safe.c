@@ -18,7 +18,7 @@ size_t free_listint_safe(listint_t **h)
 
 	nodes = looped_listint_count(*h);
 
-	if (nodes == 0) /* print not looped list */
+	if (nodes == 0) /* free not looped list */
 	{
 		while(h)
 		{
@@ -27,7 +27,7 @@ size_t free_listint_safe(listint_t **h)
 			*h = tmp;
 		}
 	}
-	else /* print looped list */
+	else /* free looped list */
 	{
 		for (index = 0; index < nodes; index++)
 		{
