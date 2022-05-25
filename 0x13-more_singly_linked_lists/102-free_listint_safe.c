@@ -51,9 +51,9 @@ size_t looped_listint_count(listint_t *head)
 			nodes++;
 			tortoise = tortoise->next;
 		}
+		return (nodes);
 	}
-
-return (nodes);
+return (0);
 }
 
 /**
