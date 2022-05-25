@@ -68,7 +68,7 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 		}
 	}
-	else 	/* print looped list */
+	else	/* print looped list */
 	{
 		for (index = 0; index < nodes; index++)
 		{
