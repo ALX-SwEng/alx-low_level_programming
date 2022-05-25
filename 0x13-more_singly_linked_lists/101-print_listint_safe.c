@@ -18,7 +18,7 @@ size_t print_listint_safe(const listint_t *head)
 	if (head == NULL)
 		exit(98);
 
-	while (slow != NULL && fast != NULL)
+	while (slow != NULL)
 	{
 		printf("[%p] %d\n", (void *)slow, slow->n);
 		++nodes;
