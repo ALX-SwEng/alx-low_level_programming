@@ -12,7 +12,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index;
-	listint_t *h = head;
+	listint_t *h = (listint_t *)head;
 
 	nodes = loop__checker_listint(h);
 
