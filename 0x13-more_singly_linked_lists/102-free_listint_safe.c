@@ -13,8 +13,8 @@ size_t free_listint_safe(listint_t **h);
  */
 size_t looped_listint_count(listint_t *head)
 {
-	listint_t tortoise = head;
-	listint_t hare = head;
+	listint_t *tortoise = head;
+	listint_t *hare = head;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
