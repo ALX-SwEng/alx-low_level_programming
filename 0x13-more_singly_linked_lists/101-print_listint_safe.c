@@ -12,8 +12,9 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index;
+	listint_t *h = head;
 
-	nodes = loop__checker_listint(head);
+	nodes = loop__checker_listint(h);
 
 	if (nodes == 0) 	/* print not looped list */
 	{
