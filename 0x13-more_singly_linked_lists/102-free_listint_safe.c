@@ -32,7 +32,7 @@ size_t looped_listint_count(listint_t *head)
 		hare = (hare->next)->next;
 	}
 
-	/* count unique nodes if the list is looped */ 
+	/* count unique nodes if the list is looped */
 	if (tortoise == hare)
 	{
 		/* count the noodes till the point of loop */
