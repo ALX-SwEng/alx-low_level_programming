@@ -12,27 +12,29 @@
  
 size_t loop__checker_listint(listint_t *head)
 {
-	listint_t *tortoise = head;
-	listint_t *hare = head->next;
-	size_t nodes = 0;
+	listint_t *tortoise;
+	listint_t *hare;
+	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
+	/* check if there is a loop */
 	tortoise = head->next;
-	hare = (head->next)->next;
-
-	while (tortoise && hare && hare->next)
+	hare = head->next->next;
+	while (hare)
 	{
 		if (tortoise == hare)
 			break;
-		
+
 		tortoise = tortoise->next;
 		hare = (hare->next)->next;
 	}
-	
-	if if (tortoise == hare)
+
+	/* count unique nodes if the list is looped */
+	if (tortoise == hare)
 	{
+		/* count the noodes till the point of loop */
 		tortoise = head;
 		while (tortoise != hare)
 		{
@@ -40,6 +42,15 @@ size_t loop__checker_listint(listint_t *head)
 			tortoise = tortoise->next;
 			hare = hare->next;
 		}
+
+		/* count the noodes after the point of loop */
+		tortoise = tortoise->next;
+		while (tortoise != hare)
+		{
+			nodes++;
+			tortoise = tortoise->next;
+		}
+		return (nodes);
 	}
-return (nodes);
+return (0);
 }
