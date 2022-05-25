@@ -9,7 +9,7 @@
  * Return: pointer to the 1st node in the new list, fail otherwise
  */
 
-size_t free_listint_safe(listint_t **h);
+size_t free_listint_safe(listint_t **h)
 {
 	int nodes = 0;
   listint_t *tmp_node;
