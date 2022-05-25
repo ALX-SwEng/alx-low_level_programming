@@ -8,7 +8,7 @@
  *
  * Return: pointer to the 1st node in the new list, fail otherwise
  */
-        
+
 size_t print_listint_safe(const listint_t *head)
 {
 	int nodes = 0;
