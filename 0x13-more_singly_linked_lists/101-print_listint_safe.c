@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "lists.h"
 
-size_t loop__checker_listint(listint_t *head);
-
 /**
  * loop__checker_listint - check if there is loop in a linked list and
  *            counts the number of unique nodes in a looped linked list
@@ -14,7 +12,7 @@ size_t loop__checker_listint(listint_t *head);
  *         Otherwise - the number of unique nodes in the list.
  */
  
-size_t loop__checker_listint(listint_t *head)
+size_t loop__checker_listint(const listint_t *head)
 {
 	listint_t *tortoise;
 	listint_t *hare;
@@ -69,9 +67,8 @@ return (0);
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes, index;
-	listint_t *h = (listint_t *)head;
 
-	nodes = loop__checker_listint(h);
+	nodes = loop__checker_listint(head);
 
 	if (nodes == 0) 	/* print not looped list */
 	{
