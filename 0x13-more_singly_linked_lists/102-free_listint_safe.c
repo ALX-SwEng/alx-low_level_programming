@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * loop__checker_listint - check if there is loop in a linked list and
+ * check_looped_listfree - check if there is loop in a linked list and
  *            counts the number of unique nodes in a looped linked list
  * @head: A pointer to the head of the listint_t to check.
  *
@@ -9,7 +9,7 @@
  *         Otherwise - the number of unique nodes in the list.
  */
 
-size_t loop__checker_listint(listint_t *head)
+size_t check_looped_listfree(listint_t *head)
 {
 	listint_t *tortoise = head->next;
 	listint_t *hare = head->next->next;
@@ -64,7 +64,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *tmp;
 	size_t nodes, index;
 
-	nodes = loop__checker_listint(*h);
+	nodes = check_looped_listfree(*h);
 	if (nodes == 0)
 	{
 		while (h != NULL && *h != NULL)
