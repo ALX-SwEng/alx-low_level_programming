@@ -11,21 +11,26 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	int nodes = 0;
+	size_t nodes, index;
 
-	while (head)
+	nodes = looped_listint_count(*h);
+
+	if (nodes == 0) 	/* print not looped list */
 	{
-		++nodes;
-		printf("[%p] %d\n", (void *)head, head->n);
-
-		if (head - head->next > 0)
-			head = head->next;
-		else
+		while(h)
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
+			printf("[%p] %d\n", (void *)head, head->n);
+			*h = (*h)->next;
 		}
-
+	}
+	else 	/* print looped list */
+	{
+		for (index = 0; index < nodes; index++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			*h = (*h)->next;
+		}
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 
 return (nodes);
