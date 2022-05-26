@@ -24,6 +24,6 @@ unsigned int binary_to_uint(const char *b)
 
 	while (--i >= 0)
 		decimal += (b[i] * pow(2, i));
-		
-	return (decimal);	
+
+	return (decimal);
 }
