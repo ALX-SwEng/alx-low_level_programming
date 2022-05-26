@@ -43,7 +43,7 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	while (--i >= 0)
-		decimal += ((b[i] - '0') * pow(2, i));
+		decimal += ((b[i] - '0') * _pow_recursion(2, i));
 
 	return (decimal);
 }
