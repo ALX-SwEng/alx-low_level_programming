@@ -1,7 +1,5 @@
 #include "main"
 
-#include "main"
-
 /**
 * binary_to_uint - converts a binary number to unsigned int
 *
