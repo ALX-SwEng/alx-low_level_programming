@@ -14,7 +14,9 @@ void print_binary(unsigned long int n)
 		current = current >> 1;
 		count++;
 	}
-	
+	if (count < 64)
+		count = 64;
+
 	while (count)
 	{
 		current = n>>--count;
@@ -23,7 +25,7 @@ void print_binary(unsigned long int n)
 		else
 			putchar('0');
 	}
-	
+
 	if (!count)
 		putchar('0');
 }
