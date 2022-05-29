@@ -9,18 +9,18 @@ void print_binary(unsigned long int n)
 	int count = 0;
 	unsigned long int current = n;
 
-	while(current)
+	while (current)
 	{
 		current = current >> 1;
 		count++;
 	}
-	
+
 	if (!count)
 		putchar('0');
-	
+
 	while (count)
 	{
-		current = n>>--count;
+		current = n >> --count;
 		if (current & 1)
 			putchar('1');
 		else
