@@ -15,7 +15,7 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	return ((n >> index) & 1);
 
-/**
+/*
 *	alternative solution
 *
 *	unsigned int count = 0;
