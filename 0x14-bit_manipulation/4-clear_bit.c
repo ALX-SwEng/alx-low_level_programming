@@ -15,10 +15,10 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	 /*
 	 * First shift left 1 by index bits
-	 * and then OR/Add it the given number
+	 * and then Invert and AND it the given number
 	 */
 
-	*n = *n & (1 << index);
+	*n = *n & (~(1 << index));
 
 return (1);
 }
