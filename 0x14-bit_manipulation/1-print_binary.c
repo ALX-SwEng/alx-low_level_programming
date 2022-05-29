@@ -14,12 +14,12 @@ void print_binary(unsigned long int n)
 		current = current >> 1;
 		count++;
 	}
-	if (count < 64)
-		count = 64;
+	if (count < 63)
+		count = 63;
 
-	while (count)
+	for (;count >= 0; --count)
 	{
-		current = n>>--count;
+		current = n>>count;
 		if (current & 1)
 			putchar('1');
 		else
