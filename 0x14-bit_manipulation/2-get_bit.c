@@ -19,7 +19,7 @@ int get_bit(unsigned long int n, unsigned int index)
 *	alternative solution
 *
 *	unsigned int count = 0;
-*	unsigned long int current = n; 
+*	unsigned long int current = n;
 *
 *
 *	while (current)
