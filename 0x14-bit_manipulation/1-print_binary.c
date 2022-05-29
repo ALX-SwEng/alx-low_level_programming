@@ -6,7 +6,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	int count = 0, n = 18;
+	int count = 0;
 	unsigned long int current = n;
 
 	while(current)
@@ -15,9 +15,6 @@ void print_binary(unsigned long int n)
 		count++;
 	}
 	
-	if (!count)
-		putchar('0');
-	
 	while (count)
 	{
 		current = n>>--count;
@@ -25,5 +22,8 @@ void print_binary(unsigned long int n)
 			putchar('1');
 		else
 			putchar('0');
-	}	
+	}
+	
+	if (!count)
+		putchar('0');
 }
