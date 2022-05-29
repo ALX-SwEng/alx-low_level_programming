@@ -22,21 +22,21 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned long int current = n; */
 
 /*
-	while (current)
-	{
-		current = current >> 1;
-		count++;
-	}
-
-	while (count)
-	{
-		current = n >> --count;
-		if (current & 1 && index == count)
-			return (1);
-		else if (index == count)
-			return (0);
-	}
-	return (0);
+*	while (current)
+*	{
+*		current = current >> 1;
+*		count++;
+*	}
+*
+*	while (count)
+*	{
+*		current = n >> --count;
+*		if (current & 1 && index == count)
+*			return (1);
+*		else if (index == count)
+*			return (0);
+*	}
+*	return (0);
 */
 }
 
