@@ -12,7 +12,7 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int count = 0;
+	int count = 0, num_flips = 0;
 	unsigned long int current = n;
 
 	while (current)
@@ -21,15 +21,12 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		count++;
 	}
 
-	if (!count)
-		putchar('0');
-
 	while (count)
 	{
-		current = n >> --count;
-		if (current & 1)
-			putchar('1');
-		else
-			putchar('0');
+		if ((n & 1) != (m & 1)) /* check if corresponding bits are not the same */
+			num_flips++;
+		n = n >> 1;
+		m = m >> 1;
 	}
+return (num_flips);
 }
