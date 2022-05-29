@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * set_bit -  find the value of a bit at a given index.
+ * clear_bit -  find the value of a bit at a given index.
  * @n: decimal number
  * @index: index starting from 0 of the bit you want to get
  *
  * Return: value of a bit
  */
 
-int set_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	if (index > 32) /* because size of long int is 32 bits */
 		return (-1);
