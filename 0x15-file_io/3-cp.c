@@ -22,7 +22,7 @@ void print_error(int file_des)
 int main(int argc, char *argv[])
 {
 	int fp_from, fp_to, wc;
-	char buffer[1024];
+	char buffer[BUFSIZE];
 
 	if (argc != 3)
 	{
@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(fp_from);
 		exit(99); }
-	while ((wc = read(fp_from, buffer, 1024)) > 0)
+	while ((wc = read(fp_from, buffer, BUFSIZE)) > 0)
 	{
-		if (wc != write(fp_to, buffer, 1024))
+		if (wc != write(fp_to, buffer, wc))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(fp_from);
