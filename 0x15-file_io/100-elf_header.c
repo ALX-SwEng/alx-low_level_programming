@@ -247,7 +247,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	free(header);
 	if (close(fd) == -1)
 	{
-		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(98);
 	}
 	return (0);
