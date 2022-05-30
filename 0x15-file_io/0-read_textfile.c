@@ -13,7 +13,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
 	int rc, wc; /* read & write character counter */
-	FILE *fp;  /* File pointer */
+	int fp;  /* File pointer */
 
 	fp = fopen(filename, O_RDONLY);
 	if (filename == NULL || fp < 0)
@@ -37,5 +37,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (wc < 0)
 		return (0);
 
-return (write_c);
+return (wc);
 }
