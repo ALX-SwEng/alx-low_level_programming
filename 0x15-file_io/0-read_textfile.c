@@ -11,33 +11,31 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-  char *buffer;
-  int read_c, write_c;
-  FILE *fp;
- 
-  fp = fopen (*filename, O_RDONLY);
-  
-  if (filename == NULL || fp < 0)
-    return (0);
-  
-  buffer = malloc(letters * sizeof(char));
-  if (buffer == NULL)
-    return (0);
-  
-  read_c = read(fp, buffer, letters);
-  if (read_c < 0)
-  {
-    free(buffer);
-    return (0);
-  }
-  buffer[read_c] = '\0';
-  
-   write_c = write(STDOUT_FILENO, buffer, read_c);
-  if (write_c < 0)
-  {
-    free(buffer);
-    return (0);
-  }
- free(buffer);
-  return (write_c);
+	char *buffer;
+	int rc, wc; /* read & write character counter */
+	FILE *fp;  /* File pointer */
+
+	fp = fopen (*filename, O_RDONLY);
+	if (filename == NULL || fp < 0)
+		return (0);
+		
+	buffer = malloc(letters * sizeof(char));
+	if (buffer == NULL)
+		return (0);
+
+	rc = read(fp, buffer, letters);
+	if (rc < 0)
+	{
+		free(buffer);
+		return (0);
+	}
+	buffer[rc] = '\0';
+
+	wc = write(STDOUT_FILENO, buffer, rc);
+	free(buffer);
+
+	if (wc < 0)	
+		return (0);
+
+return (write_c);
 }
