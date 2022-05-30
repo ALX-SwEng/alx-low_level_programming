@@ -4,9 +4,9 @@
  * read_textfile - reads a text file and prints it to the POSIX standard output
  *
  * @filename: name of the file to be read
- * @letters: number of letters to read and print
+ * @text_content: a NULL terminated string to write to the file
  *
- * Return: the number of letters printed, or 0 if it failed
+ * Return: 1 on success, -1 on failure 
  */
 
 int create_file(const char *filename, char *text_content)
