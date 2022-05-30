@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * check_elf - Checks if a file is an ELF file.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
@@ -54,16 +53,12 @@ void print_magic(unsigned char *e_ident)
 void print_class(unsigned char *e_ident)
 {
 	printf("  Class:                             ");
-
 	if (e_ident[EI_CLASS] == ELFCLASSNONE)
 		printf("none\n");
-
 	else if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("ELF32\n");
-
 	else if (e_ident[EI_CLASS] == ELFCLASS64)
 		printf("ELF64\n");
-
 	else
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 }
@@ -75,16 +70,12 @@ void print_class(unsigned char *e_ident)
 void print_data(unsigned char *e_ident)
 {
 	printf("  Data:                              ");
-
 	if (e_ident[EI_DATA] == ELFDATANONE)
 		printf("none\n");
-
 	else if (e_ident[EI_DATA] == ELFDATA2LSB)
 		printf("2's complement, little endian\n");
-
 	else if (e_ident[EI_DATA] == ELFDATA2MSB)
 		printf("2's complement, big endian\n");
-
 	else
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 }
@@ -98,11 +89,15 @@ void print_version(unsigned char *e_ident)
 	printf("  Version:                           %d",
 	       e_ident[EI_VERSION]);
 
-	if (e_ident[EI_VERSION] == EV_CURRENT)
+	switch (e_ident[EI_VERSION])
+	{
+	case EV_CURRENT:
 		printf(" (current)\n");
-
-	else
+		break;
+	default:
 		printf("\n");
+		break;
+	}
 }
 
 /**
@@ -112,39 +107,38 @@ void print_version(unsigned char *e_ident)
 void print_osabi(unsigned char *e_ident)
 {
 	printf("  OS/ABI:                            ");
-
 	if (e_ident[EI_OSABI] == ELFOSABI_NONE)
 		printf("UNIX - System V\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_HPUX)
 		printf("UNIX - HP-UX\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_NETBSD)
 		printf("UNIX - NetBSD\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_LINUX)
 		printf("UNIX - Linux\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_SOLARIS)
 		printf("UNIX - Solaris\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_IRIX)
 		printf("UNIX - IRIX\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_FREEBSD)
 		printf("UNIX - FreeBSD\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_TRU64)
 		printf("UNIX - TRU64\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_ARM)
 		printf("ARM\n");
-
 	else if (e_ident[EI_OSABI] == ELFOSABI_STANDALONE)
 		printf("Standalone App\n");
-
 	else
 		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
+}
+
+/**
+ * print_abi - Prints the ABI version of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF ABI version.
+ */
+void print_abi(unsigned char *e_ident)
+{
+	printf("  ABI Version:                       %d\n",
+	       e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -201,11 +195,13 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 		printf("%#lx\n", e_entry);
 }
 
+
 /**
  * main - Displays the information contained in the
  *        ELF header at the start of an ELF file.
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
+ *
  * Return: 0 on success.
  *
  * Description: If the file is not an ELF File or
@@ -244,17 +240,16 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_data(header->e_ident);
 	print_version(header->e_ident);
 	print_osabi(header->e_ident);
-	printf("  ABI Version:                       %d\n", e_ident[EI_ABIVERSION]);
+	print_abi(header->e_ident);
 	print_type(header->e_type, header->e_ident);
 	print_entry(header->e_entry, header->e_ident);
 
 	free(header);
 	if (close(fd) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO,"Error: Can't close fd %d\n", fd);
 		exit(98);
 	}
 	return (0);
 }
-
 
