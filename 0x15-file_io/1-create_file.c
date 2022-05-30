@@ -11,7 +11,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int wc, fp;
+	int wc1, wc2, fp;
 
 	if (!filename)
 		return (-1);
@@ -22,10 +22,11 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content)
 	{
-		while (text_content[wc++])
-			;
+		while (text_content[wc1])
+			wc1++;
 
-		if (wc != write(fp, text_content, wc))
+		wc2 = write(fp, text_content, wc1);
+		if (wc2 != wc1)
 			return (-1);
 	}
 
