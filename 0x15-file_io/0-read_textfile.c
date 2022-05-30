@@ -13,7 +13,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
 	int rc, wc; /* read & write character counter */
-	int fp;  /* File pointer */
+	int fp;  /* File descriptor */
 
 	if (!filename)
 		return (0);
@@ -33,11 +33,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	buffer[rc] = '\0';
+	close(fp);
 
 	wc = write(STDOUT_FILENO, buffer, rc);
 	free(buffer);
 
-	if (wc < 0)		
+	if (wc < 0)	
 		return (0);
 
 return (wc);
