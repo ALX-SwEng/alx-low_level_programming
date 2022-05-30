@@ -223,8 +223,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	{
 		close(fd);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
-		exit(98);
-	}
+		exit(98); }
 	s = read(fd, header, sizeof(Elf64_Ehdr));
 	if (s == -1)
 	{
@@ -248,8 +247,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (close(fd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		exit(98);
-	}
+		exit(98); }
 	return (0);
 }
 
