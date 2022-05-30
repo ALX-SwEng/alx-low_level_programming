@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	int fp_from, fp_to, wc;
-	char buffer = [1024];
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	if (close(fp_from) < 0)
 		print_error(fp_from);
 	if (close(fp_to) < 0)
-		print_error(fp_to);	
+		print_error(fp_to);
 return (0);
 }
 
