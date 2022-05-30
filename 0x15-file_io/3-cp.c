@@ -54,7 +54,7 @@ return (0);
 * Return: None.
 */
 
-void print_error (int file_des)
+void print_error(int file_des)
 {
 	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_des);
 	exit(100);
