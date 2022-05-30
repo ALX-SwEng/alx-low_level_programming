@@ -15,7 +15,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int rc, wc; /* read & write character counter */
 	FILE *fp;  /* File pointer */
 
-	fp = fopen(*filename, O_RDONLY);
+	fp = fopen(filename, O_RDONLY);
 	if (filename == NULL || fp < 0)
 		return (0);
 
