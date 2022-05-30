@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
  * check_elf - Checks if a file is an ELF file.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
@@ -147,17 +148,6 @@ void print_osabi(unsigned char *e_ident)
 }
 
 /**
- * print_abi - Prints the ABI version of an ELF header.
- * @e_ident: A pointer to an array containing the ELF ABI version.
- */
-
-void print_abi(unsigned char *e_ident)
-{
-	printf("  ABI Version:                       %d\n",
-	       e_ident[EI_ABIVERSION]);
-}
-
-/**
  * print_type - Prints the type of an ELF header.
  * @e_type: The ELF type.
  * @e_ident: A pointer to an array containing the ELF class.
@@ -254,7 +244,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_data(header->e_ident);
 	print_version(header->e_ident);
 	print_osabi(header->e_ident);
-	print_abi(header->e_ident);
+	printf("  ABI Version:                       %d\n", e_ident[EI_ABIVERSION]);
 	print_type(header->e_type, header->e_ident);
 	print_entry(header->e_entry, header->e_ident);
 
