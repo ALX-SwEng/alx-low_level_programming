@@ -11,7 +11,6 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	char *buffer;
 	int wc, fp;
 
 	if (!filename)
@@ -26,7 +25,7 @@ int create_file(const char *filename, char *text_content)
 		while (text_content[wc++])
 			;
 
-		if (wc != write(fd, text_content, wc))
+		if (wc != write(fp, text_content, wc))
 			return (-1);
 	}
 
