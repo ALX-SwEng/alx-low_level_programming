@@ -1,3 +1,2 @@
 #!/bin/bash
-cp ../sh2.sh .
-. ./sh2.sh
+./gm 9 8 10 24 75 9
